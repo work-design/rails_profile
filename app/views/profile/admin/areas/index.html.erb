@@ -11,13 +11,11 @@
     <thead>
       <tr>
         <th>ID</th>
-        <th><%= Area.human_attribute_name(:nation) %></th>
-        <th><%= Area.human_attribute_name(:province) %></th>
-        <th><%= Area.human_attribute_name(:city) %></th>
-        <th><%= Area.human_attribute_name(:district) %></th>
-        <th><%= Area.human_attribute_name(:nation) %></th>
-        <th><%= Area.human_attribute_name(:nation) %></th>
-        <th><%= Area.human_attribute_name(:nation) %></th>
+        <th><%= Area.human_attribute_name(:names) %></th>
+        <th><%= Area.human_attribute_name(:name) %></th>
+        <th><%= Area.human_attribute_name(:popular) %></th>
+        <th><%= Area.human_attribute_name(:published) %></th>
+        <th></th>
       </tr>
     </thead>
 
@@ -25,15 +23,17 @@
     <% @areas.each do |area| %>
       <tr>
         <td><%= area.id %></td>
-        <td><%= area.nation %></td>
-        <td><%= area.province %></td>
-        <td><%= area.city %></td>
-        <td><%= area.district %></td>
+        <td><%= area.names.join(' / ') %></td>
+        <td><%= area.name %></td>
         <td><%= area.popular %></td>
         <td><%= area.published %></td>
         <td>
-          <%= link_to '编辑', edit_admin_area_path(area), class: 'ui pink label' %>
-          <%= link_to '删除', admin_area_path(area), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
+          <%= link_to edit_admin_area_path(area), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button', remote: true do %>
+            <i class="pencil alternate icon"></i>
+          <% end %>
+          <%= link_to admin_area_path(area), method: :delete, data: { tooltip: t('.destroy'), confirm: 'Are you sure?' }, class: 'ui red mini icon button' do %>
+            <i class="times icon"></i>
+          <% end %>
         </td>
       </tr>
     <% end %>

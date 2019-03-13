@@ -45,12 +45,10 @@ class Profile::Admin::AreasController < Profile::Admin::BaseController
 
   def area_params
     params.fetch(:area, {}).permit(
-      :nation,
-      :province,
-      :city,
-      :district,
+      :name,
       :popular,
-      :published
+      :published,
+      :parent_ancestors
     )
   end
 
