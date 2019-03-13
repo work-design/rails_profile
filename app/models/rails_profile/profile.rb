@@ -17,4 +17,4 @@ class Profile < ApplicationRecord
     r_hash[:year]
   end
 
-end
+end unless RailsProfile.config.disabled_models.include?('Profile')

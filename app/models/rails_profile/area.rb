@@ -58,7 +58,7 @@ class Area < ApplicationRecord
     Rails.cache.write('areas/timestamp', t)
   end
 
-end unless RailsTrade.config.disabled_models.include?('Area')
+end unless RailsProfile.config.disabled_models.include?('Area')
 # :region
 # :nation
 # :province

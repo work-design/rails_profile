@@ -9,4 +9,4 @@ class Address < ApplicationRecord
   }
 
 
-end unless RailsTrade.config.disabled_models.include?('Address')
+end unless RailsProfile.config.disabled_models.include?('Address')

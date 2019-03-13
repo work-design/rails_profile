@@ -18,5 +18,20 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
+    create_table :profiles do |t|
+      t.references :user
+      t.string "title"
+      t.string "real_name"
+      t.string "private_email"
+      t.string "gender"
+      t.string "birthday_type"
+      t.date "birthday"
+      t.string "highest_education"
+      t.string "degree"
+      t.string "major"
+      t.text "work_experience"
+      t.timestamps
+    end
+
   end
 end
