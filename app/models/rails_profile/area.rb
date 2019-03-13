@@ -6,21 +6,16 @@ class Area < ApplicationRecord
   attribute :city, :string
   attribute :district, :string, default: ''
 
-  has_many :provinces, -> { where(city: '').where.not(province: '') }, class_name: 'Area', primary_key: :nation, foreign_key: :nation, dependent: :destroy
-  has_many :cities, -> { where.not(city: '') }, class_name: 'Area', primary_key: :province, foreign_key: :province, dependent: :destroy
-
-  scope :all_provinces, -> { where(city: '').where.not(province: '')}
-
   scope :popular, -> { where(popular: true) }
-
-  scope :nations, ->(region_name){ where(region: region_name).group(:nation).pluck(:nation, :nation) }
-  scope :provinces, ->(nation_name){ select(:province).distinct.where(nation: nation_name) }
-  scope :cities, ->(province_name){ select(:city).distinct.where(province: province_name) }
 
   default_scope -> { where(published: true) }
 
   after_save :sync_names, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
   after_commit :update_timestamp, :delete_cache, on: [:create, :update]
+
+  def full_name
+    names.join(' / ')
+  end
 
   def sync_names
     self.names = self.self_and_ancestors.pluck(:name).reverse
