@@ -2,7 +2,7 @@ $:.push File.expand_path('lib', __dir__)
 require 'rails_profile/version'
 
 Gem::Specification.new do |s|
-  s.name = 'rails_ship'
+  s.name = 'rails_profile'
   s.version = RailsProfile::VERSION
   s.authors = ['qinmingyuan']
   s.email = ['mingyuan0715@foxmail.com']
