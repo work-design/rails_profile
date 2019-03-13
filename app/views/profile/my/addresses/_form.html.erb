@@ -1,0 +1,23 @@
+<%= form_with model: [:my, @address], local: true do |f| %>
+  <div class="fields">
+    <div class="field">
+      <%= label :nation, 'Nation' %>
+      <%= select_tag :nation, options_for_select(Area.all_nations), class: 'ui search selection dropdown' %>
+    </div>
+    <div class="field">
+      <%= label :province, 'Province' %>
+      <%= select_tag :province, options_for_select([]), class: 'ui search selection dropdown' %>
+    </div>
+    <div class="field">
+      <%= label :city, 'City' %>
+      <%= select_tag :city, options_for_select([]), class: 'ui search selection dropdown' %>
+    </div>
+  </div>
+  <%= f.hidden_field :area_id %>
+  <%= f.text_field :contact_person %>
+  <%= f.text_field :tel %>
+  <%= f.text_field :address %>
+  <%= f.submit %>
+<% end %>
+
+

@@ -1,0 +1,2 @@
+$('.ui.modal').modal('hide');
+$("#address_<%= @address.id %>").replaceWith('<%= j(render partial: 'address', locals: { address: @address }) %>')

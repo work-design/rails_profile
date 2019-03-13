@@ -1,0 +1,52 @@
+if ($('.ui.modals').length === 0) {
+  $('body').append('<%= j(render 'new') %>');
+} else {
+  $('.ui.modals').html('<%= j(render 'new') %>');
+}
+
+$('.ui.modal').modal('setting', { autofocus: false }).modal('show');
+
+$('#address_nation').dropdown({
+  onChange: function(value, text, $selectedItem){
+    var search_path = '/areas/search'
+    var search_url = new URL(window.location.origin + search_path)
+    search_url.searchParams.set('nation', value)
+    fetch(search_url).then(function(response){
+      return response.json();
+    }).then(function(response){
+      $('#address_province').dropdown('clear').dropdown('setup menu', response);
+    })
+  }
+});
+
+$('#address_province').dropdown({
+  onChange: function(value, text, $selectedItem){
+    var search_path = '/areas/search'
+    var search_url = new URL(window.location.origin + search_path)
+    search_url.searchParams.set('province', value)
+    fetch(search_url).then(function(response){
+      return response.json();
+    }).then(function(response){
+      $('#address_city').dropdown('clear').dropdown('setup menu', response);
+    })
+    var opt = document.createElement('option');
+    opt.text = text;
+    opt.value = text;
+    opt.selected = true;
+    this.options.add(opt, null)
+  }
+});
+
+$('#address_city').dropdown({
+  onChange: function(value, text, $selectedItem){
+    $('#address_area_id').val(value);
+    var opt = document.createElement('option');
+    opt.text = text;
+    opt.value = text;
+    opt.selected = true;
+    this.options.add(opt, null)
+  }
+});
+
+$('#address_address_type').dropdown();
+$('#address_proxy_shipment').dropdown();

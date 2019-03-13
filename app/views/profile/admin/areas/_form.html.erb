@@ -1,0 +1,10 @@
+<%= form_with model: [:admin, @area] do |f| %>
+  <%= render 'shared/error_messages', target: @area %>
+  <%= f.text_field :nation, label: '国家' %>
+  <%= f.text_field :province, label: '省：' %>
+  <%= f.text_field :city, label: '市：' %>
+  <%= f.text_field :district %>
+  <%= f.check_box :popular, label: '是否热门:'  %>
+  <%= f.check_box :published, label: '是否显示:' %>
+  <%= f.submit "创建" %>
+<% end %>

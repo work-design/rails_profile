@@ -1,0 +1,45 @@
+<div class="">
+
+  <div class="ui top attached menu borderless">
+    <div class="item"><strong>地区列表</strong></div>
+    <div class="right menu">
+      <div class="item"><%= link_to '新建', new_admin_area_path, class: 'ui teal button' %></div>
+    </div>
+  </div>
+
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th><%= Area.human_attribute_name(:nation) %></th>
+        <th><%= Area.human_attribute_name(:province) %></th>
+        <th><%= Area.human_attribute_name(:city) %></th>
+        <th><%= Area.human_attribute_name(:district) %></th>
+        <th><%= Area.human_attribute_name(:nation) %></th>
+        <th><%= Area.human_attribute_name(:nation) %></th>
+        <th><%= Area.human_attribute_name(:nation) %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <% @areas.each do |area| %>
+      <tr>
+        <td><%= area.id %></td>
+        <td><%= area.nation %></td>
+        <td><%= area.province %></td>
+        <td><%= area.city %></td>
+        <td><%= area.district %></td>
+        <td><%= area.popular %></td>
+        <td><%= area.published %></td>
+        <td>
+          <%= link_to '编辑', edit_admin_area_path(area), class: 'ui pink label' %>
+          <%= link_to '删除', admin_area_path(area), method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui red label' %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @areas %>
+
+</div>
