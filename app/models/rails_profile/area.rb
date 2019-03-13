@@ -1,4 +1,11 @@
 class Area < ApplicationRecord
+  prepend RailsTaxonNode
+
+  attribute :region, :string
+  attribute :nation, :string
+  attribute :province, :string
+  attribute :city, :string
+
   has_many :provinces, -> { where(city: '').where.not(province: '') }, class_name: 'Area', primary_key: :nation, foreign_key: :nation, dependent: :destroy
   has_many :cities, -> { where.not(city: '') }, class_name: 'Area', primary_key: :province, foreign_key: :province, dependent: :destroy
 
@@ -13,6 +20,10 @@ class Area < ApplicationRecord
   default_scope -> { where(published: true) }
 
   after_commit :update_timestamp, :delete_cache, on: [:create, :update]
+
+  def name
+    self.district.presence || self.city.presence || self.province.presence || self.nation.presence
+  end
 
   def self.list
     Rails.cache.fetch('areas/list') do
@@ -59,7 +70,3 @@ class Area < ApplicationRecord
   end
 
 end unless RailsProfile.config.disabled_models.include?('Area')
-# :region
-# :nation
-# :province
-# :city

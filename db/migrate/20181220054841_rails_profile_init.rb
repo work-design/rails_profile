@@ -8,7 +8,16 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
       t.string :district, default: ''
       t.boolean :published, default: true
       t.boolean :popular, default: false
+      t.references :parent
       t.timestamps
+    end
+
+    create_table :area_hierarchies, id: false do |t|
+      t.integer :ancestor_id, null: false
+      t.integer :descendant_id, null: false
+      t.integer :generations, null: false
+      t.index [:ancestor_id, :descendant_id, :generations], unique: true, name: 'area_anc_desc_idx'
+      t.index [:descendant_id], name: 'area_desc_idx'
     end
 
     create_table :addresses do |t|
