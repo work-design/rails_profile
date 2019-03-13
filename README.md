@@ -1,25 +1,10 @@
-# RailsShip
-Short description and motivation.
+# RailsProfile
+`RailsProfile`用于拓展用户的资料，比如简历、所在地区管理等；
 
 ## Usage
 How to use my plugin.
 
-## Installation
-Add this line to your application's Gemfile:
 
-```ruby
-gem 'rails_ship'
-```
-
-And then execute:
-```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install rails_ship
-```
 
 ## Contributing
 Contribution directions go here.
