@@ -29,16 +29,13 @@ class Profile::My::ProfilesController < Profile::My::BaseController
 
   def profile_params
     params.fetch(:profile, {}).permit(
-      :title,
       :real_name,
-      :private_email,
       :gender,
       :birthday_type,
       :birthday,
       :highest_education,
       :degree,
-      :major,
-      :work_experience
+      :major
     )
   end
 
