@@ -24,33 +24,29 @@ class Area < ApplicationRecord
 
   def self.list
     Rails.cache.fetch('areas/list') do
-      nations.includes(provinces: :cities).map do |nation|
+      roots.map do |root|
         {
-          id: nation.id,
-          name: nation.nation,
-          provinces: nation.provinces.map do |province|
-            {
-              id: province.id,
-              name: province.province,
-              cities: province.cities.map do |city|
-                { id: city.id, name: city.city }
-              end
-            }
-          end
+          id: root.id,
+          name: root.name,
+          children: root.tree_lists
         }
       end
+    end
+  end
+
+  def tree_lists
+    children.map do |child|
+      {
+        id: child.id,
+        name: child.name,
+        children: child.tree_lists
+      }
     end
   end
 
   def self.timestamp
     Rails.cache.fetch('areas/timestamp') do
       order(updated_at: :desc).last.updated_at.to_i
-    end
-  end
-
-  def self.all_nations
-    Rails.cache.fetch('areas/all_nations') do
-      select(:nation).distinct.pluck(:nation)
     end
   end
 

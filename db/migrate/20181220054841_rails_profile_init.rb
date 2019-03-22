@@ -34,6 +34,7 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
       t.string :gender
       t.string :birthday_type
       t.date :birthday
+      t.string :mobile
       t.string :degree
       t.string :major
       t.string :note

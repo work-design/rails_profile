@@ -9,8 +9,10 @@ class Profile < ApplicationRecord
   attribute :note, :string
   attribute :major, :string  # 主修科目
   attribute :degree, :string  # 学位
+  attribute :address, :string
 
   belongs_to :user, optional: true
+  belongs_to :area, optional: true
   has_one_attached :resume
   has_one_attached :avatar
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   scope module: :profile do
-    resources :areas, only: [] do
+    resources :areas, only: [:index] do
       get :search, on: :collection
     end
   end
