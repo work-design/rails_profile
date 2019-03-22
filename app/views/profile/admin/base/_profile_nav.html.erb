@@ -1,0 +1,10 @@
+<div class="item">
+  <a class="<%= active_helper(controllers: ['areas'], active_class: 'title active', item_class: 'title') %>">
+    <i class="address book outline icon"></i>
+    <span>区域管理</span>
+    <i class="dropdown icon"></i>
+  </a>
+  <div class="<%= active_helper(controllers: ['areas'], active_class: 'menu content active', item_class: 'menu content') %>">
+    <%= link_to '地区', admin_areas_path, class: active_helper(controllers: 'areas') %>
+  </div>
+</div>

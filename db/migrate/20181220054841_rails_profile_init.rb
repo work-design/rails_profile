@@ -20,7 +20,8 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
 
     create_table :addresses do |t|
       t.references :area
-      t.references :buyer, polymorphic: true
+      t.references :addressing, polymorphic: true
+      t.string :address
       t.string :kind
       t.timestamps
     end
