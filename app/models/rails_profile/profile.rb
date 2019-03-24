@@ -1,4 +1,5 @@
 class Profile < ApplicationRecord
+  has_taxons :area
 
   attribute :type, :string
   attribute :real_name, :string
