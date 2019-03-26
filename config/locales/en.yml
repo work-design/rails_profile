@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    attributes:
+      profile/birthday_type:
+        solar: Gregorian
+        lunar: Lunar
+      profile/gender:
+        male: Male
+        female: Female

@@ -1,0 +1,9 @@
+zh:
+  activerecord:
+    attributes:
+      profile/birthday_type:
+        solar: 阳历
+        lunar: 阴历
+      profile/gender:
+        male: 男
+        remale: 女
