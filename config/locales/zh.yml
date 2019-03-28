@@ -1,6 +1,6 @@
 zh:
   activerecord:
-    attributes:
+    enum:
       profile/birthday_type:
         solar: 阳历
         lunar: 阴历
