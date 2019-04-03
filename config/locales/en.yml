@@ -1,9 +1,10 @@
 en:
   activerecord:
     enum:
-      profile/birthday_type:
-        solar: Gregorian
-        lunar: Lunar
-      profile/gender:
-        male: Male
-        female: Female
+      profile:
+        birthday_type:
+          solar: Gregorian
+          lunar: Lunar
+        gender:
+          male: Male
+          female: Female

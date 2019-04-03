@@ -1,9 +1,10 @@
 zh:
   activerecord:
     enum:
-      profile/birthday_type:
-        solar: 阳历
-        lunar: 阴历
-      profile/gender:
-        male: 男
-        remale: 女
+      profile:
+        birthday_type:
+          solar: 阳历
+          lunar: 阴历
+        gender:
+          male: 男
+          remale: 女
