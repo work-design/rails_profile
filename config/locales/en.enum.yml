@@ -1,6 +1,11 @@
 en:
   activerecord:
     enum:
+      address:
+        kind:
+          transport: Transport
+          forwarder: Forwarder
+          invoice: Invoice
       profile:
         birthday_type:
           solar: Gregorian
