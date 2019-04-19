@@ -1,4 +1,4 @@
-class Profile::BaseController < RailsProfile.config.app_class.constantize
+class Profile::BaseController < RailsProfile.config.app_controller.constantize
 
 
 
