@@ -1,0 +1,9 @@
+zh:
+  activerecord:
+    attributes:
+      profile:
+        birthday_type: 生日类型
+        birthday: 生日
+        gender: 性别
+        real_name: 真实姓名
+        nick_name: 昵称
