@@ -32,7 +32,7 @@
           <td><%= address.address %></td>
           <td><%= link_to 'Show', address_path(address) %></td>
           <td><%= link_to 'Edit', edit_my_address_path(address), remote: true %></td>
-          <td><%= link_to 'Destroy', my_address_path(address), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', my_address_path(address), method: :delete, data: { confirm: t('.confirm') } %></td>
         </tr>
       <% end %>
       </tbody>
