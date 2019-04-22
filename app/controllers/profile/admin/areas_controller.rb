@@ -19,7 +19,7 @@ class Profile::Admin::AreasController < Profile::Admin::BaseController
     @area = Area.new area_params
 
     if @area.save
-      redirect_to admin_areas_url, notice: '地区添加成功'
+      redirect_to admin_areas_url
     else
       render action: 'new'
     end
@@ -27,7 +27,7 @@ class Profile::Admin::AreasController < Profile::Admin::BaseController
 
   def update
     if @area.update area_params
-      redirect_to admin_areas_url, notice: 'Area was successfully updated.'
+      redirect_to admin_areas_url
     else
       render action: 'edit'
     end

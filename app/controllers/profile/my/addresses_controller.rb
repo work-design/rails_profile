@@ -19,7 +19,7 @@ class Profile::My::AddressesController < Profile::My::BaseController
     @address = current_buyer.addresses.build(address_params)
 
     if @address.save
-      redirect_to my_addresses_url, notice: 'Address was successfully created.'
+      redirect_to my_addresses_url
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Profile::My::AddressesController < Profile::My::BaseController
 
   def update
     if @address.update(address_params)
-      redirect_to my_addresses_url, notice: 'Address was successfully updated.'
+      redirect_to my_addresses_url
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Profile::My::AddressesController < Profile::My::BaseController
 
   def destroy
     @address.destroy
-    redirect_to my_addresses_url, notice: 'Address was successfully destroyed.'
+    redirect_to my_addresses_url
   end
 
   private

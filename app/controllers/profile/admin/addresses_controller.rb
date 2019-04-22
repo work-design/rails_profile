@@ -15,7 +15,7 @@ class Profile::Admin::AddressesController < Profile::Admin::BaseController
     respond_to do |format|
       if @address.save
         format.html {
-          redirect_to admin_addresses_url(user_id: @address.user_id), notice: 'Address was successfully created.'
+          redirect_to admin_addresses_url(user_id: @address.user_id)
         }
         format.js
         format.json { render json: @order, status: :created, location: @order }
@@ -36,7 +36,7 @@ class Profile::Admin::AddressesController < Profile::Admin::BaseController
   def update
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to admin_addresses_url(user_id: @address.user_id), notice: 'Address was successfully updated.' }
+        format.html { redirect_to admin_addresses_url(user_id: @address.user_id) }
         format.js
       else
         format.html { render :edit }
@@ -48,7 +48,7 @@ class Profile::Admin::AddressesController < Profile::Admin::BaseController
   def destroy
     @address.destroy
     respond_to do |format|
-      format.html { redirect_to admin_addresses_url(user_id: @address.user_id), notice: 'Address was successfully destroyed.' }
+      format.html { redirect_to admin_addresses_url(user_id: @address.user_id) }
       format.js
     end
   end
