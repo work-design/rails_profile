@@ -2,7 +2,9 @@ class Profile::Admin::AreasController < Profile::Admin::BaseController
   before_action :set_area, only: [:show, :edit, :update, :destroy]
 
   def index
-    @areas = Area.unscoped.page(params[:page])
+    q_params = {}
+    q_params.merge! params.permit(:name)
+    @areas = Area.unscoped.default_where(q_params).page(params[:page])
   end
 
   def show

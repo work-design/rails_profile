@@ -1,45 +1,51 @@
-<div class="">
-
-  <div class="ui top attached menu borderless">
-    <div class="item"><strong>地区列表</strong></div>
-    <div class="right menu">
-      <div class="item"><%= link_to '新建', new_admin_area_path, class: 'ui teal button' %></div>
-    </div>
-  </div>
-
-  <table class="ui table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th><%= Area.human_attribute_name(:names) %></th>
-        <th><%= Area.human_attribute_name(:name) %></th>
-        <th><%= Area.human_attribute_name(:popular) %></th>
-        <th><%= Area.human_attribute_name(:published) %></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-    <% @areas.each do |area| %>
-      <tr>
-        <td><%= area.id %></td>
-        <td><%= area.names.join(' / ') %></td>
-        <td><%= area.name %></td>
-        <td><%= area.popular %></td>
-        <td><%= area.published %></td>
-        <td>
-          <%= link_to edit_admin_area_path(area), data: { tooltip: t('.edit') }, class: 'ui pink mini icon button', remote: true do %>
-            <i class="fas fa-pencil-alt"></i>
-          <% end %>
-          <%= link_to admin_area_path(area), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, class: 'ui red mini icon button' do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
-  <%= paginate @areas %>
-
+<div class="ui top attached segment">
+  <%= render 'filter' %>
 </div>
+
+<table class="ui bottom attached table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th><%= Area.human_attribute_name(:names) %></th>
+      <th><%= Area.human_attribute_name(:name) %></th>
+      <th><%= Area.human_attribute_name(:popular) %></th>
+      <th><%= Area.human_attribute_name(:published) %></th>
+      <th>
+        <%= link_to new_admin_area_path, class: 'ui mini primary button' do %>
+          <i class="fas fa-plus"></i><%= t('.new') %>
+        <% end %>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @areas.each do |area| %>
+    <tr>
+      <td><%= area.id %></td>
+      <td><%= area.names.join(' / ') %></td>
+      <td><%= area.name %></td>
+      <td>
+        <div class="ui toggle checkbox">
+          <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, remote: true, url: admin_area_path(area), submit: true }, id: nil %>
+        </div>
+      </td>
+      <td>
+        <div class="ui toggle checkbox">
+          <%= check_box_tag '[area]published', nil, area.published, data: { method: :patch, remote: true, url: admin_area_path(area), submit: true }, id: nil %>
+        </div>
+      </td>
+      <td>
+        <%= link_to edit_admin_area_path(area), data: { tooltip: t('.edit') }, remote: true, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to admin_area_path(area), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, class: 'ui mini circular icon button' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @areas %>
+
