@@ -30,20 +30,6 @@
       <td class="right aligned"><%= Profile.human_attribute_name(:birthday) %></td>
       <td><%= @profile.birthday %></td>
     </tr>
-    <tr>
-      <td class="right aligned"><%= Profile.human_attribute_name(:major) %></td>
-      <td><%= @profile.major %></td>
-    </tr>
-    <tr>
-      <td class="right aligned"><%= Profile.human_attribute_name(:degree) %></td>
-      <td><%= @profile.degree %></td>
-    </tr>
-    <tr>
-      <td class="right aligned"><%= Profile.human_attribute_name(:resume) %></td>
-      <td>
-        <%= link_to @profile.resume.filename, rails_blob_path(@profile.resume), target: '_blank' if @profile.resume.attached? %>
-      </td>
-    </tr>
   </tbody>
 </table>
 
