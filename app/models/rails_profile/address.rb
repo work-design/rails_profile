@@ -1,12 +1,14 @@
-class Address < ApplicationRecord
-  belongs_to :area, optional: true
-  belongs_to :addressing, polymorphic: true
+module RailsProfile::Address
+  extend ActiveSupport::Concern
+  included do
+    belongs_to :area, optional: true
+    belongs_to :addressing, polymorphic: true
+  
+    enum kind: {
+      transport: 'transport',
+      forwarder: 'forwarder',
+      invoice: 'invoice'
+    }
+  end
 
-  enum kind: {
-    transport: 'transport',
-    forwarder: 'forwarder',
-    invoice: 'invoice'
-  }
-
-
-end unless RailsProfile.config.disabled_models.include?('Address')
+end
