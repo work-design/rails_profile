@@ -47,4 +47,4 @@ module RailsProfile::Profile
   end
 
 
-end unless RailsProfile.config.disabled_models.include?('Profile')
+end
