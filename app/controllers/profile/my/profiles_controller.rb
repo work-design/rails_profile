@@ -2,11 +2,6 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   before_action :set_profile
 
   def show
-    respond_to do |format|
-      format.js
-      format.html
-      format.json { render json: @profile }
-    end
   end
 
   def edit
@@ -16,6 +11,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
     respond_to do |format|
       if @profile.update profile_params
         format.html { redirect_to my_profile_url }
+        format.json { render :show }
       else
         format.html { render action: 'edit' }
       end
