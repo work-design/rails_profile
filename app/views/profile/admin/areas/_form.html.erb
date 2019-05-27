@@ -1,6 +1,6 @@
 <%= form_with model: [:admin, @area] do |f| %>
   <%= render 'shared/error_messages', target: @area %>
-  <%= render partial: 'nodes/children_select', locals: { f: f } %>
+  <%= render partial: 'nodes/siblings_select', locals: { f: f, node: Area.root || Area.new } %>
   <%= f.text_field :name %>
   <%= f.check_box :popular, label: '是否热门:'  %>
   <%= f.check_box :published, label: '是否显示:' %>
