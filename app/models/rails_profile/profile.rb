@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 module RailsProfile::Profile
   extend ActiveSupport::Concern
   included do
+    delegate :url_helpers, to: 'Rails.application.routes'
     has_taxons :area
   
-    attribute :type, :string
+    attribute :first_name, :string
     attribute :real_name, :string
     attribute :nick_name, :string
     attribute :birthday_type, :string
@@ -37,14 +40,13 @@ module RailsProfile::Profile
   end
 
   def age_str
-    return "未知" unless self.birthday
+    return '未知' unless self.birthday
     r_hash = TimeHelper.exact_distance_time(self.birthday, Date.today)
     "#{r_hash[:year]}岁#{r_hash[:month]}月"
   end
 
   def avatar_url
-    avatar.service_url if avatar.attachment.present?
+    url_helpers.rails_blob_url(avatar) if avatar.attachment.present?
   end
-
 
 end

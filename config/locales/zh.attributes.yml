@@ -6,8 +6,10 @@ zh:
         birthday: 生日
         age: 年龄
         gender: 性别
-        real_name: 真实姓名
+        first_name: 姓
+        real_name: 名
         nick_name: 昵称
         area_id: 地区
         area_ancestors: 地区
         address: 地址
+        mobile: 手机号码

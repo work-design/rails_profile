@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RailsProfile::Area
   extend ActiveSupport::Concern
   included do
