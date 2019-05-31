@@ -38,6 +38,7 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
       t.string :degree
       t.string :major
       t.string :note
+      t.jsonb :extra
       t.timestamps
     end
 

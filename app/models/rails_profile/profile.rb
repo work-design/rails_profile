@@ -16,6 +16,7 @@ module RailsProfile::Profile
     attribute :major, :string  # 主修科目
     attribute :degree, :string  # 学位
     attribute :address, :string
+    attribute :extra, :jsonb
   
     belongs_to :user, optional: true
     belongs_to :area, optional: true

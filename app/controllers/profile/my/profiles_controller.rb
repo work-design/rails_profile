@@ -1,6 +1,18 @@
 class Profile::My::ProfilesController < Profile::My::BaseController
-  before_action :set_profile
-
+  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  
+  def index
+  
+  end
+  
+  def new
+    @profile = current_user.profiles.build
+  end
+  
+  def create
+    @profile = current_user.profiles.build(profile_params)
+  end
+  
   def show
   end
 
@@ -17,10 +29,14 @@ class Profile::My::ProfilesController < Profile::My::BaseController
       end
     end
   end
+  
+  def destroy
+  
+  end
 
   private
   def set_profile
-    @profile = current_user.profile || current_user.create_profile
+    @profile = current_user.profiles.find params[:id]
   end
 
   def profile_params

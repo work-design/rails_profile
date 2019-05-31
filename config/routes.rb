@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   scope :my, module: 'profile/my', as: 'my' do
-    resource :profile
+    resources :profiles
     resources :addresses
   end
 
