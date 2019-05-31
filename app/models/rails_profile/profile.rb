@@ -13,10 +13,8 @@ module RailsProfile::Profile
     attribute :birthday, :date
     attribute :gender, :string
     attribute :note, :string
-    attribute :major, :string  # 主修科目
-    attribute :degree, :string  # 学位
     attribute :address, :string
-    attribute :extra, :jsonb
+    attribute :extra, :json
   
     belongs_to :user, optional: true
     belongs_to :area, optional: true
