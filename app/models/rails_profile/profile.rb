@@ -17,11 +17,14 @@ module RailsProfile::Profile
     attribute :extra, :json
   
     belongs_to :user, optional: true
+    belongs_to :account, -> { where(confirmed: true) }, primary_key: :identity, foreign_key: :identity, optional: true
+
     belongs_to :area, optional: true
     has_one_attached :resume
     has_one_attached :avatar
-  
-  
+
+    validates :identity, uniqueness: { scope: :organ_id }
+
     enum birthday_type: {
       solar: 'solar',
       lunar: 'lunar'

@@ -28,13 +28,14 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
 
     create_table :profiles do |t|
       t.references :user
+      t.references :organ
       t.string :type
       t.string :real_name
       t.string :nick_name
       t.string :gender
       t.string :birthday_type
       t.date :birthday
-      t.string :mobile
+      t.string :identity
       t.string :degree
       t.string :major
       t.string :note
