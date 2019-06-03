@@ -1,0 +1,31 @@
+<div class="ui three cards">
+  <% @profiles.each do |profile| %>
+  <div class="card">
+    <div class="image">
+      <%= image_tag profile.avatar, class: 'ui circular image' if profile.avatar.present? %>
+    </div>
+    <div class="content">
+      <div>
+        <i class="fas fa-user"></i>
+        <span class="ui grey text"><%= profile.real_name %></span>
+        <span class="ui green text"><%= profile.identity %></span>
+        <%= link_to edit_my_profile_path(profile), data: { tooltip: t('.edit') }, remote: true do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+      </div>
+    </div>
+    <div class="extra content">
+      <p>
+        <span><%= profile.address %></span>
+      </p>
+    </div>
+  </div>
+  <% end %>
+  <div class="card">
+    <div class="content">
+      <%= link_to new_my_profile_path, data: { tooltip: t('org.my.profiles.new.title') }, remote: true do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -2,7 +2,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   
   def index
-  
+    @profiles = current_user.profiles
   end
   
   def new
