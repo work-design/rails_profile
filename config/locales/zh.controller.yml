@@ -2,5 +2,7 @@ zh:
   profile:
     my:
       profiles:
-        show:
+        index:
           title: 个人资料
+        new:
+          title: 添加个人资料

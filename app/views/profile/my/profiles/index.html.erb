@@ -1,8 +1,8 @@
-<div class="ui three cards">
+<div class="ui cards">
   <% @profiles.each do |profile| %>
   <div class="card">
-    <div class="image">
-      <%= image_tag profile.avatar, class: 'ui circular image' if profile.avatar.present? %>
+    <div class="ui small circular image">
+      <%= image_tag profile.avatar if profile.avatar.present? %>
     </div>
     <div class="content">
       <div>
