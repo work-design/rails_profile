@@ -23,7 +23,7 @@ module RailsProfile::Profile
     has_one_attached :resume
     has_one_attached :avatar
 
-    validates :identity, uniqueness: { scope: :organ_id }
+    validates :identity, uniqueness: { scope: :organ_id }, allow_blank: true
 
     enum birthday_type: {
       solar: 'solar',
