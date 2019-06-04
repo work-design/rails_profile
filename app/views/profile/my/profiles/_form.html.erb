@@ -5,6 +5,6 @@
   <%= f.select :birthday_type, options_for_select(Profile.options_i18n(:birthday_type)) %>
   <%= f.date_field :birthday %>
   <%= f.text_area :note %>
+  <%= f.select :identity, options_for_select(current_user.accounts.pluck(:identity, :identity)) %>
   <%= f.submit %>
 <% end %>
-
