@@ -11,6 +11,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   
   def create
     @profile = current_user.profiles.build(profile_params)
+    @profile.save
   end
   
   def show
@@ -22,7 +23,8 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   def update
     respond_to do |format|
       if @profile.update profile_params
-        format.html { redirect_to my_profile_url }
+        format.html { redirect_to my_profiles_url }
+        format.js { redirect_to my_profiles_url }
         format.json { render :show }
       else
         format.html { render action: 'edit' }

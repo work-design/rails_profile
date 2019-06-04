@@ -1,4 +1,4 @@
-<%= form_with model: @profile, scope: :profile, url: my_profile_path do |f| %>
+<%= form_with model: [:my, @profile] do |f| %>
   <%= f.text_field :real_name %>
   <%= f.text_field :nick_name %>
   <%= f.select :gender, options_for_select(Profile.options_i18n(:gender), @profile.gender) %>
