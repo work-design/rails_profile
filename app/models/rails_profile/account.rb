@@ -5,7 +5,7 @@ module RailsProfile::Account
     after_save :sync_to_profiles, if: -> { saved_change_to_identity? || saved_change_to_confirmed? }
   end
 
-  def sync_to_members
+  def sync_to_profiles
     if confirmed?
       profiles.update_all(user_id: self.user_id)
     end
