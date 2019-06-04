@@ -5,9 +5,6 @@
   <%= f.select :birthday_type, options_for_select(Profile.options_i18n(:birthday_type)) %>
   <%= f.date_field :birthday %>
   <%= f.text_area :note %>
-  <div class="inline fields">
-    <%= f.submit t('.save'), on: { wrapper_all: false } %>
-    <%= link_to t('.back'), my_profile_path, class: 'ui button' %>
-  </div>
+  <%= f.submit %>
 <% end %>
 
