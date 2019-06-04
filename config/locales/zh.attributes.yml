@@ -12,4 +12,8 @@ zh:
         area_id: 地区
         area_ancestors: 地区
         address: 地址
-        mobile: 手机号码
+        identity: 联系方式
+        resume: 简历
+        major: 专业
+        degree: 学历
+
