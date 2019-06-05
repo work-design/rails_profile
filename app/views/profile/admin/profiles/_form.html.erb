@@ -1,0 +1,13 @@
+<%= form_with model: @profile do |f| %>
+  <%= render 'shared/error_messages', target: @profile %>
+  <%= f.text_field :real_name %>
+  <%= f.text_field :nick_name %>
+  <%= f.text_field :gender %>
+  <%= f.text_field :birthday_type %>
+  <%= f.text_field :birthday %>
+  <%= f.text_field :area_id %>
+  <%= f.text_field :address %>
+  <%= f.text_field :note %>
+  <%= f.text_field :extra %>
+  <%= f.submit %>
+<% end %>
