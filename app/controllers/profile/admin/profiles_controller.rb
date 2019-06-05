@@ -40,12 +40,12 @@ class Profile::Admin::ProfilesController < Profile::Admin::BaseController
       if @profile.save
         format.html.phone
         format.html { redirect_to admin_profiles_url }
-        format.js { redirect_back fallback_location: admin_profiles_url }
+        format.js
         format.json { render :show }
       else
         format.html.phone { render :edit }
         format.html { render :edit }
-        format.js { redirect_back fallback_location: admin_profiles_url }
+        format.js
         format.json { render :show }
       end
     end
