@@ -71,7 +71,8 @@ class Profile::Admin::ProfilesController < Profile::Admin::BaseController
       :area_id,
       :address,
       :note,
-      :extra
+      :resume,
+      :avatar
     )
   end
 
