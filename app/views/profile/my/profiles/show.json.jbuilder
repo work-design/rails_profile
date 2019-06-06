@@ -1,1 +1,1 @@
-json.user @profile.user, partial: 'user', as: :user
+json.profile @profile, partial: 'profile', as: :profile

@@ -50,7 +50,8 @@ class Profile::My::ProfilesController < Profile::My::BaseController
       :birthday,
       :note,
       :degree,
-      :major
+      :major,
+      extra: {}
     )
   end
 
