@@ -7,17 +7,24 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   
   def new
     @profile = current_user.profiles.build
+    prepare_form
   end
   
   def create
     @profile = current_user.profiles.build(profile_params)
-    @profile.save
+    if @profile.save
+      redirect_to my_profiles_url
+    else
+      prepare_form
+      render :new
+    end
   end
   
   def show
   end
 
   def edit
+    prepare_form
   end
 
   def update
@@ -39,6 +46,10 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   private
   def set_profile
     @profile = current_user.profiles.find params[:id]
+  end
+  
+  def prepare_form
+    @accounts = current_user.accounts.confirmed
   end
 
   def profile_params
