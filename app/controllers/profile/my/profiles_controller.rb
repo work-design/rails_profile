@@ -62,6 +62,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
       :note,
       :degree,
       :major,
+      :identity,
       extra: {}
     )
   end
