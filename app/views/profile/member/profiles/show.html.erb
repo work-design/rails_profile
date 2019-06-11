@@ -1,0 +1,35 @@
+<%= render 'menu' %>
+
+<table class="ui very basic large table">
+  <thead>
+    <tr>
+      <th class="three wide"></th>
+      <th>
+        <%= link_to t('.edit'), edit_my_profile_path, class: 'ui mini blue right floated button' %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="right aligned"><%= Profile.human_attribute_name(:real_name) %></td>
+      <td><%= @profile.real_name %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Profile.human_attribute_name(:nick_name) %></td>
+      <td><%= @profile.nick_name %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Profile.human_attribute_name(:gender) %></td>
+      <td><%= @profile.gender_i18n %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Profile.human_attribute_name(:birthday_type) %></td>
+      <td><%= @profile.birthday_type_i18n %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Profile.human_attribute_name(:birthday) %></td>
+      <td><%= @profile.birthday %></td>
+    </tr>
+  </tbody>
+</table>
+

@@ -17,5 +17,9 @@ Rails.application.routes.draw do
     resources :addresses
   end
 
+  scope :member, module: 'profile/member', as: 'member' do
+    resource :profile
+  end
+
 
 end
