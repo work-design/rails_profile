@@ -5,9 +5,7 @@
 <table class="ui bottom attached selectable table">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= Area.human_attribute_name(:names) %></th>
-      <th><%= Area.human_attribute_name(:name) %></th>
       <th><%= Area.human_attribute_name(:popular) %></th>
       <th><%= Area.human_attribute_name(:published) %></th>
       <th>
@@ -21,9 +19,7 @@
   <tbody>
   <% @areas.each do |area| %>
     <tr>
-      <td><%= area.id %></td>
       <td><%= area.names.join(' / ') %></td>
-      <td><%= area.name %></td>
       <td>
         <div class="ui toggle checkbox">
           <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, remote: true, url: admin_area_path(area), submit: true }, id: nil %>

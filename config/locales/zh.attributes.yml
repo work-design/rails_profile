@@ -16,4 +16,7 @@ zh:
         resume: 简历
         major: 专业
         degree: 学历
-
+      area:
+        names: 地区
+        popular: 是否热门
+        published: 是否显示

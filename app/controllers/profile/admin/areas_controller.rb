@@ -4,7 +4,7 @@ class Profile::Admin::AreasController < Profile::Admin::BaseController
   def index
     q_params = {}
     q_params.merge! params.permit(:name)
-    @areas = Area.unscoped.default_where(q_params).page(params[:page])
+    @areas = Area.unscoped.default_where(q_params).order(id: :asc).page(params[:page])
   end
 
   def show
