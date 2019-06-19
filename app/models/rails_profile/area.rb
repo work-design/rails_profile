@@ -3,8 +3,6 @@
 module RailsProfile::Area
   extend ActiveSupport::Concern
   included do
-    prepend RailsTaxon::Node
-  
     attribute :nation, :string
     attribute :province, :string
     attribute :city, :string
