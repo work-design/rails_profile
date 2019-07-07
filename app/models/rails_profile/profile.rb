@@ -17,13 +17,13 @@ module RailsProfile::Profile
     attribute :extra, :json
   
     belongs_to :user, optional: true
-    belongs_to :account, -> { where(confirmed: true) }, primary_key: :identity, foreign_key: :identity, optional: true
+    belongs_to :account, primary_key: :identity, foreign_key: :identity, optional: true
 
     belongs_to :area, optional: true
     has_one_attached :resume
     has_one_attached :avatar
 
-    validates :identity, uniqueness: { scope: :organ_id }, allow_blank: true
+    validates :identity, uniqueness: { scope: :organ_id }
 
     enum birthday_type: {
       solar: 'solar',
@@ -49,6 +49,19 @@ module RailsProfile::Profile
 
   def avatar_url
     url_helpers.rails_blob_url(avatar) if avatar.attachment.present?
+  end
+  
+  def init_user
+    account || build_account
+    account.user || account.build_user
+    self.user = account.user
+    
+    self.class.transaction do
+      self.save!
+      account.save!
+    end
+    
+    user
   end
 
 end
