@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     resources :addresses
     resources :areas
     resources :profiles do
-      patch :user, on: :member
+      member do
+        patch :user
+        patch :qrcode
+      end
     end
   end
 

@@ -1,5 +1,5 @@
 class Profile::Admin::ProfilesController < Profile::Admin::BaseController
-  before_action :set_profile, only: [:show, :edit, :update, :user, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :user, :qrcode, :destroy]
 
   def index
     @profiles = Profile.page(params[:page])
@@ -53,6 +53,11 @@ class Profile::Admin::ProfilesController < Profile::Admin::BaseController
   
   def user
     @profile.init_user
+  end
+  
+  def qrcode
+    @profile.init_user
+    @profile.account.qrcode
   end
 
   def destroy
