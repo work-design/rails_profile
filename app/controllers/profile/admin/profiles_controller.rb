@@ -1,5 +1,5 @@
 class Profile::Admin::ProfilesController < Profile::Admin::BaseController
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :user, :destroy]
 
   def index
     @profiles = Profile.page(params[:page])
@@ -49,6 +49,10 @@ class Profile::Admin::ProfilesController < Profile::Admin::BaseController
         format.json { render :show }
       end
     end
+  end
+  
+  def user
+    @profile.init_user
   end
 
   def destroy
