@@ -9,7 +9,7 @@ module RailsProfile::Profile
     attribute :first_name, :string
     attribute :real_name, :string
     attribute :nick_name, :string
-    attribute :birthday_type, :string
+    attribute :birthday_type, :string, default: 'solar'
     attribute :birthday, :date
     attribute :gender, :string
     attribute :note, :string
