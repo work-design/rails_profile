@@ -31,7 +31,8 @@ module RailsProfile::Profile
     }
     enum gender: {
       male: 'male',
-      female: 'female'
+      female: 'female',
+      unknown: 'unknown'
     }
   end
   
