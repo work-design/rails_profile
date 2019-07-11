@@ -3,7 +3,6 @@
 module RailsProfile::Profile
   extend ActiveSupport::Concern
   included do
-    delegate :url_helpers, to: 'Rails.application.routes'
     has_taxons :area
   
     attribute :first_name, :string
@@ -49,7 +48,7 @@ module RailsProfile::Profile
   end
 
   def avatar_url
-    url_helpers.rails_blob_url(avatar) if avatar.attachment.present?
+    avatar.service_url if avatar.attachment.present?
   end
   
   def init_user
