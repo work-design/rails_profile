@@ -9,7 +9,7 @@
       <th><%= Area.human_attribute_name(:popular) %></th>
       <th><%= Area.human_attribute_name(:published) %></th>
       <th>
-        <%= link_to new_admin_area_path, class: 'ui mini primary button' do %>
+        <%= link_to new_admin_area_path, remote: true, class: 'ui mini primary button' do %>
           <i class="fas fa-plus"></i><%= t('.new') %>
         <% end %>
       </th>
@@ -19,7 +19,7 @@
   <tbody>
   <% @areas.each do |area| %>
     <tr>
-      <td><%= area.names.join(' / ') %></td>
+      <td><%= area.full_name %></td>
       <td>
         <div class="ui toggle checkbox">
           <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, remote: true, url: admin_area_path(area), submit: true }, id: nil %>

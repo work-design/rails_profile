@@ -7,13 +7,14 @@ module RailsProfile::Area
     attribute :province, :string
     attribute :city, :string
     attribute :district, :string, default: ''
-  
+    attribute :names, :string, array: true, default: []
+    
     scope :popular, -> { where(popular: true) }
   
     default_scope -> { where(published: true) }
   
-    after_save :sync_names, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
-    after_commit :update_timestamp, :delete_cache, on: [:create, :update]
+    after_save_commit :sync_names, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
+    after_save_commit :update_timestamp, :delete_cache, on: [:create, :update]
   end
   
   def full_name
