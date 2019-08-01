@@ -43,5 +43,14 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
+    create_table :tutelages do |t|
+      t.references :tutelar
+      t.references :pupil
+      t.references :user
+      t.string :relation
+      t.boolean :major
+      t.timestamps
+    end
+
   end
 end

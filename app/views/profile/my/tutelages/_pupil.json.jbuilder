@@ -1,0 +1,10 @@
+json.extract! pupil,
+              :id,
+              :name,
+              :petname,
+              :birthday_type,
+              :birthday,
+              :gender,
+              :note,
+              :created_at,
+              :updated_at

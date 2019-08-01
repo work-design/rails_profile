@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   scope :my, module: 'profile/my', as: 'my' do
     resources :profiles
     resources :addresses
+    resources :tutelages
   end
 
   scope :member, module: 'profile/member', as: 'member' do

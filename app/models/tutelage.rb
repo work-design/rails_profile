@@ -1,3 +1,3 @@
 class Tutelage < ApplicationRecord
-  include RailsCrm::Tutelage
+  include RailsProfile::Tutelage
 end unless defined? Tutelage

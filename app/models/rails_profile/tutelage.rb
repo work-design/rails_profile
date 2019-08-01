@@ -1,4 +1,4 @@
-module RailsCrm::Tutelage
+module RailsProfile::Tutelage
   extend ActiveSupport::Concern
   
   included do
@@ -6,8 +6,7 @@ module RailsCrm::Tutelage
     
     belongs_to :tutelar, class_name: 'Profile', foreign_key: :tutelar_id, inverse_of: :proteges
     belongs_to :pupil, class_name: 'Profile', foreign_key: :pupil_id # for autosave
-    has_one :maintain, inverse_of: :tutelage
-    has_many :maintains
+   
     has_many :crowd_students
     has_many :crowds, through: :crowd_students
     has_many :cards, dependent: :nullify
