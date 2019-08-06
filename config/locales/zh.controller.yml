@@ -1,5 +1,10 @@
 zh:
   profile:
+    admin:
+      title: 区域管理
+      areas:
+        index:
+          title: 地区
     my:
       profiles:
         index:
