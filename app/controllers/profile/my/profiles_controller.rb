@@ -2,7 +2,9 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   
   def index
-    @profiles = current_user.profiles
+    q_params = {}
+    q_params.merge! default_params
+    @profiles = current_user.profiles.default_where(q_params)
   end
   
   def new
@@ -53,7 +55,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
   end
 
   def profile_params
-    params.fetch(:profile, {}).permit(
+    p = params.fetch(:profile, {}).permit(
       :real_name,
       :nick_name,
       :gender,
@@ -65,6 +67,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
       :identity,
       extra: {}
     )
+    p.merge! default_params
   end
 
 end
