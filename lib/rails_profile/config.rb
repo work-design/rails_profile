@@ -5,7 +5,7 @@ module RailsProfile #:nodoc:
 
   configure do |config|
     config.app_controller = 'ApplicationController'
-    config.my_controller = 'MyController'
+    config.my_controller = 'OrgController'
     config.admin_controller = 'AdminController'
     config.member_controller = 'MemberController'
   end
