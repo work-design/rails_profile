@@ -6,6 +6,7 @@ zh:
         index:
           title: 地区
     my:
+      title: 个人中心
       profiles:
         index:
           title: 个人资料
@@ -13,4 +14,4 @@ zh:
           title: 添加个人资料
       tutelages:
         index:
-          title: 我的宝贝
+          title: 我的客户
