@@ -3,8 +3,6 @@
 module RailsProfile::Profile
   extend ActiveSupport::Concern
   included do
-    has_taxons :area
-  
     attribute :first_name, :string
     attribute :real_name, :string
     attribute :nick_name, :string
@@ -33,6 +31,12 @@ module RailsProfile::Profile
       female: 'female',
       unknown: 'unknown'
     }
+    
+    after_initialize if: :new_record? do
+      self.real_name ||= user.name
+    end
+    
+    has_taxons :area
   end
   
   def age
