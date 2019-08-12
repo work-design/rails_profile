@@ -33,7 +33,7 @@ module RailsProfile::Profile
     }
     
     after_initialize if: :new_record? do
-      self.real_name ||= user.name
+      self.real_name ||= user&.name
     end
     
     has_taxons :area
