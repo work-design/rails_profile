@@ -67,7 +67,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
       :identity,
       extra: {}
     )
-    p.merge! default_params
+    p.merge! default_form_params
   end
 
 end
