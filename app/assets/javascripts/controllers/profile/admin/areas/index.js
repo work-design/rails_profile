@@ -1,1 +1,1 @@
-//= require rails_taxon/tree_view
+import 'rails_taxon/tree_view'
