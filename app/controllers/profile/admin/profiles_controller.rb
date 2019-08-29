@@ -2,7 +2,9 @@ class Profile::Admin::ProfilesController < Profile::Admin::BaseController
   before_action :set_profile, only: [:show, :edit, :update, :user, :qrcode, :destroy]
 
   def index
-    @profiles = Profile.page(params[:page])
+    q_params = {}
+    q_params.merge! default_params
+    @profiles = Profile.default_where(q_params).page(params[:page])
   end
 
   def new
