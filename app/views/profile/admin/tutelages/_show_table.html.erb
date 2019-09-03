@@ -1,0 +1,33 @@
+<table class="ui very basic large table">
+  <tbody>
+    <tr>
+      <td class="right aligned"><%= Tutelage.human_attribute_name('pupil.real_name') %></td>
+      <td><%= @tutelage.pupil.real_name %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Tutelage.human_attribute_name('pupil.age') %></td>
+      <td><%= @tutelage.pupil.age %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Tutelage.human_attribute_name('pupil.gender') %></td>
+      <td><%= @tutelage.pupil.gender %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Tutelage.human_attribute_name(:note) %></td>
+      <td><%= @tutelage.pupil.note %></td>
+    </tr>
+    <tr>
+      <td class="right aligned"><%= Tutelage.human_attribute_name('tutelar.identity') %></td>
+      <td>
+        <%= @tutelage.tutelar.identity %>
+        <% if @tutelage.tutelar.user && @tutelage.tutelar.account&.wechat_response %>
+          <%= image_tag @tutelage.tutelar.account.qrcode_url, class: 'ui small image' %>
+        <% else %>
+          <%= link_to qrcode_admin_profile_path(@tutelage.tutelar), method: :patch, remote: true, id: 'account_qrcode' do %>
+            <i class="fas fa-qrcode"></i>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>

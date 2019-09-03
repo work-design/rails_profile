@@ -15,6 +15,14 @@ Rails.application.routes.draw do
         patch :qrcode
       end
     end
+    resources :tutelages do
+      member do
+        get 'crowd' => :edit_crowd
+        patch 'crowd' => :update_crowd
+        delete 'crowd' => :destroy_crowd
+        delete 'card' => :destroy_card
+      end
+    end
   end
 
   scope :my, module: 'profile/my', as: 'my' do

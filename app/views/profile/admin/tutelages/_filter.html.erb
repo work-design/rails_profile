@@ -1,0 +1,7 @@
+<%= search_form_with model: Tutelage.new do |f| %>
+  <div class="fields">
+    <%= f.text_field 'pupil.real_name' %>
+    <%= f.submit %>
+    <%= link_to t('.clear'), filter_params(except: ['pupil.real_name']), class: 'ui button' %>
+  </div>
+<% end %>

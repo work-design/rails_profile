@@ -1,0 +1,8 @@
+<%= form_with model: [:admin, @pupil] do |f| %>
+  <%= render 'shared/error_messages', target: @pupil %>
+  <%= f.text_field :real_name %>
+  <%= f.text_field :age %>
+  <%= f.text_field :gender %>
+  <%= f.text_field :note %>
+  <%= f.submit %>
+<% end %>

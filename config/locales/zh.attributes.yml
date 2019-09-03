@@ -20,3 +20,8 @@ zh:
         names: 地区
         popular: 是否热门
         published: 是否显示
+      tutelage:
+        relation: 关系
+      tutelage/pupil:
+        real_name: 学生姓名
+        age: 年龄
