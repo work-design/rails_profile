@@ -1,8 +1,11 @@
 # RailsProfile
+
+用户画像，
+
 `RailsProfile`用于拓展用户的资料，比如简历、所在地区管理等；
 
 ## Usage
-How to use my plugin.
+
 
 
 

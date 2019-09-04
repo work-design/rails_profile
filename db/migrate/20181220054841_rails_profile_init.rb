@@ -42,12 +42,10 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_table :tutelages do |t|
-      t.references :tutelar
-      t.references :pupil
-      t.references :user
+    create_table :agencies do |t|
+      t.references :agent, polymorphic: true
+      t.references :client, polymorphic: true
       t.string :relation
-      t.boolean :major
       t.timestamps
     end
 
