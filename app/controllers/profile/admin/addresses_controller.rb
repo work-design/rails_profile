@@ -12,18 +12,8 @@ class Profile::Admin::AddressesController < Profile::Admin::BaseController
   def create
     @address = Address.new(address_params)
 
-    respond_to do |format|
-      if @address.save
-        format.html {
-          redirect_to admin_addresses_url(user_id: @address.user_id)
-        }
-        format.js
-        format.json { render json: @order, status: :created, location: @order }
-      else
-        format.html { render action: 'new' }
-        format.js
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+    unless @address.save
+      render :new, locals: { model: @address }, status: :unprocessable_entity
     end
   end
 
@@ -34,23 +24,15 @@ class Profile::Admin::AddressesController < Profile::Admin::BaseController
   end
 
   def update
-    respond_to do |format|
-      if @address.update(address_params)
-        format.html { redirect_to admin_addresses_url(user_id: @address.user_id) }
-        format.js
-      else
-        format.html { render :edit }
-        format.js
-      end
+    @address.assign_attributes(address_params)
+
+    unless @address.save
+      render :edit, locals: { model: @address }, status: :unprocessable_entity
     end
   end
 
   def destroy
     @address.destroy
-    respond_to do |format|
-      format.html { redirect_to admin_addresses_url(user_id: @address.user_id) }
-      format.js
-    end
   end
 
   private

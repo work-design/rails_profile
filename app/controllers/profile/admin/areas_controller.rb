@@ -20,24 +20,21 @@ class Profile::Admin::AreasController < Profile::Admin::BaseController
   def create
     @area = Area.new area_params
 
-    if @area.save
-      redirect_to admin_areas_url
-    else
-      render action: 'new'
+    unless @area.save
+      render :new, locals: { model: @area }, status: :unprocessable_entity
     end
   end
 
   def update
-    if @area.update area_params
-      redirect_to admin_areas_url
-    else
-      render action: 'edit'
+    @area.assign_attributes area_params
+
+    unless @area.save
+      render :new, locals: { model: @area }, status: :unprocessable_entity
     end
   end
 
   def destroy
     @area.destroy
-    redirect_to admin_areas_url
   end
 
   private
