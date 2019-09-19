@@ -1,0 +1,48 @@
+<div class="ui top attached segment">
+  <%= render 'filter' %>
+</div>
+
+<table class="ui bottom attached selectable table">
+  <thead>
+    <tr>
+      <th><%= Agency.human_attribute_name('client.real_name') %></th>
+      <th><%= Agency.human_attribute_name('client.age') %></th>
+      <th><%= Agency.human_attribute_name('client.gender') %></th>
+      <th><%= Agency.human_attribute_name('client.note') %></th>
+      <th>会员卡</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @agencies.each do |agency| %>
+    <tr>
+      <td><%= agency.client.real_name %></td>
+      <td><%= agency.client.age %></td>
+      <td>
+        <span class="ui icon label">
+          <i class="fas <%= active_assert(agency.client.male?, expected: 'fa-male', unexpected: 'fa-female') %>"></i>
+          <%= agency.client.gender_i18n %>
+        </span>
+      </td>
+      <td><%= agency.client.note %></td>
+      <td>
+        <% agency.cards.each do |card| %>
+          <div class="ui image label">
+            <%= link_to card.card_uuid, admin_card_card_logs_path(card), text: true %>
+            <%= link_to card_admin_agency_path(agency, card_id: card.id), method: :delete do %>
+              <i class="delete icon"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to admin_agency_path(agency), class: 'ui mini circular icon button', remote: true do %>
+          <i class="fas fa-eye"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @agencies %>

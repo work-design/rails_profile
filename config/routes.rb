@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         patch :qrcode
       end
     end
-    resources :tutelages do
+    resources :agencies do
       member do
         get 'crowd' => :edit_crowd
         patch 'crowd' => :update_crowd
