@@ -1,8 +1,8 @@
-json.extract! pupil,
+json.extract! agency,
               :id,
-              :real_name,
-              :age,
-              :gender,
-              :note,
-              :created_at,
-              :updated_at
+              :relation,
+              :relation_i18n
+json.client agency.client, :id, :real_name
+if agency.agent
+  json.agent agency.agent, :id, :real_name
+end

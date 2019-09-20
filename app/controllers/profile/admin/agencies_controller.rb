@@ -29,31 +29,35 @@ class Profile::Admin::AgenciesController < Profile::Admin::BaseController
 
   def edit_crowd
     q_params = {
-      'id-not': @agency.crowd_ids
+      #'id-not': @agency.crowd_ids
     }
     q_params.merge! default_params
     @crowds = Crowd.default_where(q_params)
   end
 
   def update_crowd
-    @agency.join_crowd params[:crowd_id]
-
-    redirect_back fallback_location: admin_agencys_url
+    if @agency.join_crowd params[:crowd_id]
+      render 'update'
+    else
+      render :edit_crowd, locals: { model: @agency }, status: :unprocessable_entity
+    end
   end
 
   def destroy_crowd
-    cs = @agency.crowd_students.find_by(crowd_id: params[:crowd_id])
-    cs.destroy if cs
-    redirect_back fallback_location: admin_agencys_url
+    cs = @agency.crowd_members.find_by(crowd_id: params[:crowd_id])
+    if cs&.destroy
+      render 'update'
+    end
   end
 
   def destroy_card
     card = @agency.cards.find(params[:card_id])
     card.agency = nil
     card.client = nil
-    card.save
     
-    redirect_back fallback_location: admin_agencys_url
+    if card.save
+      render 'update'
+    end
   end
 
   def destroy
