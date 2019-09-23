@@ -9,6 +9,7 @@
       <th><%= Agency.human_attribute_name('client.age') %></th>
       <th><%= Agency.human_attribute_name('client.gender') %></th>
       <th><%= Agency.human_attribute_name('client.note') %></th>
+      <th>班级</th>
       <th>会员卡</th>
       <th></th>
     </tr>
@@ -25,6 +26,20 @@
         </span>
       </td>
       <td><%= agency.client.note %></td>
+      <td>
+        <% agency.crowds.each do |crowd| %>
+          <div class="ui image label">
+            <%= image_tag crowd.logo if crowd.logo.present? %>
+            <%= crowd.name %>
+            <%= link_to crowd_admin_agency_path(agency, crowd_id: crowd.id), method: :delete, remote: true do %>
+              <i class="delete icon"></i>
+            <% end %>
+          </div>
+        <% end %>
+        <%= link_to crowd_admin_agency_path(agency), data: { tooltip: '分班' }, class: 'ui mini circular icon button', remote: true do %>
+          <i class="hand point right icon"></i>
+        <% end %>
+      </td>
       <td>
         <% agency.cards.each do |card| %>
           <div class="ui image label">
