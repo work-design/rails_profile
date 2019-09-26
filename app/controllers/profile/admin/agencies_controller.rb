@@ -29,7 +29,7 @@ class Profile::Admin::AgenciesController < Profile::Admin::BaseController
 
   def edit_crowd
     q_params = {
-      #'id-not': @agency.crowd_ids
+      'id-not': @agency.crowd_ids
     }
     q_params.merge! default_params
     @crowds = Crowd.default_where(q_params)
