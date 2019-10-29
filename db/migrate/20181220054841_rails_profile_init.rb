@@ -38,7 +38,11 @@ class RailsProfileInit < ActiveRecord::Migration[5.2]
       t.string :identity
       t.string :degree
       t.string :major
-      t.jsonb :extra
+      if connection.adapter_name == 'PostgreSQL'
+        t.jsonb :extra
+      else
+        t.json :extra
+      end
       t.timestamps
     end
 
