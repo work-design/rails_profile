@@ -1,4 +1,4 @@
-<%= search_form_with model: Tutelage.new do |f| %>
+<%= form_with theme: 'search', model: Tutelage.new do |f| %>
   <div class="fields">
     <%= f.text_field 'pupil.real_name' %>
     <%= f.submit %>
