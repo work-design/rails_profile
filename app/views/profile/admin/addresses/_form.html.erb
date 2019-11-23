@@ -1,15 +1,15 @@
 <div class="fields">
   <div class="field">
     <%= label :nation, 'Nation' %>
-    <%= f.select :nation, options_for_select(Area.all_nations, @address.area&.nation), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
+    <%= f.select :nation, options_for_select(Area.all_nations, @address.area&.nation), { on: { wrap_all: false, wrap_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
   </div>
   <div class="field">
     <%= label :province, 'Province' %>
-    <%= f.select :province, options_for_select([@address.area&.province], @address.area&.province), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
+    <%= f.select :province, options_for_select([@address.area&.province], @address.area&.province), { on: { wrap_all: false, wrap_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
   </div>
   <div class="field">
     <%= label :city, 'City' %>
-    <%= f.select :city, options_for_select([@address.area&.city], @address.area&.city), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
+    <%= f.select :city, options_for_select([@address.area&.city], @address.area&.city), { on: { wrap_all: false, wrap_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
   </div>
 </div>
 <%= f.hidden_field :area_id %>
