@@ -6,7 +6,7 @@ module RailsProfile::Area
     attribute :name, :string
     attribute :published, :boolean, default: true
     attribute :popular, :boolean, default: false
-    attribute :names, :string, array: true, default: []
+    attribute :names, :string, array: true
     
     scope :popular, -> { where(popular: true) }
   
