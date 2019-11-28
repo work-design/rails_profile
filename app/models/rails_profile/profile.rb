@@ -3,7 +3,7 @@
 module RailsProfile::Profile
   extend ActiveSupport::Concern
   included do
-    attribute :first_name, :string
+    attribute :identity, :string
     attribute :real_name, :string
     attribute :nick_name, :string
     attribute :birthday_type, :string, default: 'solar'
@@ -12,7 +12,8 @@ module RailsProfile::Profile
     attribute :note, :string
     attribute :address, :string
     attribute :extra, :json
-  
+    
+    belongs_to :organ, optional: true
     belongs_to :user, optional: true
     belongs_to :account, primary_key: :identity, foreign_key: :identity, optional: true
 

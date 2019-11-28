@@ -3,10 +3,9 @@
 module RailsProfile::Area
   extend ActiveSupport::Concern
   included do
-    attribute :nation, :string
-    attribute :province, :string
-    attribute :city, :string
-    attribute :district, :string, default: ''
+    attribute :name, :string
+    attribute :published, :boolean, default: true
+    attribute :popular, :boolean, default: false
     attribute :names, :string, array: true, default: []
     
     scope :popular, -> { where(popular: true) }

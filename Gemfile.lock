@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 0e25c50555370de08d6ce594134300d6ad6b946b
+  revision: 4ad70da642c5287c623a6f895eab6b2720431387
   specs:
     rails_com (1.2.9)
       default_form (~> 1.5)
@@ -90,7 +90,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
-    loofah (2.3.1)
+    loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)

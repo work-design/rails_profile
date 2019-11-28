@@ -3,6 +3,9 @@
 module RailsProfile::Address
   extend ActiveSupport::Concern
   included do
+    attribute :address, :string
+    attribute :kind, :string
+    
     belongs_to :area, optional: true
     belongs_to :addressing, polymorphic: true
   
