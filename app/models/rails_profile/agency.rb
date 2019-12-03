@@ -3,6 +3,7 @@ module RailsProfile::Agency
   
   included do
     attribute :relation, :string, default: 'unknown'
+    attribute :rate, :string, comment: '交易时抽成比例'
     
     belongs_to :agent, polymorphic: true
     belongs_to :client, polymorphic: true
@@ -18,17 +19,10 @@ module RailsProfile::Agency
       nephew: 'nephew',
       unknown: 'unknown'
     }
-  
-    before_validation :sync_from_maintain, if: -> { self.maintain.present? }
   end
   
   def name
-    "#{relation_i18n} #{pupil.real_name}"
-  end
-  
-  def sync_from_maintain
-    self.agent = maintain.agent
-    self.client = maintain.client
+    "#{relation_i18n} #{client.real_name}"
   end
   
   class_methods do
