@@ -4,8 +4,8 @@ module RailsProfile::Agency
   included do
     attribute :relation, :string, default: 'unknown'
     
-    belongs_to :agent, polymorphic: true, inverse_of: :proteges
-    belongs_to :client, polymorphic: true # for autosave
+    belongs_to :agent, polymorphic: true
+    belongs_to :client, polymorphic: true
    
     has_many :cards, dependent: :nullify
     
@@ -29,6 +29,16 @@ module RailsProfile::Agency
   def sync_from_maintain
     self.agent = maintain.agent
     self.client = maintain.client
+  end
+  
+  class_methods do
+    def agent_types
+      self.unscoped.select(:agent_type).distinct.pluck(:agent_type).sort!
+    end
+    
+    def client_types
+      self.unscoped.select(:client_type).distinct.pluck(:client_type).sort!
+    end
   end
 
 end

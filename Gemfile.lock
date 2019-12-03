@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/work-design/rails_auth.git
+  revision: 083485324eee3fdbe17e1a32eb870d93a113403d
+  specs:
+    rails_auth (1.0.6)
+      bcrypt (~> 3.1)
+      jwt (>= 2.0, <= 3.0)
+      rails_com (~> 1.2)
+
+GIT
   remote: https://github.com/work-design/rails_com.git
   revision: 2a0e3c30dc9080fff0630a66639074408554aaf7
   specs:
@@ -8,11 +17,21 @@ GIT
       httpx (~> 0.5)
       rails (~> 6.0)
 
+GIT
+  remote: https://github.com/work-design/rails_taxon.git
+  revision: e775977047beef0138294342cbc8ba0e3dc01a29
+  specs:
+    rails_taxon (1.0.0)
+      acts_as_list (>= 0.9, <= 1.0)
+      closure_tree (>= 6.6, <= 7.1)
+      rails_com (~> 1.2)
+
 PATH
   remote: .
   specs:
     rails_profile (0.1.0)
       rails_com (~> 1.2)
+      rails_taxon
 
 GEM
   remote: https://rubygems.org/
@@ -72,7 +91,13 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    acts_as_list (1.0.0)
+      activerecord (>= 4.2)
+    bcrypt (3.1.13)
     builder (3.2.3)
+    closure_tree (7.0.0)
+      activerecord (>= 4.2.10)
+      with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
     default_form (1.5.0)
@@ -90,6 +115,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jwt (2.2.1)
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -151,6 +177,8 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+    with_advisory_lock (4.6.0)
+      activerecord (>= 4.2)
     zeitwerk (2.2.1)
 
 PLATFORMS
@@ -158,8 +186,10 @@ PLATFORMS
 
 DEPENDENCIES
   jbuilder
+  rails_auth!
   rails_com!
   rails_profile!
+  rails_taxon!
   sqlite3
 
 BUNDLED WITH
