@@ -4,22 +4,13 @@ module RailsProfile::Profile
   extend ActiveSupport::Concern
   included do
     attribute :identity, :string
-    attribute :real_name, :string
-    attribute :nick_name, :string
     attribute :birthday_type, :string, default: 'solar'
     attribute :birthday, :date
     attribute :gender, :string
-    attribute :note, :string
-    attribute :address, :string
-    attribute :extra, :json
     
     belongs_to :organ, optional: true
     belongs_to :user, optional: true
     belongs_to :account, primary_key: :identity, foreign_key: :identity, optional: true
-
-    belongs_to :area, optional: true
-    has_one_attached :resume
-    has_one_attached :avatar
 
     validates :identity, uniqueness: { scope: :organ_id }, allow_blank: true
 
@@ -32,12 +23,6 @@ module RailsProfile::Profile
       female: 'female',
       unknown: 'unknown'
     }
-    
-    after_initialize if: :new_record? do
-      self.real_name ||= user&.name
-    end
-    
-    has_taxons :area
   end
   
   def age
@@ -52,10 +37,6 @@ module RailsProfile::Profile
     "#{r_hash[:year]}岁#{r_hash[:month]}月"
   end
 
-  def avatar_url
-    avatar.service_url if avatar.attachment.present?
-  end
-  
   def init_user
     account || build_account
     account.user || account.build_user
