@@ -1,4 +1,4 @@
-class Profile::Member::ProfilesController < Profile::Member::BaseController
+class Profile::Membership::ProfilesController < Profile::Membership::BaseController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   
   def show
@@ -8,14 +8,10 @@ class Profile::Member::ProfilesController < Profile::Member::BaseController
   end
 
   def update
-    respond_to do |format|
-      if @profile.update profile_params
-        format.html { redirect_to my_profiles_url }
-        format.js { redirect_to my_profiles_url }
-        format.json { render :show }
-      else
-        format.html { render action: 'edit' }
-      end
+    @profile.assign_attributes profile_params
+    
+    unless @profile.save
+      render :edit, locals: { model: @profile }, status: :unprocessable_entity
     end
   end
   
