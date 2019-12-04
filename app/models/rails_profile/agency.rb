@@ -3,7 +3,8 @@ module RailsProfile::Agency
   
   included do
     attribute :relation, :string, default: 'unknown'
-    attribute :rate, :string, comment: '交易时抽成比例'
+    attribute :commission_ratio, :decimal, precision: 4, scale: 2, comment: '交易时抽成比例'
+    attribute :note, :string, comment: '备注'
     
     belongs_to :agent, polymorphic: true
     belongs_to :client, polymorphic: true
