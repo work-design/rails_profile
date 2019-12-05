@@ -20,8 +20,3 @@ zh:
         names: 地区
         popular: 是否热门
         published: 是否显示
-      agency:
-        relation: 关系
-      agency/client:
-        real_name: 姓名
-        age: 年龄
