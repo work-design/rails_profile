@@ -1,7 +1,7 @@
 <%= form_with model: [:my, @tutelage] do |f| %>
   <%= render 'shared/error_messages', target: @tutelage %>
   <%= f.select :relation, options_for_select(Tutelage.options_i18n(:relation)) %>
-  <%= f.fields :pupil do |ef| %>
+  <%= f.fields :client do |ef| %>
     <%= ef.text_field :real_name %>
     <%= ef.text_field :nick_name %>
     <%= ef.select :birthday_type, options_for_select(Profile.options_i18n(:birthday_type)) %>

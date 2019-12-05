@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-
 module RailsProfile::Profile
   extend ActiveSupport::Concern
+
   included do
     attribute :identity, :string
     attribute :birthday_type, :string, default: 'solar'
@@ -24,7 +24,7 @@ module RailsProfile::Profile
       unknown: 'unknown'
     }
   end
-  
+
   def age
     return 0 unless self.birthday
     r_hash = TimeHelper.exact_distance_time(self.birthday, Date.today)
