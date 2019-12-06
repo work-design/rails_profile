@@ -9,10 +9,9 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: a11a944323c8c1a2823b0140e947069c3d1991eb
+  revision: 73aaa19b018a9767d6a1d63ce798199e27c5e573
   specs:
     rails_com (1.2.9)
-      default_form (~> 1.5)
       default_where (~> 2.2)
       httpx (~> 0.5)
       rails (~> 6.0)
@@ -100,8 +99,6 @@ GEM
       with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
-    default_form (1.5.0)
-      rails (>= 5.2, <= 6.1)
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.9.0)
