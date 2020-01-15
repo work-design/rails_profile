@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: ae8ae25e8c5ef881ff124fe2b324b7d98a8c3345
+  revision: ba132ab825d86970478fe79cba877b86262a32ba
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 73aaa19b018a9767d6a1d63ce798199e27c5e573
+  revision: 2a932bd4da62d2d42e930f86430ed2368084d794
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -93,19 +93,19 @@ GEM
     acts_as_list (1.0.0)
       activerecord (>= 4.2)
     bcrypt (3.1.13)
-    builder (3.2.3)
+    builder (3.2.4)
     closure_tree (7.0.0)
       activerecord (>= 4.2.10)
       with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.5)
-    crass (1.0.5)
+    crass (1.0.6)
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.9.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.1.2)
-    httpx (0.6.2)
+    http-2-next (0.2.1)
+    httpx (0.6.4)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.7.0)
@@ -126,9 +126,9 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.13.0)
     nio4r (2.5.2)
-    nokogiri (1.10.5)
+    nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
-    rack (2.0.7)
+    rack (2.1.1)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.1)
@@ -166,7 +166,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.1)
-    thor (0.20.3)
+    thor (1.0.1)
     thread_safe (0.3.6)
     timers (4.3.0)
     tzinfo (1.2.5)

@@ -17,9 +17,5 @@ module RailsProfile
       g.templates.unshift File.expand_path('lib/templates', RailsCom::Engine.root)
     end
 
-    initializer 'rails_profile.assets.precompile' do |app|
-      app.config.assets.precompile += ['rails_profile_manifest.js']
-    end
-
   end
 end
