@@ -7,15 +7,15 @@ module RailsProfile::Area
     attribute :published, :boolean, default: true
     attribute :popular, :boolean, default: false
     attribute :names, :string, array: true
-    
+
     scope :popular, -> { where(popular: true) }
-  
-    default_scope -> { where(published: true) }
-  
+
+    default_scope -> { where(published: true).order(id: :asc) }
+
     after_save_commit :sync_names, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
     after_save_commit :update_timestamp, :delete_cache, on: [:create, :update]
   end
-  
+
   def full_name
     names.join(' / ')
   end
@@ -34,7 +34,7 @@ module RailsProfile::Area
       }
     end
   end
-  
+
   private
   def delete_cache
     ['areas/list', 'areas/popular', 'areas/all_nations'].each do |c|
@@ -46,9 +46,9 @@ module RailsProfile::Area
     t = self.updated_at.to_i
     Rails.cache.write('areas/timestamp', t)
   end
-  
+
   class_methods do
-    
+
     def timestamp
       Rails.cache.fetch('areas/timestamp') do
         order(updated_at: :desc).last.updated_at.to_i
@@ -66,8 +66,8 @@ module RailsProfile::Area
         end
       end
     end
-    
+
   end
-  
+
 
 end
