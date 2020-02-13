@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: a99c370911301036e4d249a47fa9ee49e9dbe0bb
+  revision: 2ce95a3a29c05db7afaeff6775dfe4228711f89c
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 237bb173380ff71a196f1e6af2ce46fdcd7d172b
+  revision: e7c231db79efe64a54a6d4c1eb91f2eea1feac71
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_taxon.git
-  revision: e775977047beef0138294342cbc8ba0e3dc01a29
+  revision: 9d3c12106f9f568efeca0162c0beaa13b4cd6a45
   specs:
     rails_taxon (1.0.0)
       acts_as_list (>= 0.9, <= 1.0)
@@ -107,7 +107,7 @@ GEM
       activesupport (>= 4.2.0)
     http-2-next (0.2.1)
     http-form_data (2.2.0)
-    httpx (0.6.4)
+    httpx (0.6.5)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.2)
@@ -130,7 +130,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
-    rack (2.1.2)
+    rack (2.2.1)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.1)

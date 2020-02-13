@@ -1,0 +1,24 @@
+<%= content_for(:wechat_js) do %>
+  <%= wechat_config_js debug: false, apis: ['getLocation', 'openLocation'] -%>
+<% end %>
+
+<script>
+  wx.ready(function() {
+    wx.getLocation({
+      type: 'gcj02',
+      success: function(res) {
+        console.log(res)
+      },
+      fail: function(res) {
+        alert(res)
+      }
+    })
+    wx.openLocation({
+      latitude: 0,
+      longitude: 0,
+      scale: 20, // 地图缩放级别,整形值,范围从1~28。默认为最大
+      infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
+    });
+  })
+  
+</script>

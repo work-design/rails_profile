@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   end
 
   scope :admin, module: 'profile/admin', as: 'admin' do
-    resources :addresses
     resources :areas
     resources :profiles do
       member do
@@ -22,7 +21,7 @@ Rails.application.routes.draw do
     resources :addresses
   end
 
-  scope :member, module: 'profile/member', as: 'member' do
+  scope :member, module: 'profile/membership', as: 'member' do
     resource :profile
   end
 
