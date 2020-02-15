@@ -1,0 +1,21 @@
+weui.picker(
+  <%= raw Area.list(value_name: 'value', label_name: 'label').to_json %>,
+  {
+    id: 'multiPickerBtn',
+    title: '多列选择器',
+    onChange: function(result) {
+      console.log(result)
+    },
+    onConfirm: function(result) {
+      var values = result.map(function(item) {
+        return item.value
+      })
+      var val = values[values.length - 1]
+      document.getElementById('<%= params[:node_type] %>_area_id').value = val
+      console.log(val)
+    },
+    onClose: function() {
+    
+    }
+  }
+)

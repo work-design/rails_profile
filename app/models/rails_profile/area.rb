@@ -25,11 +25,11 @@ module RailsProfile::Area
     self.save
   end
 
-  def tree_lists
+  def tree_lists(value_name: 'id', label_name: 'name')
     children.map do |child|
       {
-        id: child.id,
-        name: child.name,
+        value_name => child.id,
+        label_name => child.name,
         children: child.tree_lists
       }
     end
@@ -55,13 +55,13 @@ module RailsProfile::Area
       end
     end
 
-    def list
+    def list(value_name: 'id', label_name: 'name')
       Rails.cache.fetch('areas/list') do
         roots.map do |root|
           {
-            id: root.id,
-            name: root.name,
-            children: root.tree_lists
+            value_name => root.id,
+            label_name => root.name,
+            children: root.tree_lists(value_name: value_name, label_name: label_name)
           }
         end
       end

@@ -1,7 +1,6 @@
 class Profile::AreasController < Profile::BaseController
 
   def index
-    render json: { list: Area.list, timestamp: Area.timestamp }
   end
 
   def search
