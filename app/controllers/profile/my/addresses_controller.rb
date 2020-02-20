@@ -2,40 +2,46 @@ class Profile::My::AddressesController < Profile::My::BaseController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def index
-    @addresses = current_buyer.addresses.includes(:area).page(params[:page])
+    q_params = {}
+    @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
+  end
+
+  def new
+    @address = current_user.addresses.build
+  end
+
+  def create
+    @address = current_user.addresses.build(address_params)
+
+    if @address.save
+      render 'create', locals: { return_to: my_addresses_url }
+    else
+      render :new, locals: { model: @address }, status: :unprocessable_entity
+    end
   end
 
   def show
   end
 
-  def new
-    @address = current_buyer.addresses.build
+  def join
+    au = current_user.address_users.find_or_initialize_by(address_id: @address.id)
+    au.save
+    render 'show'
   end
 
   def edit
   end
 
-  def create
-    @address = current_buyer.addresses.build(address_params)
-
-    if @address.save
-      redirect_to my_addresses_url
-    else
-      render :new
-    end
-  end
-
   def update
-    if @address.update(address_params)
-      redirect_to my_addresses_url
-    else
-      render :edit
+    @address.assign_attributes(address_params)
+
+    unless @address.save
+      render :edit, locals: { model: @address }, status: :unprocessable_entity
     end
   end
 
   def destroy
     @address.destroy
-    redirect_to my_addresses_url
   end
 
   private
@@ -46,9 +52,10 @@ class Profile::My::AddressesController < Profile::My::BaseController
   def address_params
     params.fetch(:address, {}).permit(
       :area_id,
-      :contact_person,
+      :name,
+      :contact,
       :tel,
-      :address
+      :detail
     )
   end
 

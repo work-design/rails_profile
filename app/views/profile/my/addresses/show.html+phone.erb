@@ -1,0 +1,26 @@
+<%= content_for(:wechat_js) do %>
+  <%= wechat_config_js debug: false, apis: ['updateAppMessageShareData', 'updateTimelineShareData'] -%>
+<% end %>
+
+<%= render 'show_table' %>
+
+<script>
+wx.ready(function() {
+  wx.updateAppMessageShareData({
+    title: 'dddd',
+    desc: 'ssss',
+    link: '<%= join_my_rally_url(@rally.id, invited_code: current_user.id) %>',
+    imgUrl: '',
+    success: function() {
+    }
+  })
+  wx.updateTimelineShareData({
+    title: '',
+    link: '<%= join_my_rally_url(@rally.id, invited_code: current_user.id) %>',
+    imgUrl: '',
+    success: function() {
+    
+    }
+  })
+})
+</script>

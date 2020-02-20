@@ -15,3 +15,6 @@ zh:
           title: 个人资料
         new:
           title: 添加个人资料
+      addresses:
+        index:
+          title: 我的地址

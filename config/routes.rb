@@ -18,7 +18,12 @@ Rails.application.routes.draw do
 
   scope :my, module: 'profile/my', as: 'my' do
     resources :profiles
-    resources :addresses
+    resources :addresses do
+      member do
+        get :join
+      end
+      resources :address_users
+    end
   end
 
   scope :member, module: 'profile/membership', as: 'member' do

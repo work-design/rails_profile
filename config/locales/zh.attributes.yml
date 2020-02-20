@@ -20,3 +20,7 @@ zh:
         names: 地区
         popular: 是否热门
         published: 是否显示
+      address:
+        contact: 联系人
+        tel: 联系方式
+        detail: 详细地址

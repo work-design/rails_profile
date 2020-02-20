@@ -3,17 +3,14 @@
 module RailsProfile::Address
   extend ActiveSupport::Concern
   included do
-    attribute :address, :string
-    attribute :kind, :string
-    
-    belongs_to :area, optional: true
-    belongs_to :addressing, polymorphic: true
-  
-    enum kind: {
-      transport: 'transport',
-      forwarder: 'forwarder',
-      invoice: 'invoice'
-    }
+    attribute :name, :string
+    attribute :detail, :string
+    attribute :contact, :string
+    attribute :tel, :string
+
+    belongs_to :area
+    has_many :address_users, dependent: :delete_all
+    has_many :users, through: :users
   end
 
 end
