@@ -1,3 +1,7 @@
+<%= content_for(:wechat_js) do %>
+  <%= wechat_config_js debug: false, apis: ['openAddress'] -%>
+<% end %>
+
 <div class="weui-panel">
   <div class="weui-panel__hd"><%= t('.title') %></div>
   <div class="weui-panel__bd">
@@ -23,4 +27,12 @@
       <span class="weui-cell__ft"></span>
     <% end %>
   </div>
+  <div class="weui-panel__ft">
+    <%= link_to fork_my_addresses_path, remote: true, class: 'weui-cell weui-cell_access weui-cell_link' do %>
+      <div class="weui-cell__bd"><%= t('.new') %></div>
+      <span class="weui-cell__ft"></span>
+    <% end %>
+  </div>
 </div>
+
+
