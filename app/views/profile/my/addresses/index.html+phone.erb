@@ -11,11 +11,11 @@
         <h6 class="weui-media-box__title">
           <%= link_to address.name, my_address_path(address) %>
         </h6>
-        <div class="weui-media-box__desc"><%= address.area.full_name %><%= address.detail %></div>
+        <div class="weui-media-box__desc"><%= address.area&.full_name %><%= address.detail %></div>
       </div>
       <div class="weui-media-box__ft">
         <div class="weui-btn weui-btn_default">
-          <%= link_to '召集', my_address_url(address.id) %>
+          <%= link_to '删除', my_address_url(address.id), method: :delete, data: { confirm: t('.confirm') }, remote: true %>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ module RailsProfile::Address
     attribute :contact, :string
     attribute :tel, :string
 
-    belongs_to :area
+    belongs_to :area, optional: true
     has_many :address_users, dependent: :delete_all
     has_many :users, through: :address_users
   end
