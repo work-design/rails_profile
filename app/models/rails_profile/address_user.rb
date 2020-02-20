@@ -5,7 +5,7 @@ module RailsProfile::AddressUser
     attribute :commission_ratio, :decimal, precision: 4, scale: 2, default: 0, comment: '佣金比例'
     attribute :kind, :string
 
-    belongs_to :address, inverse_of: :adddress_users
+    belongs_to :address, inverse_of: :address_users
     belongs_to :user
     belongs_to :inviter, class_name: 'User', optional: true
 

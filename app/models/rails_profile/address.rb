@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module RailsProfile::Address
   extend ActiveSupport::Concern
   included do
@@ -10,7 +8,7 @@ module RailsProfile::Address
 
     belongs_to :area
     has_many :address_users, dependent: :delete_all
-    has_many :users, through: :users
+    has_many :users, through: :address_users
   end
 
 end
