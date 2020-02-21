@@ -21,9 +21,13 @@ class Profile::My::AddressesController < Profile::My::BaseController
   end
 
   def wechat
-    @address = current_user.addresses.build(address_params)
     area = Area.sure_find [area_params['provinceName'], area_params['cityName'], area_params['countryName']]
+    cached_key = [area.id, area_params[:detail], area_params[:contact], area_params[:tel]].join(',')
+
+    @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
+    @address.assign_attributes area_params
     @address.area = area
+    @address.source = 'wechat'
 
     if @address.save
       render 'create', locals: { return_to: my_addresses_url }
