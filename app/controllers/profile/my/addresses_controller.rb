@@ -22,10 +22,10 @@ class Profile::My::AddressesController < Profile::My::BaseController
 
   def wechat
     area = Area.sure_find [area_params['provinceName'], area_params['cityName'], area_params['countryName']]
-    cached_key = [area.id, area_params[:detail], area_params[:contact], area_params[:tel]].join(',')
+    cached_key = [area.id, address_params[:detail], address_params[:contact], address_params[:tel]].join(',')
 
     @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
-    @address.assign_attributes area_params
+    @address.assign_attributes address_params
     @address.area = area
     @address.source = 'wechat'
 
