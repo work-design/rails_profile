@@ -30,7 +30,9 @@ class Profile::My::AddressesController < Profile::My::BaseController
     @address.source = 'wechat'
 
     if @address.save
-      render 'create', locals: { return_to: my_addresses_url }
+      return_to = URI(params[:return_to])
+      return_to.query = "address_id=#{@address.id}"
+      render 'create', locals: { return_to: return_to.to_s || my_addresses_url }
     else
       render :new, locals: { model: @address }, status: :unprocessable_entity
     end

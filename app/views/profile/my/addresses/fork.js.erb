@@ -11,7 +11,7 @@ wx.ready(function() {
       data.append('countryName', res.countryName)
       
       Rails.ajax({
-        url: '<%= wechat_my_addresses_path %>',
+        url: '<%= wechat_my_addresses_path(return_to: params[:return_to]) %>',
         type: 'POST',
         data: data,
         dataType: 'script'

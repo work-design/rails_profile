@@ -1,24 +1,25 @@
-<table class="ui very basic large table">
-  <thead>
-    <tr>
-      <th class="six wide">
-        <%= link_to t('.edit'), edit_my_rally_path(@rally), class: 'ui mini blue right floated button', remote: true %>
-      </th>
-      <th class="ten wide"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="right aligned"><%= Rally.human_attribute_name(:name) %></td>
-      <td><%= @rally.name %></td>
-    </tr>
-    <tr>
-      <td class="right aligned"><%= Rally.human_attribute_name(:detail) %></td>
-      <td><%= @rally.detail %></td>
-    </tr>
-    <tr>
-      <td class="right aligned"><%= Rally.human_attribute_name(:area_id) %></td>
-      <td><%= @rally.area_id %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="weui-form-preview">
+  <div class="weui-form-preview__hd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= @address.contact %></label>
+      <em class="weui-form-preview__value"><%= @address.tel %></em>
+    </div>
+  </div>
+  <div class="weui-form-preview__bd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Address.human_attribute_name(:area) %></label>
+      <span class="weui-form-preview__value"><%= @address.area.full_name %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Address.human_attribute_name(:detail) %></label>
+      <span class="weui-form-preview__value"><%= @address.detail %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Address.human_attribute_name(:post_code) %></label>
+      <span class="weui-form-preview__value"><%= @address.post_code %></span>
+    </div>
+  </div>
+  <div class="weui-form-preview__ft">
+    <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
+  </div>
+</div>
