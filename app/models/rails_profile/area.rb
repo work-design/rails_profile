@@ -8,11 +8,14 @@ module RailsProfile::Area
     attribute :popular, :boolean, default: false
     attribute :names, :string, array: true
 
+    validates :name, presence: true
+
     scope :popular, -> { where(popular: true) }
 
     default_scope -> { where(published: true).order(id: :asc) }
 
     after_save_commit :sync_names, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
+    after_commit :sync_children_names
     after_save_commit :update_timestamp, :delete_cache, on: [:create, :update]
   end
 
@@ -20,9 +23,14 @@ module RailsProfile::Area
     names.join(' / ')
   end
 
+  # todo sync after destroy parent
   def sync_names
     self.names = self.self_and_ancestors.pluck(:name).reverse
     self.save
+  end
+
+  def sync_children_names
+
   end
 
   def tree_lists(value_name: 'id', label_name: 'name')
@@ -65,6 +73,19 @@ module RailsProfile::Area
           }
         end
       end
+    end
+
+    # names must be an instance of Enumerator, first is root, child is after root
+    def sure_find(names, parent = nil)
+      names = names.to_enum unless names.is_a? Enumerator
+      area = find_or_initialize_by(name: names.next)
+      if parent
+        area.parent = parent
+      end
+      area.save
+      sure_find(names, area)
+    rescue StopIteration => e
+      parent
     end
 
   end

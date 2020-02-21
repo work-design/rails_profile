@@ -6,6 +6,10 @@
   <thead>
     <tr>
       <th><%= Area.human_attribute_name(:names) %></th>
+      <th>
+        <p><%= Area.human_attribute_name(:name) %></p>
+        <p><%= Area.human_attribute_name(:parent) %></p>
+      </th>
       <th><%= Area.human_attribute_name(:popular) %></th>
       <th><%= Area.human_attribute_name(:published) %></th>
       <th>
@@ -20,6 +24,10 @@
   <% @areas.each do |area| %>
     <tr>
       <td><%= area.full_name %></td>
+      <td>
+        <p><%= area.name %></p>
+        <p class="ui grey text"><%= area.parent&.name %></p>
+      </td>
       <td>
         <div class="ui toggle checkbox">
           <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, remote: true, url: admin_area_path(area), submit: true }, id: nil %>

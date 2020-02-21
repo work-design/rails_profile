@@ -5,6 +5,7 @@ module RailsProfile::Address
     attribute :detail, :string
     attribute :contact, :string
     attribute :tel, :string
+    attribute :post_code, :string
 
     belongs_to :area, optional: true
     has_many :address_users, dependent: :delete_all

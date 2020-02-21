@@ -20,6 +20,18 @@ class Profile::My::AddressesController < Profile::My::BaseController
     end
   end
 
+  def wechat
+    @address = current_user.addresses.build(address_params)
+    area = Area.sure_find [area_params['provinceName'], area_params['cityName'], area_params['countryName']]
+    @address.area = area
+
+    if @address.save
+      render 'create', locals: { return_to: my_addresses_url }
+    else
+      render :new, locals: { model: @address }, status: :unprocessable_entity
+    end
+  end
+
   def show
   end
 
@@ -49,13 +61,18 @@ class Profile::My::AddressesController < Profile::My::BaseController
     @address = Address.find(params[:id])
   end
 
+  def area_params
+    params.permit('provinceName', 'cityName', 'countryName')
+  end
+
   def address_params
     params.fetch(:address, {}).permit(
       :area_id,
       :name,
       :contact,
       :tel,
-      :detail
+      :detail,
+      :post_code
     )
   end
 
