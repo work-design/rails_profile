@@ -12,6 +12,7 @@ class Profile::My::AddressesController < Profile::My::BaseController
 
   def create
     @address = current_user.addresses.build(address_params)
+    @address.role = 'principal'
 
     if @address.save
       render 'create', locals: { return_to: my_addresses_url }
