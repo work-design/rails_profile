@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 758e2b34ca3c068d3fa23360aafc70521cb4db06
+  revision: fb200bf291bee5bb31d479c36705edc2b8b46074
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 38f7457ddb8a43fd1e4b2d50bc82d368954524f0
+  revision: 9bab932ab26c9c0566afeb1180e8410fb5fa8944
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -98,22 +98,22 @@ GEM
     closure_tree (7.1.0)
       activerecord (>= 4.2.10)
       with_advisory_lock (>= 4.0.0)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     crass (1.0.6)
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.9.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.2.1)
+    http-2-next (0.2.2)
     http-form_data (2.2.0)
-    httpx (0.6.5)
+    httpx (0.6.6)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
-    jbuilder (2.9.1)
-      activesupport (>= 4.2.0)
+    jbuilder (2.10.0)
+      activesupport (>= 5.0.0)
     jwt (2.2.1)
     loofah (2.4.0)
       crass (~> 1.0.2)
