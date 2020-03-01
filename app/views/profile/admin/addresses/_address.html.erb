@@ -1,0 +1,24 @@
+<tr id="address_<%= address.id %>">
+  <td>
+    <div class="ui radio checkbox">
+      <% if address.kind == 'invoice' %>
+        <%= radio_button_tag :'order[invoice_address_id]', address.id, true, form: 'new_order' %><label></label>
+      <% else %>
+        <%= radio_button_tag :'order[address_id]', address.id, true, form: 'new_order' %><label></label>
+      <% end %>
+    </div>
+  </td>
+  <td><%= address.contact_person %></td>
+  <td><%= address.tel %></td>
+  <td>
+    <%= address.area.nation %>
+    <%= address.area.province %>
+    <%= address.area.city %>
+  </td>
+  <td><%= address.address %></td>
+  <td>
+    <%= link_to 'Edit', edit_admin_address_path(address), remote: true %>
+    <%= link_to 'Destroy', admin_address_path(address), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
+

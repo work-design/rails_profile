@@ -1,0 +1,23 @@
+<div class="fields">
+  <div class="field">
+    <%= label :nation, 'Nation' %>
+    <%= f.select :nation, options_for_select(Area.all_nations, @address.area&.nation), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
+  </div>
+  <div class="field">
+    <%= label :province, 'Province' %>
+    <%= f.select :province, options_for_select([@address.area&.province], @address.area&.province), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
+  </div>
+  <div class="field">
+    <%= label :city, 'City' %>
+    <%= f.select :city, options_for_select([@address.area&.city], @address.area&.city), { on: { wrapper_all: false, wrapper_input: false }, label: false }, { class: 'ui search selection dropdown' } %>
+  </div>
+</div>
+<%= f.hidden_field :area_id %>
+<%= f.hidden_field :user_id %>
+<%= f.select :kind, options_for_select(Address.options_i18n(:kind)) %>
+<%= f.select :proxy_shipment, options_for_select(Address.options_i18n(:proxy_shipment)) %>
+<%= f.text_field :contact_person %>
+<%= f.text_field :tel %>
+<%= f.text_field :address %>
+<%= f.text_field :postcode %>
+<%= f.submit data: { 'disable-with': 'saving' } %>

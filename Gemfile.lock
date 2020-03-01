@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: fb200bf291bee5bb31d479c36705edc2b8b46074
+  revision: bd11de895f9620807ffef23638b21434ed49fc12
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 9bab932ab26c9c0566afeb1180e8410fb5fa8944
+  revision: 56312b47fd52b15b39871e4d2a5a3ae7cb5f1176
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_taxon.git
-  revision: b3e873f243bd20b925be22d8e94e7c4736f2a728
+  revision: f7df11bd219fea3c8d8a0eac951e9faca3c72d0a
   specs:
     rails_taxon (1.0.0)
       acts_as_list (>= 0.9, <= 1.0)

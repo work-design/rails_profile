@@ -9,7 +9,7 @@ module RailsProfile::Address
     attribute :source, :string
     attribute :cached_key, :string
 
-    belongs_to :area, optional: true
+    belongs_to :area
     has_many :address_users, dependent: :delete_all
     has_many :users, through: :address_users
 
@@ -18,6 +18,10 @@ module RailsProfile::Address
 
   def sync_cached_key
     self.cached_key = [area_id, detail, contact, tel].join(',')
+  end
+
+  def content
+    "#{area.full_name} #{detail}"
   end
 
 end

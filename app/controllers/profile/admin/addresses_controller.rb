@@ -1,8 +1,11 @@
 class Profile::Admin::AddressesController < Profile::Admin::BaseController
-  before_action :set_addresses, only: [:index]
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def index
+    q_params = {}
+    q_params.merge! params.permit('address_users.user_id')
+
+    @addresses = Address.includes(:area).default_where(q_params).page(params[:page])
   end
 
   def new
@@ -36,16 +39,6 @@ class Profile::Admin::AddressesController < Profile::Admin::BaseController
   end
 
   private
-  def set_addresses
-    if params[:user_id]
-      @addresses = Address.includes(:area).where(user_id: params[:user_id])
-    elsif params[:buyer_id]
-      @addresses = Address.includes(:area).where(buyer_id: params[:buyer_id])
-    else
-      @addresses = Address.none
-    end
-  end
-
   def set_address
     @address = Address.find(params[:id])
   end
