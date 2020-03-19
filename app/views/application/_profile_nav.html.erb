@@ -1,5 +1,4 @@
-<% if rails_role_user.any_role?('profile/admin') %>
-<div class="item">
+<div class="item" data-controller="menu">
   <a class="<%= active_helper(controllers: ['areas'], active_class: 'title active', item_class: 'title') %>">
     <i class="fas fa-map-marker-alt fa-fw"></i>
     <span><%= t('profile.admin.title') %></span>
@@ -9,4 +8,3 @@
     <%= link_to t('profile.admin.areas.index.title'), admin_areas_path, class: active_helper(controllers: 'areas') %>
   </div>
 </div>
-<% end %>
