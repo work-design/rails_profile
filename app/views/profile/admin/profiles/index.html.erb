@@ -36,13 +36,13 @@
       <td><%= profile.note %></td>
       <td><%= profile.extra %></td>
       <td>
-        <%= link_to admin_profile_path(profile), data: { tooltip: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_profile_path(profile), aria: { label: t('.show') }, remote: true, class: 'ui mini circular icon button' do %>
           <i class="fas fa-eye"></i>
         <% end %>
-        <%= link_to edit_admin_profile_path(profile), data: { tooltip: t('.edit') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to edit_admin_profile_path(profile), aria: { label: t('.edit') }, remote: true, class: 'ui mini circular icon button' do %>
           <i class="fas fa-pencil-alt"></i>
         <% end %>
-        <%= link_to admin_profile_path(profile), method: :delete, data: { tooltip: t('.destroy'), confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_profile_path(profile), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </td>
