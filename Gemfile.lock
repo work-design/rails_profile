@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: be594a54660ed5ed75d48fa0fe8e2ae4d552daba
+  revision: a53da04414be96f312ea9aada308916f53b3aaa3
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 861483630d050bbe20492f97a39a524af16cbdac
+  revision: 3c5bd14be46be83bab840a52b77e5afe429d08ab
   specs:
     rails_com (1.2.9)
       default_where (~> 2.2)

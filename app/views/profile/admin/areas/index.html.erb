@@ -11,7 +11,7 @@
       <th><%= Area.human_attribute_name(:popular) %></th>
       <th><%= Area.human_attribute_name(:published) %></th>
       <th>
-        <%= link_to new_admin_area_path, remote: true, class: 'ui mini primary button' do %>
+        <%= link_to new_admin_area_path, remote: true, class: 'button is-link is-small' do %>
           <i class="fas fa-plus"></i><%= t('.new') %>
         <% end %>
       </th>
@@ -37,10 +37,10 @@
         </div>
       </td>
       <td>
-        <%= link_to edit_admin_area_path(area), aria: { label: t('.edit') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to edit_admin_area_path(area), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
           <i class="fas fa-pencil-alt"></i>
         <% end %>
-        <%= link_to admin_area_path(area), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'ui mini circular icon button' do %>
+        <%= link_to admin_area_path(area), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </td>
