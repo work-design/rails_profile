@@ -16,7 +16,7 @@
       <th><%= Profile.human_attribute_name(:note) %></th>
       <th><%= Profile.human_attribute_name(:extra) %></th>
       <th>
-        <%= link_to new_admin_profile_path, remote: true, class: 'ui mini green button' do %>
+        <%= link_to new_admin_profile_path, remote: true, class: 'button is-link is-small' do %>
           <i class="fas fa-plus"></i><%= t('.new') %>
         <% end %>
       </th>
