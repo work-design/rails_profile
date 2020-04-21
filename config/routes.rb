@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :panel, module: 'profile/admin', as: :panel do
+  scope :panel, module: 'profile/panel', as: :panel do
     resources :areas
     resources :profiles do
       member do
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :my, module: 'profile/my', as: 'my' do
+  scope :my, module: 'profile/my', as: :my do
     resources :profiles
     resources :addresses do
       collection do

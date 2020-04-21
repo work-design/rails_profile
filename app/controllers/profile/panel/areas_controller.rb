@@ -1,4 +1,4 @@
-class Profile::Admin::AreasController < Profile::Admin::BaseController
+class Profile::Panel::AreasController < Profile::Panel::BaseController
   before_action :set_area, only: [:show, :edit, :update, :destroy]
 
   def index
