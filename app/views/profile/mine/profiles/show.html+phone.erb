@@ -20,6 +20,10 @@
       <label class="weui-form-preview__label"><%= Profile.human_attribute_name(:birthday) %></label>
       <span class="weui-form-preview__value"><%= @profile.birthday %></span>
     </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Profile.human_attribute_name(:age) %></label>
+      <span class="weui-form-preview__value"><%= @profile.age %></span>
+    </div>
   </div>
   <div class="weui-form-preview__ft">
     <%= link_to t('.edit'), edit_mine_profile_path, class: 'weui-form-preview__btn weui-form-preview__btn_primary' %>
