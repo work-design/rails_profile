@@ -1,3 +1,3 @@
-class Profile::Admin::BaseController < RailsProfile.config.admin_controller.constantize
+class Profile::Admin::BaseController < AdminController
 
-end
+end unless defined? Profile::Admin::BaseController

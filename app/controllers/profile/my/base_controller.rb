@@ -1,4 +1,7 @@
-class Profile::My::BaseController < RailsProfile.config.my_controller.constantize
+class Profile::My::BaseController < MyController
 
+  def current_agent
+    current_member
+  end
 
-end
+end unless defined? Profile::My::BaseController

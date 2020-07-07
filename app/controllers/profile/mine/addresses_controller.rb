@@ -1,4 +1,4 @@
-class Profile::My::AddressesController < Profile::My::BaseController
+class Profile::Mine::AddressesController < Profile::Mine::BaseController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def index

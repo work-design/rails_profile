@@ -1,5 +1,3 @@
-class Profile::BaseController < RailsProfile.config.app_controller.constantize
+class Profile::BaseController < ApplicationController
 
-
-
-end
+end unless defined? Profile::BaseController

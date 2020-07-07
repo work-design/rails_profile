@@ -1,3 +1,3 @@
-class Profile::Panel::BaseController < RailsProfile.config.panel_controller.constantize
+class Profile::Panel::BaseController < PanelController
 
-end
+end unless defined? Profile::Panel::BaseController
