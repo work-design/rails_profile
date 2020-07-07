@@ -1,0 +1,28 @@
+<div class="weui-form-preview">
+  <div class="weui-form-preview__bd">
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Profile.human_attribute_name(:real_name) %></label>
+      <span class="weui-form-preview__value"><%= @profile.real_name %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Profile.human_attribute_name(:nick_name) %></label>
+      <span class="weui-form-preview__value"><%= @profile.nick_name %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Profile.human_attribute_name(:gender) %></label>
+      <span class="weui-form-preview__value"><%= @profile.gender_i18n %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Profile.human_attribute_name(:birthday_type) %></label>
+      <span class="weui-form-preview__value"><%= @profile.birthday_type_i18n %></span>
+    </div>
+    <div class="weui-form-preview__item">
+      <label class="weui-form-preview__label"><%= Profile.human_attribute_name(:birthday) %></label>
+      <span class="weui-form-preview__value"><%= @profile.birthday %></span>
+    </div>
+  </div>
+  <div class="weui-form-preview__ft">
+    <%= link_to t('.edit'), edit_mine_profile_path, class: 'weui-form-preview__btn weui-form-preview__btn_primary' %>
+  </div>
+</div>
+

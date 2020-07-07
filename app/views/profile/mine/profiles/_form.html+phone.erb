@@ -1,0 +1,16 @@
+<%= form_with theme: 'weui', model: [:mine, @profile] do |f| %>
+  <div class="weui-form__control-area">
+    <div class="weui-cells__group weui-cells__group_form">
+      <div class="weui-cells__title">个人信息</div>
+      <div class="weui-cells weui-cells_form">
+        <%= f.text_field :real_name %>
+        <%= f.text_field :nick_name %>
+        <%= f.select :gender, options_for_select(Profile.options_i18n(:gender), @profile.gender) %>
+        <%= f.select :birthday_type, options_for_select(Profile.options_i18n(:birthday_type)) %>
+        <%= f.date_field :birthday %>
+        <%= f.select :identity, options_for_select(@accounts.pluck(:identity, :identity)) %>
+      </div>
+    </div>
+  </div>
+  <%= f.submit nil, wrap: { all: nil } %>
+<% end %>

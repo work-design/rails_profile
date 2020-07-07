@@ -1,12 +1,6 @@
 class Profile::Mine::ProfilesController < Profile::Mine::BaseController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
-  def index
-    q_params = {}
-    q_params.merge! default_params
-    @profiles = current_user.profiles.default_where(q_params)
-  end
-
   def new
     @profile = current_user.profiles.build
     prepare_form
@@ -43,7 +37,7 @@ class Profile::Mine::ProfilesController < Profile::Mine::BaseController
 
   private
   def set_profile
-    @profile = current_user.profiles.find params[:id]
+    @profile = current_user.profiles.find_or_create_by(default_params)
   end
 
   def prepare_form
