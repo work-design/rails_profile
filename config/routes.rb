@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :member, module: 'profile/membership', as: 'member' do
+  scope :mine, module: 'profile/mine', as: :mine do
     resource :profile
   end
 

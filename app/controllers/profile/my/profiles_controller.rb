@@ -1,6 +1,6 @@
-class Profile::Membership::ProfilesController < Profile::Membership::BaseController
+class Profile::My::ProfilesController < Profile::My::BaseController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-  
+
   def show
   end
 
@@ -9,12 +9,12 @@ class Profile::Membership::ProfilesController < Profile::Membership::BaseControl
 
   def update
     @profile.assign_attributes profile_params
-    
+
     unless @profile.save
       render :edit, locals: { model: @profile }, status: :unprocessable_entity
     end
   end
-  
+
   def destroy
   end
 
