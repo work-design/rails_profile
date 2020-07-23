@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   scope :my, module: 'profile/my', as: :my do
-    resources :profiles
+    resource :profile
     resources :addresses do
       collection do
         get :fork
