@@ -1,13 +1,10 @@
 class Profile::Panel::AreasController < Profile::Panel::BaseController
-  before_action :set_area, only: [:show, :edit, :update, :destroy]
+  before_action :set_area, only: [:edit, :update, :destroy]
 
   def index
     q_params = {}
     q_params.merge! params.permit(:name)
     @areas = Area.unscoped.default_where(q_params).order(id: :asc).page(params[:page])
-  end
-
-  def show
   end
 
   def new
