@@ -27,13 +27,15 @@
         <p class="ui grey text"><%= area.parent&.name %></p>
       </td>
       <td>
-        <div class="ui toggle checkbox">
-          <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, remote: true, url: panel_area_path(area), submit: true }, id: nil %>
+        <div data-controller="input">
+          <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, remote: true, url: panel_area_path(area), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+          <label></label>
         </div>
       </td>
       <td>
-        <div class="ui toggle checkbox">
-          <%= check_box_tag '[area]published', nil, area.published, data: { method: :patch, remote: true, url: panel_area_path(area), submit: true }, id: nil %>
+        <div data-controller="input">
+          <%= check_box_tag '[area]published', nil, area.published, data: { method: :patch, remote: true, url: panel_area_path(area), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+          <label></label>
         </div>
       </td>
       <td>
