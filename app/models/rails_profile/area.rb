@@ -57,6 +57,12 @@ module RailsProfile::Area
 
   class_methods do
 
+    def rebuild_names
+      find_each do |area|
+        area.sync_names
+      end
+    end
+
     def timestamp
       Rails.cache.fetch('areas/timestamp') do
         order(updated_at: :desc).last.updated_at.to_i
