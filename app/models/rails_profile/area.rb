@@ -12,7 +12,7 @@ module RailsProfile::Area
 
     scope :popular, -> { where(popular: true) }
 
-    default_scope -> { where(published: true).order(id: :asc) }
+    default_scope -> { where(published: true) }
 
     after_save_commit :sync_names, if: -> { saved_change_to_name? || saved_change_to_parent_id? }
     after_commit :sync_children_names
