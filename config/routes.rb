@@ -18,6 +18,10 @@ Rails.application.routes.draw do
 
   scope :my, module: 'profile/my', as: :my do
     resource :profile
+  end
+
+  scope :my, module: 'profile/mine', subdomain: /.+\.#{RailsCom.config.subdomain}/, as: :my do
+    resource :profile
     resources :addresses do
       collection do
         get :fork
@@ -28,10 +32,6 @@ Rails.application.routes.draw do
       end
       resources :address_users
     end
-  end
-
-  scope :mine, module: 'profile/mine', as: :mine do
-    resource :profile
   end
 
 end
