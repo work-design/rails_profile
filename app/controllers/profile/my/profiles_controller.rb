@@ -27,7 +27,7 @@ class Profile::My::ProfilesController < Profile::My::BaseController
     @profile.assign_attributes profile_params
 
     if @profile.save
-      render 'update', locals: { return_to: mine_profile_url }
+      render 'update', locals: { return_to: my_profile_url }
     else
       render :edit, locals: { model: @profile }, status: :unprocessable_entity
     end

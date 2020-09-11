@@ -1,7 +1,7 @@
-class Profile::My::BaseController < MyController
+class Profile::Me::BaseController < MeController
 
   def current_agent
     current_member
   end
 
-end unless defined? Profile::My::BaseController
+end unless defined? Profile::Me::BaseController

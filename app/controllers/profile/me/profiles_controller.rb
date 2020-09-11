@@ -1,4 +1,4 @@
-class Profile::My::ProfilesController < Profile::My::BaseController
+class Profile::Me::ProfilesController < Profile::Me::BaseController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   def show
