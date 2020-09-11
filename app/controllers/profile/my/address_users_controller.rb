@@ -1,4 +1,4 @@
-class Profile::Mine::AddressUsersController < Profile::Mine::BaseController
+class Profile::My::AddressUsersController < Profile::My::BaseController
   before_action :set_address
 
   def index

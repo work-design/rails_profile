@@ -18,3 +18,8 @@ zh:
       addresses:
         index:
           title: 我的地址
+    me:
+      title: 个人中心
+      profiles:
+        index:
+          title: 个人资料
