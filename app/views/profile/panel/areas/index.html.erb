@@ -7,8 +7,8 @@
       <th><%= Area.human_attribute_name(:popular) %></th>
       <th><%= Area.human_attribute_name(:published) %></th>
       <th>
-        <%= link_to new_panel_area_path, remote: true, class: 'button is-link is-small' do %>
-          <i class="fas fa-plus"></i><%= t('.new') %>
+        <%= link_to({ action: 'new' }, { remote: true, class: 'button is-link is-small' }) do %>
+          <i class="fas fa-plus"></i><span><%= t('.new') %></span>
         <% end %>
       </th>
     </tr>
