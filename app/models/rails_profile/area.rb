@@ -7,6 +7,8 @@ module RailsProfile::Area
     attribute :published, :boolean, default: true
     attribute :popular, :boolean, default: false
     attribute :names, :string, array: true
+    attribute :timezone, :string
+    attribute :locale, :string
 
     validates :name, presence: true
 
