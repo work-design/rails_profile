@@ -1,4 +1,4 @@
 class Area < ApplicationRecord
   include RailsProfile::Area
-  include RailsTaxon::Node
+  include RailsCom::Taxon
 end unless defined? Area

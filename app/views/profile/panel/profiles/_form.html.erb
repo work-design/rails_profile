@@ -6,7 +6,7 @@
   <%= f.select :gender, options_for_select(Profile.options_i18n(:gender), @profile.gender) %>
   <%= f.select :birthday_type, options_for_select(Profile.options_i18n(:birthday_type), @profile.birthday_type) %>
   <%= f.date_field :birthday %>
-  <%= render partial: 'taxon/nodes/outer_select', locals: { f: f, outer: 'area' } %>
+  <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area' } %>
   <%= f.text_field :address %>
   <%= f.text_area :note %>
   <%= f.file_field :resume %>
