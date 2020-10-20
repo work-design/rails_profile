@@ -1,8 +1,6 @@
-<%= form_with model: [:panel, @area] do |f| %>
-  <%= render 'shared/error_messages', target: @area %>
-  <%= render partial: 'com/nodes/siblings_select', locals: { f: f, node: Area.new } %>
-  <%= f.text_field :name %>
-  <%= f.check_box :popular %>
-  <%= f.check_box :published %>
-  <%= f.submit %>
-<% end %>
+<%= render 'shared/error_messages', target: @area %>
+<%= render partial: 'com/nodes/siblings_select', locals: { f: f, node: Area.new } %>
+<%= f.text_field :name %>
+<%= f.check_box :popular %>
+<%= f.check_box :published %>
+<%= f.submit %>

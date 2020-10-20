@@ -19,6 +19,5 @@ Gem::Specification.new do |s|
   ]
 
   s.add_dependency 'rails_com', '~> 1.2'
-  s.add_dependency 'rails_taxon'
   s.add_development_dependency 'sqlite3'
 end

@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: d4b0db7b0ffdc142cc54922bfbb0ed67819f7211
+  revision: 50cf953e8c1b9fd0bd753f79d139567b1d01b3b6
   specs:
     rails_com (1.2.9)
       acme-client
@@ -35,7 +35,6 @@ PATH
   specs:
     rails_profile (0.1.0)
       rails_com (~> 1.2)
-      rails_taxon
 
 GEM
   remote: https://rubygems.org/
