@@ -16,10 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :me, module: 'profile/me', as: :me do
-    resource :profile
-  end
-
   scope :my, module: 'profile/my', as: :my do
     resource :profile
     resources :addresses do
