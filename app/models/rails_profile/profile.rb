@@ -3,26 +3,24 @@ module RailsProfile::Profile
   extend ActiveSupport::Concern
 
   included do
-    attribute :birthday_type, :string, default: 'solar'
     attribute :birthday, :date
-    attribute :gender, :string
     attribute :real_name, :string
     attribute :nick_name, :string
 
     belongs_to :organ, optional: true
     belongs_to :user, optional: true
 
-    has_one_attached :avatar
-
     enum birthday_type: {
       solar: 'solar',
       lunar: 'lunar'
-    }
+    }, _default: 'solar'
     enum gender: {
       male: 'male',
       female: 'female',
       unknown: 'unknown'
     }
+
+    has_one_attached :avatar
   end
 
   def age
