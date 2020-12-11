@@ -4,6 +4,7 @@ class Profile::Admin::ProfilesController < Profile::Admin::BaseController
   def index
     q_params = {}
     q_params.merge! default_params
+
     @profiles = Profile.default_where(q_params).page(params[:page])
   end
 
@@ -32,11 +33,11 @@ class Profile::Admin::ProfilesController < Profile::Admin::BaseController
       render :edit, locals: { model: @profile }, status: :unprocessable_entity
     end
   end
-  
+
   def user
     @profile.init_user
   end
-  
+
   def qrcode
     @profile.init_user
     @profile.account.qrcode
