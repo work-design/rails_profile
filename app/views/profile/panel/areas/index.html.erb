@@ -1,47 +1,5 @@
-<%= render 'filter_form' %>
-
-<table class="table is-hoverable is-fullwidth">
-  <thead>
-    <tr>
-      <th><%= Area.human_attribute_name(:names) %></th>
-      <th><%= Area.human_attribute_name(:popular) %></th>
-      <th><%= Area.human_attribute_name(:published) %></th>
-      <th>
-        <%= link_to({ action: 'new' }, { remote: true, class: 'button is-link is-small' }) do %>
-          <i class="fas fa-plus"></i><span><%= t('.new') %></span>
-        <% end %>
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @areas.each do |area| %>
-    <tr>
-      <td><%= area.full_name %></td>
-      <td>
-        <div data-controller="input">
-          <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, remote: true, url: panel_area_path(area), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
-          <label></label>
-        </div>
-      </td>
-      <td>
-        <div data-controller="input">
-          <%= check_box_tag '[area]published', nil, area.published, data: { method: :patch, remote: true, url: panel_area_path(area), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
-          <label></label>
-        </div>
-      </td>
-      <td>
-        <%= link_to edit_panel_area_path(area), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-pencil-alt"></i>
-        <% end %>
-        <%= link_to panel_area_path(area), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-          <i class="fas fa-trash-alt"></i>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render layout: 'index_table', locals: { cache_key: Area.column_names.hash } do %>
+  <%= render partial: 'index_tbody', collection: @areas, as: :area %>
+<% end %>
 
 <%= paginate @areas %>
-
