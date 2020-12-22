@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope module: :profile, defaults: { business: 'profile' } do
+  scope module: :profile, defaults: { namespace: 'application', business: 'profile' } do
     resources :areas, only: [:index] do
       get :search, on: :collection
     end
