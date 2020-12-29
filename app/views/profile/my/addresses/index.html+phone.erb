@@ -16,14 +16,14 @@
       </div>
       <div class="weui-media-box__ft">
         <div class="weui-btn weui-btn_default">
-          <%= link_to '删除', my_address_url(address.id), method: :delete, data: { confirm: t('.confirm') }, remote: true %>
+          <%= link_to '删除', my_address_url(address.id), method: :delete, data: { confirm: t('.confirm') } %>
         </div>
       </div>
     </div>
     <% end %>
   </div>
   <div class="weui-panel__ft">
-    <%= link_to fork_my_addresses_path, remote: true, class: 'weui-cell weui-cell_access weui-cell_link' do %>
+    <%= link_to fork_my_addresses_path, class: 'weui-cell weui-cell_access weui-cell_link' do %>
       <div class="weui-cell__bd"><%= t('.new') %></div>
       <span class="weui-cell__ft"></span>
     <% end %>

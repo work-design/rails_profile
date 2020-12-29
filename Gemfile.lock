@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 0ee280853567984e038227555ec03dd4237c9ded
+  revision: 3286bf20877021bd9e6e544d2a17f39fd6a9f01c
   specs:
     rails_auth (1.0.6)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 2de290bb9fe0373dc8139db04d3621866cafe61f
+  revision: 3ef6a195f9d38798621233ed59b57112fcf19cb7
   specs:
     rails_com (1.2.9)
       acme-client
@@ -91,7 +91,7 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    acts_as_list (1.0.2)
+    acts_as_list (1.0.3)
       activerecord (>= 4.2)
     bcrypt (3.1.16)
     builder (3.2.4)
@@ -103,7 +103,7 @@ GEM
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.10.0)
-    faraday (1.1.0)
+    faraday (1.2.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     globalid (0.4.2)
@@ -175,7 +175,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (~> 1.0)
-    rake (13.0.2)
+    rake (13.0.3)
     ruby2_keywords (0.0.2)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)

@@ -1,22 +1,9 @@
-<tr>
-  <td><%= profile.real_name %></td>
-  <td><%= profile.nick_name %></td>
-  <td><%= profile.gender %></td>
-  <td><%= profile.birthday_type %></td>
-  <td><%= profile.birthday %></td>
-  <td><%= profile.area_id %></td>
-  <td><%= profile.address %></td>
-  <td><%= profile.note %></td>
-  <td><%= profile.extra %></td>
-  <td>
-    <%= link_to admin_profile_path(profile), aria: { label: t('.show') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-info"></i>
-    <% end %>
-    <%= link_to edit_admin_profile_path(profile), aria: { label: t('.edit') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-pencil-alt"></i>
-    <% end %>
-    <%= link_to admin_profile_path(profile), method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, remote: true, class: 'button is-small is-rounded is-light' do %>
-      <i class="fas fa-trash-alt"></i>
-    <% end %>
-  </td>
-</tr>
+<td><%= model.real_name %></td>
+<td><%= model.nick_name %></td>
+<td><%= model.gender %></td>
+<td><%= model.birthday_type %></td>
+<td><%= model.birthday %></td>
+<td><%= model.area_id %></td>
+<td><%= model.address %></td>
+<td><%= model.note %></td>
+<td><%= model.extra %></td>
