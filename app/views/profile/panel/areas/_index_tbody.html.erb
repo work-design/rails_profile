@@ -1,23 +1,13 @@
-<tr>
-  <td><%= area.full_name %></td>
-  <td>
-    <div data-controller="input">
-      <%= check_box_tag '[area]popular', nil, area.popular, data: { method: :patch, url: panel_area_path(area), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
-      <label></label>
-    </div>
-  </td>
-  <td>
-    <div data-controller="input">
-      <%= check_box_tag '[area]published', nil, area.published, data: { method: :patch, url: panel_area_path(area), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
-      <label></label>
-    </div>
-  </td>
-  <td>
-    <%= link_to({ action: 'edit', id: area.id }, aria: { label: t('.edit') }, class: 'button is-small is-rounded is-light') do %>
-      <i class="fas fa-pencil-alt"></i>
-    <% end %>
-    <%= link_to({ action: 'destroy', id: area.id }, method: :delete, aria: { label: t('.destroy') }, data: { confirm: t('.confirm') }, class: 'button is-small is-rounded is-light') do %>
-      <i class="fas fa-trash-alt"></i>
-    <% end %>
-  </td>
-</tr>
+<td><%= model.full_name %></td>
+<td>
+  <div data-controller="input">
+    <%= check_box_tag '[model]popular', nil, model.popular, data: { method: :patch, url: panel_area_path(model), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+    <label></label>
+  </div>
+</td>
+<td>
+  <div data-controller="input">
+    <%= check_box_tag '[model]published', nil, model.published, data: { method: :patch, url: panel_area_path(model), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
+    <label></label>
+  </div>
+</td>
