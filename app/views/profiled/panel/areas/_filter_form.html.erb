@@ -1,4 +1,4 @@
-<%= form_with theme: 'search', model: Area.new(params.permit(:name)) do |f| %>
+<%= form_with theme: 'search', model: Profiled::Area.new(params.permit(:name)) do |f| %>
   <div class="field-body">
     <%= f.text_field :name %>
     <div class="field is-narrow">

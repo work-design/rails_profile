@@ -1,7 +1,7 @@
 zh:
   activerecord:
     attributes:
-      profile:
+      profiled/profile:
         birthday_type: 生日类型
         birthday: 生日
         age: 年龄
@@ -16,11 +16,11 @@ zh:
         resume: 简历
         major: 专业
         degree: 学历
-      area:
+      profiled/area:
         names: 地区
         popular: 是否热门
         published: 是否显示
-      address:
+      profiled/address:
         contact: 联系人
         tel: 联系方式
         detail: 详细地址

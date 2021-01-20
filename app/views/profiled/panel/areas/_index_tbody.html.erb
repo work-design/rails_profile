@@ -1,13 +1,13 @@
 <td><%= model.full_name %></td>
 <td>
-  <div data-controller="input">
-    <%= check_box_tag '[model]popular', nil, model.popular, data: { method: :patch, url: panel_area_path(model), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
-    <label></label>
-  </div>
+  <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :popular, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
+    <label data-action="click->input#check"></label>
+  <% end %>
 </td>
 <td>
-  <div data-controller="input">
-    <%= check_box_tag '[model]published', nil, model.published, data: { method: :patch, url: panel_area_path(model), action: 'input#submit' }, id: nil, class: 'switch is-rounded' %>
-    <label></label>
-  </div>
+  <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
+    <%= f.check_box :published, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
+    <label data-action="click->input#check"></label>
+  <% end %>
 </td>
