@@ -1,4 +1,6 @@
-class Area < ApplicationRecord
-  include RailsProfile::Area
-  include RailsCom::Taxon
-end unless defined? Area
+module Profiled
+  class Area < ApplicationRecord
+    include Model::Area
+    include Com::Ext::Taxon
+  end
+end

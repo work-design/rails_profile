@@ -1,3 +1,5 @@
-class AddressUser < ApplicationRecord
-  include RailsProfile::AddressUser
-end unless defined? AddressUser
+module Profiled
+  class AddressUser < ApplicationRecord
+    include Model::AddressUser
+  end
+end

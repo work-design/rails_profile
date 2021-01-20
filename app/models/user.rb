@@ -1,3 +1,5 @@
-class User < ApplicationRecord
-  include RailsProfile::User
-end unless defined? User
+module Profiled
+  class User < ApplicationRecord
+    include Model::User
+  end
+end

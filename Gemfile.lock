@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 3286bf20877021bd9e6e544d2a17f39fd6a9f01c
+  revision: 513d1d0a701c9e9f7c26714a601fa864a0c07b90
   specs:
-    rails_auth (1.0.6)
+    rails_auth (1.1.0)
       bcrypt (~> 3.1)
       jwt (>= 2.0, <= 3.0)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 3ef6a195f9d38798621233ed59b57112fcf19cb7
+  revision: 9a5f5eddfd9caac627ce5e0ad0ac6d1ecd41a020
   specs:
     rails_com (1.2.9)
       acme-client
@@ -103,9 +103,11 @@ GEM
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.10.0)
-    faraday (1.2.0)
+    faraday (1.3.0)
+      faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
+    faraday-net_http (1.0.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-2-next (0.3.0)
@@ -130,7 +132,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    loofah (2.8.0)
+    loofah (2.9.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -140,12 +142,12 @@ GEM
     method_source (1.0.0)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
-    mini_portile2 (2.4.0)
     minitest (5.14.2)
     multipart-post (2.1.1)
     nio4r (2.5.4)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.1-x86_64-darwin)
+      racc (~> 1.4)
+    racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -207,4 +209,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   2.2.0.rc.1
+   2.2.3

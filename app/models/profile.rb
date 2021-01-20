@@ -1,3 +1,5 @@
-class Profile < ApplicationRecord
-  include RailsProfile::Profile
-end unless defined? Profile
+module Profiled
+  class Profile < ApplicationRecord
+    include Model::Profile
+  end
+end
