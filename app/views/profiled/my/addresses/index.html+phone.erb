@@ -1,26 +1,26 @@
 <%= content_for(:wechat_js) do %>
   <%= wechat_config_js debug: false, apis: ['openAddress'] -%>
-  <meta name="turbolinks-visit-control" content="reload">
+  <meta name="turbo-visit-control" content="reload">
 <% end %>
 
 <div class="weui-panel">
   <div class="weui-panel__hd"><%= t('.title') %></div>
   <div class="weui-panel__bd">
-    <% @addresses.each do |address| %>
-    <div class="weui-media-box weui-media-box_appmsg">
+  <% @addresses.each do |address| %>
+    <div class="weui-media-box weui-media-box_appmsg" data-controller="swipe" data-action="touchmove->swipe#left:passive touchstart->swipe#start:passive">
       <div class="weui-media-box__bd">
         <h6 class="weui-media-box__title">
           <%= address.name %>
         </h6>
         <div class="weui-media-box__desc"><%= address.area.full_name %><%= address.detail %></div>
       </div>
-      <div class="weui-media-box__ft">
+      <div class="weui-media-box__ft" data-swipe-target="open" style="display: none">
         <div class="weui-btn weui-btn_default">
           <%= link_to '删除', my_address_url(address.id), method: :delete, data: { confirm: t('.confirm') } %>
         </div>
       </div>
     </div>
-    <% end %>
+  <% end %>
   </div>
   <div class="weui-panel__ft" data-controller="wechat">
     <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
