@@ -4,7 +4,9 @@ module Profiled
 
     def index
       q_params = {}
+
       @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
+      @address = current_user.addresses.build
     end
 
     def new
@@ -20,10 +22,6 @@ module Profiled
       else
         render :new, locals: { model: @address }, status: :unprocessable_entity
       end
-    end
-
-    def fork
-      @address = current_user.addresses.build
     end
 
     def wechat

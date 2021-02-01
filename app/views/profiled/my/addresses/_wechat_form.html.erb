@@ -1,0 +1,31 @@
+<div style="opacity: 0; display: none" data-controller="weui-dialog" id="dialog">
+  <div class="weui-half-screen-dialog weui-half-screen-dialog_show" data-weui-dialog-target="dialog">
+    <div class="weui-half-screen-dialog__hd">
+      <div class="weui-half-screen-dialog__hd__side">
+        <button class="weui-btn weui-btn_mini weui-btn_warn">返回</button>
+      </div>
+      <div class="weui-half-screen-dialog__hd__main">
+        <div class="weui-half-screen-dialog__title">选择</div>
+      </div>
+      <div class="weui-half-screen-dialog__hd__side">
+        <button class="weui-btn weui-btn_mini weui-btn_primary" data-action="weui-dialog#close">关闭</button>
+      </div>
+    </div>
+    <div class="weui-half-screen-dialog__bd">
+      <%= form_with theme: 'weui', model: @address, url: { action: 'wechat' }, data: { controller: 'wechat_address' } do |f| %>
+        <%= f.text_field :contact %>
+        <%= f.text_field :tel %>
+        <%= f.text_area :detail %>
+        <%= f.text_field :post_code %>
+        <%= hidden_field_tag :return_to, params[:return_to] %>
+        <%= hidden_field_tag :province_name %>
+        <%= hidden_field_tag :city_name %>
+        <%= hidden_field_tag :country_name %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="weui-half-screen-dialog__ft">
+      <button class="weui-btn weui-btn_mini weui-btn_primary" data-controller="wechat" data-action="wechat#close">转人工咨询</button>
+    </div>
+  </div>
+</div>

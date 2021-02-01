@@ -10,7 +10,7 @@
     <div class="weui-media-box weui-media-box_appmsg">
       <div class="weui-media-box__bd">
         <h6 class="weui-media-box__title">
-          <%= link_to address.name, my_address_path(address) %>
+          <%= address.name %>
         </h6>
         <div class="weui-media-box__desc"><%= address.area.full_name %><%= address.detail %></div>
       </div>
@@ -22,12 +22,12 @@
     </div>
     <% end %>
   </div>
-  <div class="weui-panel__ft">
-    <%= link_to fork_my_addresses_path, class: 'weui-cell weui-cell_access weui-cell_link' do %>
+  <div class="weui-panel__ft" data-controller="wechat">
+    <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
       <div class="weui-cell__bd"><%= t('.new') %></div>
       <span class="weui-cell__ft"></span>
-    <% end %>
+    </div>
   </div>
 </div>
 
-
+<%= render 'wechat_form' %>
