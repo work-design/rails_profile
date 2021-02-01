@@ -22,22 +22,23 @@ module Profiled
       end
     end
 
+    def fork
+      @address = current_user.addresses.build
+    end
+
     def wechat
-      area = Area.sure_find [area_params['provinceName'], area_params['cityName'], area_params['countryName']]
+      area = Area.sure_find [area_params['province_name'], area_params['city_name'], area_params['country_name']]
       cached_key = [area.id, address_params[:detail], address_params[:contact], address_params[:tel]].join(',')
 
       @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
       @address.assign_attributes address_params
       @address.area = area
       @address.source = 'wechat'
+      @address.save
 
-      if @address.save
-        return_to = URI(params[:return_to])
-        return_to.query = "address_id=#{@address.id}"
-        render 'create', locals: { return_to: return_to.to_s || my_addresses_url }
-      else
-        render :new, locals: { model: @address }, status: :unprocessable_entity
-      end
+      return_to = URI(params[:return_to])
+      return_to.query = "address_id=#{@address.id}"
+      render 'wechat', locals: { return_to: return_to.to_s }
     end
 
     def show
@@ -70,7 +71,11 @@ module Profiled
     end
 
     def area_params
-      params.permit('provinceName', 'cityName', 'countryName')
+      params.permit(
+        'province_name',
+        'city_name',
+        'country_name'
+      )
     end
 
     def address_params

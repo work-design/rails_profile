@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 513d1d0a701c9e9f7c26714a601fa864a0c07b90
+  revision: 31d94209305f5903b0910c41f765738a3300348a
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 9a5f5eddfd9caac627ce5e0ad0ac6d1ecd41a020
+  revision: 3d49b57f9c70fce848072ba59dee90188c279f57
   specs:
     rails_com (1.2.9)
       acme-client
@@ -112,7 +112,7 @@ GEM
       activesupport (>= 4.2.0)
     http-2-next (0.3.0)
     http-form_data (2.3.0)
-    httpx (0.10.2)
+    httpx (0.11.0)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.5)
@@ -178,7 +178,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 1.0)
     rake (13.0.3)
-    ruby2_keywords (0.0.2)
+    ruby2_keywords (0.0.4)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -187,7 +187,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
-    thor (1.0.1)
+    thor (1.1.0)
     timers (4.3.2)
     tzinfo (2.0.3)
       concurrent-ruby (~> 1.0)
