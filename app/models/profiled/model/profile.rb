@@ -8,8 +8,8 @@ module Profiled
       attribute :real_name, :string
       attribute :nick_name, :string
 
-      belongs_to :organ, optional: true
-      belongs_to :user, optional: true
+      belongs_to :organ, class_name: 'Org::Organ', optional: true
+      belongs_to :user, class_name: 'Auth::User', optional: true
 
       enum birthday_type: {
         solar: 'solar',
