@@ -14,6 +14,8 @@ zh:
       profiles:
         index:
           title: 个人资料
+        show:
+          title: 个人资料
         new:
           title: 添加个人资料
       addresses:

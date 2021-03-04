@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 24209f946be5cdfbf708d935c55c7d4ecd1c2c52
+  revision: 6eef57e7995d5947b98b6118767f6b5e6957d909
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 00e3cb0a5e9418477dc91b02c8adba389affc9d2
+  revision: d52ecfa24af4587335c85fb5226c9704353d0b5e
   specs:
     rails_com (1.2.9)
       acme-client
@@ -110,9 +110,9 @@ GEM
     faraday-net_http (1.0.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    http-2-next (0.3.0)
+    http-2-next (0.4.0)
     http-form_data (2.3.0)
-    httpx (0.11.1)
+    httpx (0.12.0)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.5)
@@ -144,7 +144,7 @@ GEM
     mini_mime (1.0.2)
     minitest (5.14.2)
     multipart-post (2.1.1)
-    nio4r (2.5.4)
+    nio4r (2.5.5)
     nokogiri (1.11.1-x86_64-darwin)
       racc (~> 1.4)
     racc (1.5.2)
@@ -188,7 +188,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     thor (1.1.0)
-    timers (4.3.2)
+    timers (4.3.3)
     tzinfo (2.0.3)
       concurrent-ruby (~> 1.0)
     websocket-driver (0.7.3)
