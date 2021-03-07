@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  scope module: :profiled, defaults: { namespace: 'application', business: 'profile' } do
+  scope module: :profiled, defaults: { business: 'profile' } do
     resources :areas, only: [:index] do
       get :search, on: :collection
     end
   end
 
-  scope :panel, module: 'profiled/panel', as: :panel, defaults: { namespace: 'panel', business: 'profile' } do
+  scope :panel, module: 'profiled/panel', as: :panel, defaults: { business: 'profile', namespace: 'panel' } do
     resources :areas
     resources :profiles do
       member do
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  scope :my, module: 'profiled/my', as: :my, defaults: { namespace: 'my', business: 'profile' } do
+  scope :my, module: 'profiled/my', as: :my, defaults: { business: 'profile', namespace: 'my' } do
     resource :profile
     resources :addresses do
       collection do
