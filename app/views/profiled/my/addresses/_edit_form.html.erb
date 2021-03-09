@@ -2,7 +2,7 @@
   <div class="fields">
     <div class="field">
       <%= label :nation, 'Nation' %>
-      <%= select_tag :nation, options_for_select(Area.all_nations, @address.area.nation), class: 'ui search selection dropdown' %>
+      <%= select_tag :nation, options_for_select(Profiled::Area.all_nations, @address.area.nation), class: 'ui search selection dropdown' %>
     </div>
     <div class="field">
       <%= label :province, 'Province' %>
