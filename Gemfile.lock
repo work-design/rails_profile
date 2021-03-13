@@ -1,9 +1,10 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 27156fdc8f3c9b06723e0b057ca76e054f9b06e4
+  revision: 7b495924b3e39e692a74bceaa538e8a8063f1c3e
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
+      groupdate
       jwt (>= 2.0, <= 3.0)
       rails_com (~> 1.2)
 
@@ -110,6 +111,8 @@ GEM
     faraday-net_http (1.0.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     http-2-next (0.4.0)
     http-form_data (2.3.0)
     httpx (0.12.0)

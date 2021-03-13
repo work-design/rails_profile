@@ -1,20 +1,20 @@
 <tr>
-  <td class="has-text-right"><%= Profile.human_attribute_name(:real_name) %></td>
+  <td class="has-text-right"><%= Profiled::Profile.human_attribute_name(:real_name) %></td>
   <td><%= @profile.real_name %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Profile.human_attribute_name(:nick_name) %></td>
+  <td class="has-text-right"><%= Profiled::Profile.human_attribute_name(:nick_name) %></td>
   <td><%= @profile.nick_name %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Profile.human_attribute_name(:gender) %></td>
+  <td class="has-text-right"><%= Profiled::Profile.human_attribute_name(:gender) %></td>
   <td><%= @profile.gender_i18n %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Profile.human_attribute_name(:birthday_type) %></td>
+  <td class="has-text-right"><%= Profiled::Profile.human_attribute_name(:birthday_type) %></td>
   <td><%= @profile.birthday_type_i18n %></td>
 </tr>
 <tr>
-  <td class="has-text-right"><%= Profile.human_attribute_name(:birthday) %></td>
+  <td class="has-text-right"><%= Profiled::Profile.human_attribute_name(:birthday) %></td>
   <td><%= @profile.birthday %></td>
 </tr>
