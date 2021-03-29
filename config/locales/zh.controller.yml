@@ -21,6 +21,8 @@ zh:
       addresses:
         index:
           title: 我的地址
+          new: 从微信添加
+          add: 地图选择
     me:
       title: 个人中心
       profiles:

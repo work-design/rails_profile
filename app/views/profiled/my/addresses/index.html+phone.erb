@@ -1,5 +1,5 @@
 <%= content_for(:wechat_js) do %>
-  <%= wechat_config_js debug: false, apis: ['openAddress'] -%>
+  <%= wechat_config_js debug: false, apis: ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'] -%>
   <meta name="turbo-visit-control" content="reload">
 <% end %>
 
@@ -24,6 +24,10 @@
   <div class="weui-panel__ft" data-controller="wechat">
     <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
       <div class="weui-cell__bd"><%= t('.new') %></div>
+      <span class="weui-cell__ft"></span>
+    </div>
+    <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#scan">
+      <div class="weui-cell__bd"><%= t('.add') %></div>
       <span class="weui-cell__ft"></span>
     </div>
   </div>

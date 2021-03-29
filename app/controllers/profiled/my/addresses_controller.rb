@@ -9,6 +9,9 @@ module Profiled
       @address = current_user.addresses.build
     end
 
+    def select
+    end
+
     def new
       @address = current_user.addresses.build
     end
@@ -18,7 +21,7 @@ module Profiled
       @address.role = 'principal'
 
       if @address.save
-        render 'create', locals: { return_to: my_addresses_url }
+        render 'create'
       else
         render :new, locals: { model: @address }, status: :unprocessable_entity
       end
