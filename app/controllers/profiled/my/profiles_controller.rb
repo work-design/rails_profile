@@ -9,8 +9,9 @@ module Profiled
 
     def create
       @profile = current_user.profiles.build(profile_params)
+
       if @profile.save
-        redirect_to my_profiles_url
+        render 'create'
       else
         prepare_form
         render :new

@@ -9,9 +9,6 @@ module Profiled
       @address = current_user.addresses.build
     end
 
-    def select
-    end
-
     def new
       @address = current_user.addresses.build
     end
