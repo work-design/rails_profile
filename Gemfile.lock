@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 2bb69ef9e37167e064adecfa524f47577dff5b52
+  revision: 71f4925dbe0445a8e48d39a8587249f54fed02ab
   specs:
     rails_com (1.2.9)
       acme-client
@@ -115,7 +115,7 @@ GEM
       activesupport (>= 5)
     http-2-next (0.4.0)
     http-form_data (2.3.0)
-    httpx (0.12.0)
+    httpx (0.13.1)
       http-2-next (>= 0.1.2)
       timers
     i18n (1.8.9)
@@ -144,7 +144,7 @@ GEM
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
     mimemagic (0.3.5)
-    mini_mime (1.0.2)
+    mini_mime (1.0.3)
     minitest (5.14.4)
     multipart-post (2.1.1)
     nio4r (2.5.7)

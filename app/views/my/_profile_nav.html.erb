@@ -1,4 +1,4 @@
 <span class="menu-label"><%= t('profiled.my.title') %></span>
 <div class="menu-list">
-  <%= link_to t('profiled.my.profiles.index.title'), my_profile_path, class: active_helper(controllers: ['profiles'], active: 'is-active') %>
+  <%= link_to t('profiled.my.profiles.index.title'), { controller: 'profiled/my/profiles', action: 'show' }, class: active_helper(controllers: ['profiles'], active: 'is-active') %>
 </div>
