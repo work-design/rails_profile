@@ -11,7 +11,7 @@ module Profiled
       attribute :source, :string
       attribute :cached_key, :string
 
-      belongs_to :area
+      belongs_to :area, class_name: 'Profiled::Area'
       has_many :address_users, dependent: :delete_all
       has_many :users, through: :address_users
 
