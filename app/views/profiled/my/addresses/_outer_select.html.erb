@@ -8,8 +8,10 @@
     <% else %>
       <%= render partial: 'com/nodes/outer_options', locals: { f: f, node: node, depth: 0, outer: outer } %>
     <% end %>
-    <%= link_to({ action: 'select' }) do %>
-      <i class="fas fa-map-marker-alt"></i><span>获取定位</span>
-    <% end %>
+    <div class="field has-addons has-addons-middle">
+      <%= link_to({ action: 'select' }) do %>
+        <i class="fas fa-map-marker-alt"></i><span>获取定位</span>
+      <% end %>
+    </div>
   </div>
 </div>
