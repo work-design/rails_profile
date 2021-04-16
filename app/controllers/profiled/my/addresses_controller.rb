@@ -23,7 +23,9 @@ module Profiled
 
     def create
       @address = current_user.addresses.build(address_params)
-      @address.role = 'principal'
+      binding.pry
+      #@address.role = 'principal'
+
 
       if @address.save
         render 'create'
@@ -86,12 +88,12 @@ module Profiled
 
     def address_params
       params.fetch(:address, {}).permit(
-        :area_id,
         :name,
         :contact,
         :tel,
         :detail,
-        :post_code
+        :post_code,
+        :area_ancestors
       )
     end
 
