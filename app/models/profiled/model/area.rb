@@ -99,6 +99,19 @@ module Profiled
         parent
       end
 
+      # names must be an instance of Enumerator, first is root, child is after root
+      def sure_find_full(names, parent = nil)
+        names = names.to_enum unless names.is_a? Enumerator
+        area = find_or_initialize_by(full: names.next)
+        if parent
+          area.parent = parent
+        end
+        area.save
+        sure_find(names, area)
+      rescue StopIteration => e
+        parent
+      end
+
     end
 
 

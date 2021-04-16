@@ -68,7 +68,7 @@ module QqMapHelper
     end
 
     results[2].each do |result|
-      area = Profiled::Area.find_or_initialize_by(name: result['name'])
+      area = Profiled::Area.find_or_initialize_by(name: result['fullname'])
       parent = Profiled::Area.find_by(code: "#{result['id'][0..3]}00")
       area.parent = parent
       area.full = result['fullname']
