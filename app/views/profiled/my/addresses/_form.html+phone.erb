@@ -1,19 +1,16 @@
-<%= form_with theme: 'weui', model: @address, url: { action: 'create' } do |f| %>
-  <%= render 'shared/error_messages', target: @address %>
-  <%= f.text_field :name %>
-  <div class="weui-cell weui-cell_active weui-cell_vcode">
-    <div class="weui-cell__hd">
-      <label class="weui-label"><%= Address.human_attribute_name(:area_id) %></label>
-    </div>
-    <div class="weui-cell__bd">
-      <%= f.hidden_field :area_id %>
-    </div>
-    <div class="weui-cell__ft">
-      <%= link_to t('.token'), areas_path, class: 'weui-btn weui-btn_default weui-vcode-btn', data: { params: 'node_type=address' } %>
-    </div>
+<%= render 'shared/error_messages', target: f.object %>
+<%= f.text_field :name %>
+<div class="weui-cell weui-cell_active weui-cell_vcode">
+  <div class="weui-cell__hd">
+    <label class="weui-label"><%= Profiled::Address.human_attribute_name(:area_id) %></label>
   </div>
-  <%= f.text_field :detail %>
-  <%= f.text_field :contact %>
-  <%= f.text_field :tel %>
-  <%= f.submit %>
-<% end %>
+  <div class="weui-cell__bd">
+    <%= f.hidden_field :area_id %>
+  </div>
+  <div class="weui-cell__ft">
+    <%= link_to t('.token'), { controller: 'profiled/areas' }, class: 'weui-btn weui-btn_default weui-vcode-btn', data: { params: 'node_type=address' } %>
+  </div>
+</div>
+<%= f.text_field :detail %>
+<%= f.text_field :contact %>
+<%= f.text_field :tel %>
