@@ -3,7 +3,9 @@
   <div class="weui-panel__bd">
     <%= form_with theme: 'weui', model: @address, url: { controller: 'profiled/my/addresses', action: 'create' }, class: 'weui-form pt-0' do |f| %>
       <%= render partial: 'profiled/my/addresses/form', locals: { f: f } %>
-      <%= f.submit %>
+      <div class="weui-form__opr-area is-flex is-justify-content-center mb-0">
+        <%= f.submit '提交', wrap: { submit: nil } %>
+      </div>
     <% end %>
   </div>
 </div>
