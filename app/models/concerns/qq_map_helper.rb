@@ -18,6 +18,22 @@ module QqMapHelper
     end
   end
 
+  def ip(ip)
+    url = 'https://apis.map.qq.com/ws/location/v1/ip'
+    body = {
+      key: KEY,
+      ip: ip
+    }
+
+    r = HTTPX.get(url, params: body)
+    result = JSON.parse(r.to_s)
+    if result['status'] == 0
+      result['result']
+    else
+      result
+    end
+  end
+
   def districts
     url = 'https://apis.map.qq.com/ws/district/v1/list'
     body = {

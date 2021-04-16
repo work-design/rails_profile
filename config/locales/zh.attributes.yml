@@ -22,7 +22,7 @@ zh:
         published: 是否显示
       profiled/address:
         contact: 联系人
-        tel: 联系方式
+        tel: 手机号
         detail: 详细地址
         area_id: 地区
         post_code: 邮政编码

@@ -1,4 +1,9 @@
 <%= f.text_field :contact %>
 <%= f.text_field :tel %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: @address.area } %>
+
+<%= link_to({ action: 'select' }) do %>
+  <i class="fas fa-map-marker-alt"></i><span>获取定位</span>
+<% end %>
+
 <%= f.text_field :detail %>
