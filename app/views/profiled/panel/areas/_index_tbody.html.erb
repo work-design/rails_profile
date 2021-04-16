@@ -1,5 +1,9 @@
 <td><%= model.full_name %></td>
 <td>
+  <p><%= model.name %></p>
+  <p><%= model.full %></p>
+</td>
+<td>
   <%= form_with theme: nil, model: model, url: { action: 'update', id: model.id }, data: { controller: 'input' } do |f| %>
     <%= f.check_box :popular, data: { input_target: 'checkbox' }, id: nil, class: 'switch is-rounded' %>
     <label data-action="click->input#check"></label>

@@ -5,11 +5,13 @@ module Profiled
 
     included do
       attribute :name, :string
+      attribute :full, :string
       attribute :published, :boolean, default: true
       attribute :popular, :boolean, default: false
       attribute :names, :string, array: true
       attribute :timezone, :string
       attribute :locale, :string
+      attribute :code, :string
 
       validates :name, presence: true
 
