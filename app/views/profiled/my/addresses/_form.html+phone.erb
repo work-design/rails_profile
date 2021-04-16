@@ -1,16 +1,16 @@
 <%= render 'shared/error_messages', target: f.object %>
-<%= f.text_field :name %>
-<div class="weui-cell weui-cell_active weui-cell_vcode">
+<%= f.text_field :contact %>
+<%= f.text_field :tel %>
+<div class="weui-cell weui-cell_active">
   <div class="weui-cell__hd">
     <label class="weui-label"><%= Profiled::Address.human_attribute_name(:area_id) %></label>
   </div>
-  <div class="weui-cell__bd">
+  <div class="weui-cell__bd" data-controller="weui-picker" data-weui-picker-id-value="address_area_id" data-weui-picker-url-value="<%= url_for(controller: '/profiled/areas', action: 'list') %>">
     <%= f.hidden_field :area_id %>
+    <input class="weui-input" type="text" data-action="click->weui-picker#getData">
   </div>
   <div class="weui-cell__ft">
-    <%= link_to t('.token'), { controller: 'profiled/areas' }, class: 'weui-btn weui-btn_default weui-vcode-btn', data: { params: 'node_type=address' } %>
+    <%= link_to '地区', { controller: 'profiled/areas' }, class: 'weui-btn weui-btn_default weui-vcode-btn', data: { params: 'node_type=address', controller: 'common', action: 'common#link' } %>
   </div>
 </div>
 <%= f.text_field :detail %>
-<%= f.text_field :contact %>
-<%= f.text_field :tel %>

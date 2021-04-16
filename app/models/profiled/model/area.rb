@@ -43,7 +43,7 @@ module Profiled
         {
           value_name => child.id,
           label_name => child.name,
-          children: child.tree_lists
+          children: child.tree_lists(value_name: value_name, label_name: label_name)
         }
       end
     end
@@ -75,7 +75,7 @@ module Profiled
       end
 
       def list(value_name: 'id', label_name: 'name')
-        Rails.cache.fetch('areas/list') do
+        Rails.cache.fetch("areas/list/#{value_name}/#{label_name}") do
           roots.map do |root|
             {
               value_name => root.id,

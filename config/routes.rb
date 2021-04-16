@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   namespace :profiled, defaults: { business: 'profiled' } do
     resources :areas, only: [:index] do
-      get :search, on: :collection
+      collection do
+        get :search
+        get :list
+      end
     end
 
     namespace :panel, defaults: { namespace: 'panel' } do

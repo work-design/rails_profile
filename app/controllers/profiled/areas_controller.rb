@@ -18,6 +18,11 @@ module Profiled
       render json: { values: results }
     end
 
+    def list
+      values = Profiled::Area.list(value_name: 'value', label_name: 'label')
+      render json: { values: values }
+    end
+
     private
     def set_area
       @area = Area.unscoped.find params[:id]

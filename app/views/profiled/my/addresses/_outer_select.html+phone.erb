@@ -1,0 +1,14 @@
+<div class="weui-cell weui-cell_active">
+  <div class="weui-cell__hd">
+    <%= f.label "#{outer}_id", class: 'weui-label' %>
+  </div>
+  <div class="weui-cell__bd is-flex">
+    <% if node&.ancestors.present? %>
+      <% node.ancestors.reverse_each do |node| %>
+        <%= render partial: 'com/nodes/outer_options', locals: { f: f, node: node, depth: node.depth, outer: outer } %>
+      <% end %>
+    <% else %>
+      <%= render partial: 'com/nodes/outer_options', locals: { f: f, node: node, depth: 0, outer: outer } %>
+    <% end %>
+  </div>
+</div>
