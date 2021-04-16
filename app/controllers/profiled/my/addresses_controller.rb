@@ -11,6 +11,7 @@ module Profiled
 
     def new
       @address = current_user.addresses.build
+      @address.area = Area.new
     end
 
     def create

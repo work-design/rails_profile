@@ -1,4 +1,4 @@
-<%= f.hidden_field :area_id %>
+<%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: @address.area } %>
 <%= f.text_field :contact_person %>
 <%= f.text_field :tel %>
 <%= f.text_field :address %>
