@@ -53,7 +53,7 @@ module Profiled
       ['areas/popular', 'areas/all_nations'].each do |c|
         Rails.cache.delete(c)
       end
-      Rails.cache.delete_matched 'areas/list/*'
+      #Rails.cache.delete_matched 'areas/list/*'
     end
 
     def update_timestamp
