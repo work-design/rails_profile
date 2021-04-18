@@ -50,9 +50,10 @@ module Profiled
 
     private
     def delete_cache
-      ['areas/list', 'areas/popular', 'areas/all_nations'].each do |c|
+      ['areas/popular', 'areas/all_nations'].each do |c|
         Rails.cache.delete(c)
       end
+      Rails.cache.delete_matched 'areas/list/*'
     end
 
     def update_timestamp
@@ -107,7 +108,7 @@ module Profiled
           area.parent = parent
         end
         area.save
-        sure_find(names, area)
+        sure_find_full(names, area)
       rescue StopIteration => e
         parent
       end

@@ -1,6 +1,6 @@
 module Profiled
   class Panel::AreasController < Panel::BaseController
-    before_action :set_area, only: [:edit, :update, :destroy]
+    before_action :set_area, only: [:show, :edit, :update, :destroy]
 
     def index
       q_params = {}
@@ -11,6 +11,9 @@ module Profiled
 
     def new
       @area = Area.new
+    end
+
+    def show
     end
 
     def edit

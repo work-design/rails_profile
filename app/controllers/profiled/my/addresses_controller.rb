@@ -11,7 +11,7 @@ module Profiled
 
     def new
       @address = current_user.addresses.build
-      r = QqMapHelper.ip request.remote_ip
+      r = QqMapHelper.ip '110.53.215.204' || request.remote_ip
       area_params = r['ad_info']
       if area_params
         area = Area.sure_find_full [area_params['province'], area_params['city'], area_params['district'].presence].compact

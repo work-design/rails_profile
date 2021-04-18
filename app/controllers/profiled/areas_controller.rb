@@ -6,8 +6,16 @@ module Profiled
 
     # for weui.js
     def list
-      values = Profiled::Area.list(value_name: 'value', label_name: 'label')
-      render json: { values: values }
+      values = Area.list(value_name: 'value', label_name: 'label')
+
+      if params[:area_id]
+        area = Area.find params[:area_id]
+        default = area.parent_ancestors.values + [area.id]
+      else
+        default = []
+      end
+
+      render json: { values: values, default: default }
     end
 
     private
