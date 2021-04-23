@@ -1,12 +1,12 @@
 en:
   activerecord:
     enum:
-      address:
+      profiled/address:
         kind:
           transport: Transport
           forwarder: Forwarder
           invoice: Invoice
-      profile:
+      profiled/profile:
         birthday_type:
           solar: Gregorian
           lunar: Lunar
