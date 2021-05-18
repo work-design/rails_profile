@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.authors = ['qinmingyuan']
   s.email = ['mingyuan0715@foxmail.com']
   s.homepage = 'https://github.com/work-design/rails_profile'
-  s.summary = ' Summary of RailsProfile.'
-  s.description = ' Description of RailsShip.'
-  s.license = 'LGPL-3.0'
+  s.summary = 'User Profile'
+  s.description = ' Description of '
+  s.license = 'MIT'
 
   s.files = Dir[
     '{app,config,db,lib}/**/*',
