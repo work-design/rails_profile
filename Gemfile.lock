@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: f18c4b4d15f7b6552eecd918fa446b10890d6f5f
+  revision: 9c61b778fc1459b9815794350d8ae246336bc0a8
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: bd3d4d895d9e8523345c4749ec2b8bd125cf5957
+  revision: 1731aa31ed942471701ca29c194a419bf80501a4
   specs:
     rails_com (1.2.9)
       acme-client
@@ -104,12 +104,16 @@ GEM
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.10.0)
-    faraday (1.4.1)
+    faraday (1.4.2)
+      faraday-em_http (~> 1.0)
+      faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
       faraday-net_http (~> 1.0)
       faraday-net_http_persistent (~> 1.1)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords (>= 0.0.4)
+    faraday-em_http (1.0.0)
+    faraday-em_synchrony (1.0.0)
     faraday-excon (1.1.0)
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.1.0)
@@ -117,10 +121,10 @@ GEM
       activesupport (>= 4.2.0)
     groupdate (5.2.2)
       activesupport (>= 5)
-    http-2-next (0.4.1)
+    http-2-next (0.4.3)
     http-form_data (2.3.0)
-    httpx (0.13.2)
-      http-2-next (>= 0.1.2)
+    httpx (0.14.0)
+      http-2-next (>= 0.4.1)
       timers
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -151,7 +155,7 @@ GEM
     minitest (5.14.4)
     multipart-post (2.1.1)
     nio4r (2.5.7)
-    nokogiri (1.11.4)
+    nokogiri (1.11.6)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     racc (1.5.2)
@@ -198,7 +202,7 @@ GEM
     timers (4.3.3)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    websocket-driver (0.7.3)
+    websocket-driver (0.7.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     with_advisory_lock (4.6.0)
