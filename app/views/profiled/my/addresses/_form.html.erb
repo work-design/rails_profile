@@ -1,4 +1,4 @@
 <%= f.text_field :contact %>
 <%= f.text_field :tel %>
 <%= render partial: 'outer_select', locals: { f: f, outer: 'area', node: @address.area } %>
-<%= f.text_field :detail %>
+<%= f.text_area :detail %>

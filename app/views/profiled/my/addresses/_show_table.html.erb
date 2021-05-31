@@ -1,24 +1,12 @@
-<table class="table is-hoverable is-fullwidth">
-  <thead>
-    <tr>
-      <th class="six wide">
-        <%= link_to t('.edit'), edit_my_rally_path(@rally), class: 'ui mini blue right floated button' %>
-      </th>
-      <th class="ten wide"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="has-text-right"><%= Rally.human_attribute_name(:name) %></td>
-      <td><%= @rally.name %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Rally.human_attribute_name(:detail) %></td>
-      <td><%= @rally.detail %></td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><%= Rally.human_attribute_name(:area_id) %></td>
-      <td><%= @rally.area_id %></td>
-    </tr>
-  </tbody>
-</table>
+<tr>
+  <td class="has-text-right"><%= Profiled::Address.human_attribute_name(:contact) %></td>
+  <td><%= @address.contact %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Profiled::Address.human_attribute_name(:detail) %></td>
+  <td><%= @address.detail %></td>
+</tr>
+<tr>
+  <td class="has-text-right"><%= Profiled::Address.human_attribute_name(:area_id) %></td>
+  <td><%= @address.area_id %></td>
+</tr>
