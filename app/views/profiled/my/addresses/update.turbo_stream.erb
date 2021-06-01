@@ -1,0 +1,5 @@
+<% if request.headers['Turbo-Frame'] == 'modal' %>
+  <%= turbo_stream.append 'body' do %>
+    <div data-controller="visit" data-visit-frame-value="modal" data-visit-url-value="<%= url_for(action: 'index') %>"></div>
+  <% end %>
+<% end %>
