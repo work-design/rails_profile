@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 9c61b778fc1459b9815794350d8ae246336bc0a8
+  revision: bcc6729a90b280b1d9413fd0f19d49cab18adba0
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: de9fc8d2b4480cbb4aea472e6d494165f23c4454
+  revision: 8d90901e7eaec2db0def7257f5d125f3cbbcc5e3
   specs:
     rails_com (1.2.9)
       acme-client
@@ -123,7 +123,7 @@ GEM
       activesupport (>= 5)
     http-2-next (0.4.3)
     http-form_data (2.3.0)
-    httpx (0.14.3)
+    httpx (0.14.4)
       http-2-next (>= 0.4.1)
       timers
     i18n (1.8.10)
