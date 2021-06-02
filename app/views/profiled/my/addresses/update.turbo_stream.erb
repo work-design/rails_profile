@@ -1,5 +1,7 @@
+<%= turbo_stream.append 'body' do %>
 <% if request.headers['Turbo-Frame'] == 'modal' && request.headers['Redirect'] %>
-  <%= turbo_stream.append 'body' do %>
-    <div data-controller="visit" data-visit-frame-value="modal" data-visit-url-value="<%= request.headers['Redirect'] %>"></div>
-  <% end %>
+  <div data-controller="visit" data-visit-frame-value="modal" data-visit-url-value="<%= request.headers['Redirect'] %>"></div>
+<% else %>
+  <div data-controller="visit"></div>
+<% end %>
 <% end %>
