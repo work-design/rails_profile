@@ -7,6 +7,7 @@ module Profiled
       attribute :birthday, :date
       attribute :real_name, :string
       attribute :nick_name, :string
+      attribute :identity, :string
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :user, class_name: 'Auth::User', optional: true

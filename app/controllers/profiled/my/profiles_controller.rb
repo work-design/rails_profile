@@ -29,7 +29,7 @@ module Profiled
       @profile.assign_attributes profile_params
 
       if @profile.save
-        render 'update', locals: { return_to: my_profile_url }
+        render 'update'
       else
         render :edit, locals: { model: @profile }, status: :unprocessable_entity
       end
