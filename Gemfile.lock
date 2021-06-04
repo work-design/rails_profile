@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: bcc6729a90b280b1d9413fd0f19d49cab18adba0
+  revision: 9bd60ff5b62722d1e57093f3c3b2268046ec2438
   specs:
     rails_auth (1.1.0)
       bcrypt (~> 3.1)
@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 8d90901e7eaec2db0def7257f5d125f3cbbcc5e3
+  revision: ed9f1b7309d212eb7595bc72877a1215a8ebb8ea
   specs:
     rails_com (1.2.9)
       acme-client
@@ -151,7 +151,7 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.0.3)
-    mini_portile2 (2.5.1)
+    mini_portile2 (2.5.3)
     minitest (5.14.4)
     multipart-post (2.1.1)
     nio4r (2.5.7)

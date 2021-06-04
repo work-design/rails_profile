@@ -1,0 +1,30 @@
+en:
+  profiled:
+    title: Profile
+    panel:
+      title: 区域管理
+      areas:
+        index:
+          title: 地区
+      agencies:
+        index:
+          title: 会员列表
+    my:
+      title: Settings
+      profiles:
+        index:
+          title: Profile
+        show:
+          title: Profile
+        new:
+          title: 添加个人资料
+      addresses:
+        index:
+          title: Addresses
+          new: Add
+          add: 地图选择
+    me:
+      title: 个人中心
+      profiles:
+        show:
+          title: 个人资料
