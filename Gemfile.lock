@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/qinmingyuan/viter.git
+  revision: 7e67bf86c44f0c95c918d631df253e0f824caf15
+  specs:
+    viter (0.1.0)
+      rails
+
+GIT
   remote: https://github.com/work-design/rails_auth.git
   revision: c9dae8f6af1e7f42d16591ef9aba91cab1b00b63
   specs:
@@ -160,6 +167,7 @@ GEM
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    pg (1.2.3)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -218,10 +226,12 @@ PLATFORMS
 
 DEPENDENCIES
   jbuilder
+  pg
   rails_auth!
   rails_com!
   rails_profile!
   sqlite3
+  viter!
 
 BUNDLED WITH
    2.2.22
