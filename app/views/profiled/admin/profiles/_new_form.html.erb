@@ -1,0 +1,5 @@
+<%= form_with model: @profile, url: { action: 'create' } do |f| %>
+  <%= render 'shared/error_messages', target: @profile %>
+  <%= render partial: 'form', locals: { f: f } %>
+  <%= f.submit %>
+<% end %>

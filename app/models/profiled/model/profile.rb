@@ -8,6 +8,7 @@ module Profiled
       attribute :real_name, :string
       attribute :nick_name, :string
       attribute :identity, :string
+      attribute :extra, :json, default: {}
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
       belongs_to :user, class_name: 'Auth::User', optional: true

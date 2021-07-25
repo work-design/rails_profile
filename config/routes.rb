@@ -8,6 +8,10 @@ Rails.application.routes.draw do
       end
     end
 
+    namespace :admin, defaults: { namespace: 'admin' } do
+      resources :profiles
+    end
+
     namespace :panel, defaults: { namespace: 'panel' } do
       resources :areas
       resources :profiles do
