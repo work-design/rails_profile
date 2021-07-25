@@ -1,0 +1,14 @@
+one:
+  birthday: <%= Date.today - 10.years %>
+  real_name: MyString
+  nick_name: MyString
+  identity: MyString
+  birthday_type: <%= Profiled::Profile.birthday_types.values.shuffle!.pop %>
+  gender: <%= Profiled::Profile.genders.values.shuffle!.pop %>
+two:
+  birthday: <%= Date.today - 18.years %>
+  real_name: MyString
+  nick_name: MyString
+  identity: MyString
+  birthday_type: <%= Profiled::Profile.birthday_types.values.shuffle!.pop %>
+  gender: <%= Profiled::Profile.genders.values.shuffle!.pop %>
