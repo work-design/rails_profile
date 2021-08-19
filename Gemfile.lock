@@ -1,32 +1,32 @@
 GIT
   remote: https://github.com/qinmingyuan/viter.git
-  revision: 7e67bf86c44f0c95c918d631df253e0f824caf15
+  revision: 997cbc807babe4380f76ad0051518de12135702e
   specs:
     viter (0.1.0)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: c9dae8f6af1e7f42d16591ef9aba91cab1b00b63
+  revision: 0d4f6adb73969f3104b75197629fb51e8fe245f1
   specs:
-    rails_auth (1.1.0)
+    rails_auth (1.2.0)
       bcrypt (~> 3.1)
       jwt (>= 2.0, <= 3.0)
       rails_com (~> 1.2)
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: ee517ffe0b36b1007196df8e86e5f611c0ba38cf
+  revision: 4829a61208ab5a358d43f43795c3e998b636a5b1
   specs:
     rails_com (1.2.9)
       acme-client
       acts_as_list (>= 1.0)
-      closure_tree (>= 7.2)
+      closure_tree (>= 7.3)
       default_where (~> 2.2)
-      http-form_data (~> 2.2)
-      httpx (~> 0.8)
+      http-form_data (~> 2.3)
+      httpx (~> 0.16)
       kaminari
-      rails (~> 6.0)
+      rails (~> 6.1)
       turbo-rails
 
 PATH
@@ -108,10 +108,10 @@ GEM
       with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    default_where (2.2.0)
-      activerecord (>= 4.0.0)
+    default_where (2.3.0)
+      activerecord (>= 4.0, <= 7.0)
     erubi (1.10.0)
-    faraday (1.5.1)
+    faraday (1.7.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -119,6 +119,7 @@ GEM
       faraday-net_http (~> 1.0)
       faraday-net_http_persistent (~> 1.1)
       faraday-patron (~> 1.0)
+      faraday-rack (~> 1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords (>= 0.0.4)
     faraday-em_http (1.0.0)
@@ -128,11 +129,12 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
-    http-2-next (0.4.3)
+    faraday-rack (1.0.0)
+    globalid (0.5.2)
+      activesupport (>= 5.0)
+    http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.15.4)
+    httpx (0.16.1)
       http-2-next (>= 0.4.1)
       timers
     i18n (1.8.10)
@@ -152,7 +154,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    loofah (2.10.0)
+    loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -160,12 +162,10 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.0)
-    mini_portile2 (2.5.3)
     minitest (5.14.4)
     multipart-post (2.1.1)
-    nio4r (2.5.7)
-    nokogiri (1.11.7)
-      mini_portile2 (~> 2.5.0)
+    nio4r (2.5.8)
+    nokogiri (1.12.3-x86_64-darwin)
       racc (~> 1.4)
     pg (1.2.3)
     racc (1.5.2)
@@ -210,7 +210,7 @@ GEM
     sqlite3 (1.4.2)
     thor (1.1.0)
     timers (4.3.3)
-    turbo-rails (0.6.0)
+    turbo-rails (0.7.3)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
