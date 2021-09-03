@@ -10,33 +10,7 @@ module Profiled
     end
 
     def new
-      @address = Address.new(user_id: params[:user_id], kind: params[:kind], address_type: params[:address_type])
-    end
-
-    def create
-      @address = Address.new(address_params)
-
-      unless @address.save
-        render :new, locals: { model: @address }, status: :unprocessable_entity
-      end
-    end
-
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @address.assign_attributes(address_params)
-
-      unless @address.save
-        render :edit, locals: { model: @address }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @address.destroy
+      @address = Address.new params.permit(*address_permit_params)
     end
 
     private
@@ -44,15 +18,15 @@ module Profiled
       @address = Address.find(params[:id])
     end
 
-    def address_params
-      params.fetch(:address, {}).permit(
+    def address_permit_params
+      [
         :user_id,
         :area_id,
         :kind,
         :contact_person,
         :tel,
         :address
-      )
+      ]
     end
 
   end

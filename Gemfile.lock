@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/qinmingyuan/default_form.git
-  revision: fd44e720f43315cb57a156b78c386e10fadc59d4
-  specs:
-    default_form (1.5.1)
-      rails_com (~> 1.2)
-
-GIT
   remote: https://github.com/qinmingyuan/rails.git
   revision: f01b541fdfcecf1438d284a288b0e4029c4c7ece
   specs:
@@ -108,7 +101,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: dc5bc4011c3ecfbf9ff71cc862b9cc67f2e81eb4
+  revision: 74e7f84874af58ca098d877add3dc13fd0d89211
   specs:
     rails_com (1.2.9)
       acme-client
@@ -123,7 +116,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_ui.git
-  revision: 3c13609a205c98818d9d7cba18cc5da6e8a1d304
+  revision: b915e58f8582043db65dccf5ea014fc73ef98dc6
   specs:
     rails_ui (0.0.1)
       rails
@@ -216,6 +209,8 @@ GEM
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     pg (1.2.3)
+    puma (5.4.0)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -254,9 +249,9 @@ PLATFORMS
 
 DEPENDENCIES
   debug (>= 1.0.0.beta)
-  default_form!
   jbuilder
   pg
+  puma
   rails!
   rails_auth!
   rails_com!

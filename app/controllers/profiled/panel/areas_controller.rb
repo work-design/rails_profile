@@ -9,48 +9,18 @@ module Profiled
       @areas = Area.unscoped.default_where(q_params).order(id: :asc).page(params[:page])
     end
 
-    def new
-      @area = Area.new
-    end
-
-    def show
-    end
-
-    def edit
-    end
-
-    def create
-      @area = Area.new area_params
-
-      unless @area.save
-        render :new, locals: { model: @area }, status: :unprocessable_entity
-      end
-    end
-
-    def update
-      @area.assign_attributes area_params
-
-      unless @area.save
-        render :new, locals: { model: @area }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @area.destroy
-    end
-
     private
     def set_area
       @area = Area.unscoped.find params[:id]
     end
 
-    def area_params
-      params.fetch(:area, {}).permit(
+    def area_permit_params
+      [
         :name,
         :popular,
         :published,
         :parent_ancestors
-      )
+      ]
     end
 
   end

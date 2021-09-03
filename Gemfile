@@ -3,11 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 gem 'rails', github: 'qinmingyuan/rails'
+gem 'puma'
 gem 'pg'
 gem 'jbuilder'
 
 gem 'viter', github: 'qinmingyuan/viter'
-gem 'default_form', github: 'qinmingyuan/default_form'
 
 gem 'rails_com', github: 'work-design/rails_com'
 gem 'rails_auth', github: 'work-design/rails_auth'
