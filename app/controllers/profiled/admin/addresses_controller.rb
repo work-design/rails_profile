@@ -11,6 +11,7 @@ module Profiled
 
     def new
       @address = Address.new params.permit(*address_permit_params)
+      @address.area ||= Area.new
     end
 
     private
@@ -21,11 +22,11 @@ module Profiled
     def address_permit_params
       [
         :user_id,
-        :area_id,
         :kind,
         :contact_person,
         :tel,
-        :address
+        :address,
+        :area_ancestors
       ]
     end
 
