@@ -5,14 +5,13 @@ gemspec
 gem 'rails', github: 'qinmingyuan/rails'
 gem 'puma'
 gem 'pg'
-gem 'jbuilder'
-
-gem 'viter', github: 'qinmingyuan/viter'
 
 gem 'rails_com', github: 'work-design/rails_com'
+gem 'rails_extend', github: 'work-design/rails_extend'
 gem 'rails_auth', github: 'work-design/rails_auth'
-gem 'rails_ui', github: 'work-design/rails_ui'
+gem 'rails_vite', github: 'work-design/rails_vite'
+gem 'rails_design', github: 'work-design/rails_design'
 
 group :development, :test do
-  gem 'debug', '>= 1.0.0.beta'
+  gem 'debug'
 end
