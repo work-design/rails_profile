@@ -1,4 +1,4 @@
-<div style="opacity: 0; display: none" data-controller="weui-dialog" id="dialog">
+<div style="opacity: 0" data-controller="weui-dialog" id="dialog">
   <div class="weui-half-screen-dialog weui-half-screen-dialog_show" data-weui-dialog-target="dialog">
     <div class="weui-half-screen-dialog__hd">
       <div class="weui-half-screen-dialog__hd__side">
@@ -15,12 +15,15 @@
       <%= form_with theme: 'weui', model: @address, url: { action: 'wechat' }, data: { controller: 'wechat_address' } do |f| %>
         <%= f.text_field :contact %>
         <%= f.text_field :tel %>
+        <%= text_field_tag :province_name, value: params[:provinceName], disabled: true %>
+        <%= text_field_tag :city_name, value: params[:cityName], disabled: true %>
+        <%= text_field_tag :country_name, value: params[:countryName], disabled: true %>
         <%= f.text_area :detail %>
         <%= f.text_field :post_code %>
         <%= hidden_field_tag :return_to, params[:return_to] %>
-        <%= hidden_field_tag :province_name %>
-        <%= hidden_field_tag :city_name %>
-        <%= hidden_field_tag :country_name %>
+        <%= hidden_field_tag :province_name, value: params[:provinceName] %>
+        <%= hidden_field_tag :city_name, value: params[:cityName] %>
+        <%= hidden_field_tag :country_name, value: params[:countryName] %>
         <%= f.submit %>
       <% end %>
     </div>

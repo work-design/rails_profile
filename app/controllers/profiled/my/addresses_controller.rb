@@ -32,6 +32,14 @@ module Profiled
       end
     end
 
+    def fork
+      @address = current_user.addresses.build
+      @address.contact = params[:userName]
+      @address.tel = params[:telNumber]
+      @address.detail = params[:detailInfo]
+      @address.post_code = params[:postalCode]
+    end
+
     def wechat
       area = Area.sure_find [area_params['province_name'], area_params['city_name'], area_params['country_name']]
       cached_key = [area.id, address_params[:detail], address_params[:contact], address_params[:tel]].join(',')
@@ -47,28 +55,10 @@ module Profiled
       render 'wechat', locals: { return_to: return_to.to_s }
     end
 
-    def show
-    end
-
     def join
       au = current_user.address_users.find_or_initialize_by(address_id: @address.id)
       au.save
       render 'show'
-    end
-
-    def edit
-    end
-
-    def update
-      @address.assign_attributes(address_params)
-
-      unless @address.save
-        render :edit, locals: { model: @address }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @address.destroy
     end
 
     private

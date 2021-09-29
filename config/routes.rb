@@ -27,8 +27,8 @@ Rails.application.routes.draw do
       resource :profile
       resources :addresses do
         collection do
-          get :fork
           get :select
+          post :fork
           post :wechat
         end
         member do
