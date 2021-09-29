@@ -1,0 +1,12 @@
+<div class="weui-media-box weui-media-box_appmsg" data-controller="swipe" data-action="touchmove->swipe#move:passive touchstart->swipe#start:passive touchend->swipe#end:passive">
+  <div class="weui-media-box__bd">
+    <h6 class="weui-media-box__title">
+      <%= model.name %>
+    </h6>
+    <div class="weui-media-box__desc"><%= model.area.full_name %><%= model.detail %></div>
+  </div>
+  <div class="weui-media-box__ft" data-swipe-target="open" style="width: 0">
+    <%= link_to '编辑', { action: 'edit', id: model.id }, class: 'weui-btn weui-btn_primary' %>
+    <%= button_to '删除', { action: 'destroy', id: model.id }, method: :delete, data: { confirm: t('.confirm') }, form: { class: 'weui-btn weui-btn_warn' } %>
+  </div>
+</div>

@@ -6,20 +6,7 @@
 <div class="weui-panel">
   <div class="weui-panel__hd"><%= t('.title') %></div>
   <div class="weui-panel__bd">
-  <% @addresses.each do |address| %>
-    <div class="weui-media-box weui-media-box_appmsg" data-controller="swipe" data-action="touchmove->swipe#move:passive touchstart->swipe#start:passive touchend->swipe#end:passive">
-      <div class="weui-media-box__bd">
-        <h6 class="weui-media-box__title">
-          <%= address.name %>
-        </h6>
-        <div class="weui-media-box__desc"><%= address.area.full_name %><%= address.detail %></div>
-      </div>
-      <div class="weui-media-box__ft" data-swipe-target="open" style="width: 0">
-        <%= link_to '编辑', { action: 'edit', id: address.id }, class: 'weui-btn weui-btn_primary' %>
-        <%= button_to '删除', { action: 'destroy', id: address.id }, method: :delete, data: { confirm: t('.confirm') }, form: { class: 'weui-btn weui-btn_warn' } %>
-      </div>
-    </div>
-  <% end %>
+    <%= render partial: 'address', collection: @addresses, as: :model %>
   </div>
   <div class="weui-panel__ft" data-controller="wechat">
     <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
