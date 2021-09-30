@@ -8,7 +8,7 @@
   <div class="weui-panel__bd">
     <%= render partial: 'address', collection: @addresses, as: :model %>
   </div>
-  <div class="weui-panel__ft" data-controller="wechat" data-wechat-address-value="/pages/profiled/my/addresses/index" data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>">
+  <div class="weui-panel__ft" data-controller="wechat" data-wechat-address-value="/pages/profiled/my/addresses/index" data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>" id="wechat_address">
     <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
       <div class="weui-cell__bd"><%= t('.new') %></div>
       <span class="weui-cell__ft"></span>
