@@ -26,9 +26,6 @@
         <%= f.text_area :detail %>
         <%= f.text_field :post_code %>
         <%= hidden_field_tag :return_to, params[:return_to] %>
-        <%= hidden_field_tag :province_name, value: params[:provinceName] %>
-        <%= hidden_field_tag :city_name, value: params[:cityName] %>
-        <%= hidden_field_tag :country_name, value: params[:countryName] %>
         <%= f.submit nil, wrap: { all: nil } %>
       <% end %>
     </div>
