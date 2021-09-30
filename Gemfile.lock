@@ -94,7 +94,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 1bebbd6ab428891e8853eb1f64e76fe0a403a4ea
+  revision: 061b45039cc66ffff0fb798c19717761897e451f
   specs:
     rails_com (1.2.9)
       acme-client
@@ -111,7 +111,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: 45db765a93cf9fece8b6f867032f088bb8854082
+  revision: abc8c34e37dc9c1bce4dc0efb3d9f7a3e13876c2
   specs:
     rails_design (0.0.1)
       rails
@@ -150,7 +150,7 @@ GEM
       with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    debug (1.1.0)
+    debug (1.2.0)
       irb
       reline (>= 0.2.7)
     default_where (2.3.0)
@@ -251,7 +251,7 @@ GEM
     websocket-extensions (0.1.5)
     with_advisory_lock (4.6.0)
       activerecord (>= 4.2)
-    zeitwerk (2.5.0.beta4)
+    zeitwerk (2.5.0.beta5)
 
 PLATFORMS
   ruby
