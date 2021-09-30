@@ -55,6 +55,22 @@ module Profiled
       render 'wechat', locals: { return_to: return_to.to_s }
     end
 
+    def program
+      area = Area.sure_find [params['provinceName'], params['cityName'], params['countryName']]
+      cached_key = [area.id, params['detailInfo'], params['userName'], params['telNumber']].join(',')
+
+      @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
+      @address.contact = params['userName']
+      @address.tel = params['telNumber']
+      @address.detail = params['detailInfo']
+      @address.post_code = params[:postalCode]
+      @address.area = area
+      @address.source = 'program'
+      @address.save
+
+      render json: { id: @address.id }
+    end
+
     def join
       au = current_user.address_users.find_or_initialize_by(address_id: @address.id)
       au.save

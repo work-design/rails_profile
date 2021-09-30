@@ -30,6 +30,7 @@ Rails.application.routes.draw do
           get :select
           post :fork
           post :wechat
+          post :program
         end
         member do
           get :join
