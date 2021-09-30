@@ -20,24 +20,6 @@ module Profiled
       end
     end
 
-    def show
-    end
-
-    def edit
-    end
-
-    def update
-      @address_user.assign_attributes(address_user_params)
-
-      unless @address_user.save
-        render :edit, locals: { model: @address_user }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-      @address_user.destroy
-    end
-
     private
     def set_address
       @address = Address.find(params[:address_id])

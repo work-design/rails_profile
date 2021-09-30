@@ -94,7 +94,7 @@ module Profiled
         if parent
           area.parent = parent
         end
-        area.save
+        area.save!
         sure_find(names, area)
       rescue StopIteration => e
         parent
