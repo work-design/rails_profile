@@ -41,7 +41,7 @@ module Profiled
     end
 
     def wechat
-      area = Area.sure_find [params['provinceName'], params['cityName'], params['countryName']]
+      area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']]
       cached_key = [area.id, address_params[:detail], address_params[:contact], address_params[:tel]].join(',')
 
       @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
@@ -56,7 +56,7 @@ module Profiled
     end
 
     def program
-      area = Area.sure_find [params['provinceName'], params['cityName'], params['countryName']]
+      area = Area.sure_find [params['provinceName'], params['cityName'], params['countyName']]
       cached_key = [area.id, params['detailInfo'], params['userName'], params['telNumber']].join(',')
 
       @address = current_user.addresses.find_or_initialize_by(cached_key: cached_key)
