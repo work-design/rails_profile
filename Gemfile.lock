@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: de92cd9f3200814202c9221fc19537d4b183b6f3
+  revision: 5f705eb8c65cfa1ff4cb24b77e7b7b84d76b5c8f
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -94,7 +94,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 061b45039cc66ffff0fb798c19717761897e451f
+  revision: 118a97a7d19b3f166e7caffa473a8c49f32b8eec
   specs:
     rails_com (1.2.9)
       acme-client
@@ -111,14 +111,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: 9dd45dbb2fe715bbe68c3502e3d198d3fdefa73a
+  revision: 20272793b4e035c68f583423e313fc33e8b83de9
   specs:
     rails_design (0.0.1)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: a01f5bcfbe28b070f92ef4edefe781497cc69a23
+  revision: 00ac38dd8fe41406d97377b87df53b48e2b2beb6
   specs:
     rails_extend (1.0.0)
       rails (>= 5.0)
@@ -150,8 +150,8 @@ GEM
       with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    debug (1.2.0)
-      irb
+    debug (1.2.3)
+      irb (>= 1.3.6)
       reline (>= 0.2.7)
     default_where (2.3.0)
       activerecord (>= 4.0, <= 7.0)
@@ -179,9 +179,8 @@ GEM
       activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.17.0)
+    httpx (0.18.0)
       http-2-next (>= 0.4.1)
-      timers
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     io-console (0.5.9)
@@ -189,7 +188,7 @@ GEM
       reline (>= 0.2.7)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    jwt (2.2.3)
+    jwt (2.3.0)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -241,7 +240,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     thor (1.1.0)
-    timers (4.3.3)
     turbo-rails (0.8.1)
       rails (>= 6.0.0)
     tzinfo (2.0.4)

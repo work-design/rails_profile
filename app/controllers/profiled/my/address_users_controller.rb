@@ -1,26 +1,17 @@
 module Profiled
   class My::AddressUsersController < My::BaseController
     before_action :set_address
+    before_action :set_new_address_user, only: [:new, :create]
 
     def index
       @address_users = @address.address_users.page(params[:page])
     end
 
-    def new
-      @address_user = @address.address_users.build
-    end
-
-    def create
-      @address_user = @address.address_users.build(user_id: user.id)
-
-      if @address_user.save
-        render 'create', locals: { return_to: my_rallies_url }
-      else
-        render :new, locals: { model: @address_user }, status: :unprocessable_entity
-      end
-    end
-
     private
+    def set_new_address_user
+      @address_user = @address.address_users.build(**params.permit(:user_id))
+    end
+
     def set_address
       @address = Address.find(params[:address_id])
     end
