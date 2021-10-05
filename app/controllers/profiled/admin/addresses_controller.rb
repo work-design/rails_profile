@@ -14,9 +14,23 @@ module Profiled
       @address.area ||= Area.new
     end
 
+    def create
+      @address = current_organ.addresses.build(address_params)
+
+      if @address.save
+        render 'create'
+      else
+        render :new, locals: { model: @address }, status: :unprocessable_entity
+      end
+    end
+
     private
     def set_address
       @address = Address.find(params[:id])
+    end
+
+    def address_params
+      params.fetch(:address, {}).permit(*address_permit_params)
     end
 
     def address_permit_params
