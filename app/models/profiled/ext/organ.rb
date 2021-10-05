@@ -3,7 +3,7 @@ module Profiled
     extend ActiveSupport::Concern
 
     included do
-      has_many :address_organs, class_name: 'Profiled::AddressOrgan', dependent: :delete_all
+      has_many :address_organs, class_name: 'Profiled::AddressOrgan', inverse_of: :organ, dependent: :delete_all
       has_many :addresses, class_name: 'Profiled::Address', through: :address_organs
     end
 

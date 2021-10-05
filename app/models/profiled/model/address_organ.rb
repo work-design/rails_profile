@@ -6,7 +6,7 @@ module Profiled
       attribute :kind, :string
       attribute :default, :boolean, default: false
 
-      belongs_to :organ, class_name: 'Org::Organ'
+      belongs_to :organ, class_name: 'Org::Organ', inverse_of: :address_organs
 
       belongs_to :address, inverse_of: :address_organs
 

@@ -16,6 +16,7 @@ module Profiled
 
       has_many :address_users, dependent: :delete_all
       has_many :users, through: :address_users
+      has_many :address_organs, inverse_of: :address, dependent: :delete_all
 
       before_validation :sync_cached_key
     end
