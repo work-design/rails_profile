@@ -20,7 +20,9 @@
 <div class="weui-panel">
   <div class="weui-panel__hd"><%= organ.name %></div>
   <div class="weui-panel__bd">
-    <%= render partial: 'address', collection: organ.addresses, as: :model %>
+    <div class="weui-cells weui-cells_radio">
+      <%= render partial: 'address', collection: organ.addresses, as: :model %>
+    </div>
   </div>
 </div>
 <% end %>

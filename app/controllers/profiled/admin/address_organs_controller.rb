@@ -1,5 +1,5 @@
 module Profiled
-  class My::AddressOrgansController < My::BaseController
+  class Admin::AddressOrgansController < Admin::BaseController
     before_action :set_address
     before_action :set_new_address_user, only: [:new, :create]
 
