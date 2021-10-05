@@ -8,7 +8,7 @@ module Profiled
       attribute :role, :string, default: 'ordinary'
 
       belongs_to :address, inverse_of: :address_users
-      belongs_to :user, class_name: 'Auth::User'
+      belongs_to :user, inverse_of: :address_users, class_name: 'Auth::User'
       belongs_to :inviter, class_name: 'Auth::User', optional: true
 
       has_many :shipments, as: :shipping

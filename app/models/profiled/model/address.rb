@@ -14,7 +14,7 @@ module Profiled
       has_taxons :area
       belongs_to :area, class_name: 'Profiled::Area'
 
-      has_many :address_users, dependent: :delete_all
+      has_many :address_users, inverse_of: :address, dependent: :delete_all
       has_many :users, through: :address_users
       has_many :address_organs, inverse_of: :address, dependent: :delete_all
 
