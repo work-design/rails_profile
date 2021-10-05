@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     namespace :admin, defaults: { namespace: 'admin' } do
       resources :profiles
+      resources :address_organs
       resources :addresses
     end
 

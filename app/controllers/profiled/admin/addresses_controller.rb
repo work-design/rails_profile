@@ -6,7 +6,7 @@ module Profiled
       q_params = {}
       q_params.merge! params.permit('address_users.user_id')
 
-      @addresses = Address.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = current_oragn.addresses.includes(:area).default_where(q_params).page(params[:page])
     end
 
     def new
