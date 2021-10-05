@@ -1,4 +1,4 @@
-<div class="<%= active_helper(modules: 'profiled/admin', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu">
+<div class="<%= active_helper(modules: 'profiled/admin', active: 'menu ex-accordion is-active', item: 'menu ex-accordion is-active') %>" data-controller="menu">
   <%= content_tag :div, class: 'menu-list' do %>
     <%= link_to t('profiled.admin.addresses.index.title'), { controller: 'profiled/admin/addresses' }, class: active_helper(controllers: 'addresses', active: 'is-active') -%>
   <% end %>

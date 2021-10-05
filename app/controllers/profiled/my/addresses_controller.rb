@@ -9,6 +9,10 @@ module Profiled
       @address = current_user.addresses.build
     end
 
+    def list
+
+    end
+
     def new
       @address = current_user.addresses.build
       r = QqMapHelper.ip '110.53.215.204' || request.remote_ip
@@ -23,7 +27,6 @@ module Profiled
 
     def create
       @address = current_user.addresses.build(address_params)
-      #@address.role = 'principal'
 
       if @address.save
         render 'create'

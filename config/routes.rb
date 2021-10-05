@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       resources :addresses do
         collection do
           get :select
+          get :list
           post :fork
           post :wechat
           post :program
@@ -36,7 +37,6 @@ Rails.application.routes.draw do
         member do
           get :join
         end
-        resources :address_users
       end
     end
   end

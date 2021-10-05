@@ -1,0 +1,26 @@
+<%= content_for(:wechat_js) do %>
+  <%= wechat_config_js debug: false, apis: ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'] -%>
+  <meta name="turbo-visit-control" content="reload">
+<% end %>
+
+<div class="weui-panel">
+  <div class="weui-panel__hd"><%= t('.title') %></div>
+  <div class="weui-panel__bd">
+    <%= render partial: 'address', collection: @current_user.addresses, as: :model %>
+  </div>
+  <div class="weui-panel__ft" data-controller="wechat" data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>" data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>" id="wechat_address">
+    <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
+      <div class="weui-cell__bd"><%= t('.new') %></div>
+      <span class="weui-cell__ft"></span>
+    </div>
+  </div>
+</div>
+
+<% current_user.organs.each do |organ| %>
+<div class="weui-panel">
+  <div class="weui-panel__hd"><%= organ.name %></div>
+  <div class="weui-panel__bd">
+    <%= render partial: 'address', collection: organ.addresses, as: :model %>
+  </div>
+</div>
+<% end %>
