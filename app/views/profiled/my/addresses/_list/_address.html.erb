@@ -1,6 +1,10 @@
 <label class="weui-cell weui-cell_active weui-check__label">
-  <span class="weui-cell__bd">
-    <%= model.area.full_name %><%= model.detail %>
+  <span class="weui-cell__bd is-flex is-flex-direction-column">
+    <span><%= model.contact %></span>
+    <span class="is-size-7">
+      <span><%= model.area.full_name %></span>
+      <span><%= model.detail %></span>
+    </span>
   </span>
   <span class="weui-cell__ft" data-controller="input">
     <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update' }, method: :patch do |f| %>
