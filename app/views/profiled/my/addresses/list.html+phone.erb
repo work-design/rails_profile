@@ -22,10 +22,10 @@
 
 <% if current_cart.member %>
 <div class="weui-panel">
-  <div class="weui-panel__hd"><%= organ.name %></div>
+  <div class="weui-panel__hd"><%= current_cart.member.organ.name %></div>
   <div class="weui-panel__bd">
     <div class="weui-cells weui-cells_radio">
-    <% if organ.addresses.blank? %>
+    <% if current_cart.member.organ.addresses.blank? %>
       <div class="weui-cell has-text-grey">暂无地址，请联系企业负责人添加</div>
     <% else %>
       <%= render partial: 'address', collection: current_cart.member.organ.addresses, as: :model %>
