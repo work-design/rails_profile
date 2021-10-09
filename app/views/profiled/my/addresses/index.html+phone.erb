@@ -4,7 +4,12 @@
 <% end %>
 
 <div class="weui-panel" id="wechat_panel">
-  <div class="weui-panel__hd"><%= t('.title') %></div>
+  <div class="weui-panel__hd level is-flex mb-0">
+    <div class="level-left"><%= t('.title') %></div>
+    <div class="level-right mt-0">
+      <%= link_to '选择', { action: 'list' } %>
+    </div>
+  </div>
   <div class="weui-panel__bd">
     <%= render partial: 'address', collection: @addresses, as: :model %>
   </div>
@@ -13,5 +18,9 @@
       <div class="weui-cell__bd"><%= t('.new') %></div>
       <span class="weui-cell__ft"></span>
     </div>
+    <%= link_to({ action: 'new' }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
+      <div class="weui-cell__bd">手动添加</div>
+      <span class="weui-cell__ft"></span>
+    <% end %>
   </div>
 </div>

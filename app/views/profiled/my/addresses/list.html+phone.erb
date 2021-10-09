@@ -4,7 +4,12 @@
 <% end %>
 
 <div class="weui-panel">
-  <div class="weui-panel__hd"><%= t('.title') %></div>
+  <div class="weui-panel__hd level is-flex mb-0">
+    <div class="level-lfet"><%= t('.title') %></div>
+    <div class="level-right mt-0">
+      <%= link_to '管理', { action: 'index' } %>
+    </div>
+  </div>
   <div class="weui-panel__bd">
     <div class="weui-cells weui-cells_radio">
       <%= render partial: 'address', collection: @current_user.addresses, as: :model %>
