@@ -10,7 +10,9 @@
     <input class="weui-input" type="text" data-action="click->weui-picker#getData">
   </div>
   <div class="weui-cell__ft">
-    <%= link_to '地区', { controller: '/profiled/areas' }, class: 'weui-btn weui-btn_default weui-vcode-btn', data: { params: 'node_type=address', controller: 'common', action: 'common#link' } %>
+    <% link_to({ controller: '/profiled/areas' }, class: 'weui-btn weui-btn_default weui-vcode-btn', data: { params: 'node_type=address', controller: 'common', action: 'common#link' }) do %>
+      <i class="fas fa-map-marker-alt"></i>
+    <% end %>
   </div>
 </div>
-<%= f.text_field :detail %>
+<%= f.text_area :detail %>
