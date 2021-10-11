@@ -1,0 +1,18 @@
+<div class="weui-cell weui-cell_active weui-check__label">
+  <span class="weui-cell__bd is-flex is-flex-direction-column">
+    <span>
+      <span><%= model.contact %></span>
+      <span><%= model.tel %></span>
+    </span>
+    <span class="is-size-7">
+      <span><%= model.area.full_name %></span>
+      <span><%= model.detail %></span>
+    </span>
+  </span>
+  <span class="weui-cell__ft" data-controller="input">
+    <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update' }, method: :patch do |f| %>
+      <%= f.check_box :address_id, { checked: model.id == current_cart.address_id, class: 'weui-check', data: { action: 'input#form' } }, model.id, model.id %>
+      <span class="weui-icon-checked"></span>
+    <% end %>
+  </span>
+</div>

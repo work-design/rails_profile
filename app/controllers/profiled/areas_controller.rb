@@ -2,6 +2,7 @@ module Profiled
   class AreasController < BaseController
 
     def index
+      @areas = Area.roots
     end
 
     # for weui.js
