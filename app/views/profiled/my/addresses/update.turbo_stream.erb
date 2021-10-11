@@ -2,6 +2,6 @@
 <% if request.headers['Turbo-Frame'] == 'modal' && request.headers['Redirect'] %>
   <div data-controller="visit" data-visit-frame-value="modal" data-visit-url-value="<%= request.headers['Redirect'] %>"></div>
 <% else %>
-  <div data-controller="visit"></div>
+  <div data-controller="visit" data-visit-url-value="<%= url_for(action: 'index') %>"></div>
 <% end %>
 <% end %>
