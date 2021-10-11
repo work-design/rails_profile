@@ -1,4 +1,4 @@
-<div data-controller="weui-dialog" class="weui-half-screen-dialog weui-picker weui-animate-slide-up">
+<div data-controller="weui-dialog" data-weui-dialog-target="dialog" class="weui-half-screen-dialog weui-picker weui-animate-slide-up" id="area_select">
   <div class="weui-half-screen-dialog__hd">
     <div class="weui-half-screen-dialog__hd__side">
       <button class="weui-icon-btn weui-icon-btn_close weui-picker__btn" data-action="weui-dialog#close">关闭</button>
@@ -8,9 +8,19 @@
     </div>
   </div>
   <div class="weui-half-screen-dialog__bd">
-    <div class="weui-picker__hd"></div>
+    <div class="weui-picker__hd">
+      <div class="weui-picker__group">
+        <div class="weui-picker__mask"></div>
+        <div class="weui-picker__indicator"></div>
+        <div class="weui-picker__content">
+        <% @areas.each do |area| %>
+          <div class="weui-picker__item"><%= area.name %></div>
+        <% end %>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="weui-half-screen-dialog__ft">
-    <button class="weui-btn weui-btn_primary weui-picker__btn"></button>
+    <button class="weui-btn weui-btn_primary weui-picker__btn">确认</button>
   </div>
 </div>
