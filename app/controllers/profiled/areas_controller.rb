@@ -5,6 +5,11 @@ module Profiled
       @areas = Area.roots
     end
 
+    def follow
+      @area = Area.find params[:id]
+      @areas = @area.children
+    end
+
     # for weui.js
     def list
       values = Area.list(value_name: 'value', label_name: 'label')

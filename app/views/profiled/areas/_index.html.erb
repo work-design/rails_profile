@@ -1,4 +1,4 @@
-<div data-controller="weui-dialog" data-weui-dialog-target="dialog" class="weui-half-screen-dialog weui-picker weui-animate-slide-up" id="area_select">
+<div data-controller="weui-dialog weui-picker" data-weui-dialog-target="dialog" data-weui-picker-url-value="<%= url_for(action: 'follow') %>" class="weui-half-screen-dialog weui-picker weui-animate-slide-up" id="area_select">
   <div class="weui-half-screen-dialog__hd">
     <div class="weui-half-screen-dialog__hd__side">
       <button class="weui-icon-btn weui-icon-btn_close weui-picker__btn" data-action="weui-dialog#close">关闭</button>
@@ -14,7 +14,7 @@
         <div class="weui-picker__indicator"></div>
         <div class="weui-picker__content">
         <% @areas.each do |area| %>
-          <div class="weui-picker__item"><%= area.name %></div>
+          <div class="weui-picker__item" data-action="click->weui-picker#getNext" data-id="<%= area.id %>"><%= area.name %></div>
         <% end %>
         </div>
       </div>
