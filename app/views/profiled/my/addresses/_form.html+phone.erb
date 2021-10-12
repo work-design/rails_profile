@@ -7,9 +7,9 @@
   </div>
   <div class="weui-cell__bd is-flex" data-controller="weui-picker" data-weui-picker-id-value="address_area_id" data-weui-picker-url-value="<%= url_for(controller: '/profiled/areas', area_id: f.object.area_id) %>" data-action="click->weui-picker#getData">
     <%= f.hidden_field :area_id %>
-    <%= text_field_tag :provinceName, params[:provinceName], class: 'weui-input', readonly: true %>
-    <%= text_field_tag :cityName, params[:cityName], class: 'weui-input', readonly: true %>
-    <%= text_field_tag :countyName, params[:countyName], class: 'weui-input', readonly: true %>
+    <% f.object.area.names.each do |name| %>
+      <%= text_field_tag :provinceName, name, class: 'weui-input', readonly: true %>
+    <% end %>
   </div>
 </div>
 <%= f.text_area :detail %>
