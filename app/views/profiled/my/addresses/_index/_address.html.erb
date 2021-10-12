@@ -1,17 +1,13 @@
 <div class="weui-media-box weui-media-box_appmsg" data-controller="swipe" data-action="touchmove->swipe#move:passive touchstart->swipe#start:passive touchend->swipe#end:passive">
   <div class="weui-media-box__bd is-flex is-flex-direction-column">
-    <span>
+    <h6 class="weui-media-box__title">
       <span><%= model.contact %></span>
       <span><%= model.tel %></span>
-    </span>
-    <span class="is-size-7">
+    </h6>
+    <div class="weui-media-box__desc is-size-7">
       <span><%= model.area.full_name %></span>
       <span><%= model.detail %></span>
-    </span>
-    <h6 class="weui-media-box__title">
-      <%= model.name %>
-    </h6>
-    <div class="weui-media-box__desc"><%= model.area.full_name %><%= model.detail %></div>
+    </div>
   </div>
   <div class="weui-media-box__ft" data-swipe-target="open" style="width: 0">
     <%= link_to '编辑', { action: 'edit', id: model.id }, class: 'weui-btn weui-btn_primary' %>

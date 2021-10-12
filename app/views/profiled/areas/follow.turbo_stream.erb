@@ -2,10 +2,10 @@
 <div class="weui-picker__group">
   <div class="weui-picker__mask"></div>
   <div class="weui-picker__indicator"></div>
-  <div class="weui-picker__content">
+  <select class="weui-picker__content">
   <% @areas.each do |area| %>
-    <div class="weui-picker__item" data-action="click->weui-picker#getNext click->weui-picker#setValue" data-id="<%= area.id %>"><%= area.name %></div>
+    <option class="weui-picker__item" data-action="click->weui-picker#getNext click->weui-picker#setValue" data-id="<%= area.id %>"><%= area.name %></option>
   <% end %>
-  </div>
+  </select>
 </div>
 <% end %>
