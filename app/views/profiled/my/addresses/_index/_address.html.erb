@@ -10,7 +10,11 @@
     </div>
   </div>
   <div class="weui-media-box__ft" data-swipe-target="open" style="width: 0">
-    <%= link_to '编辑', { action: 'edit', id: model.id }, class: 'weui-btn weui-btn_primary' %>
-    <%= button_to '删除', { action: 'destroy', id: model.id }, method: :delete, data: { confirm: t('.confirm') }, form: { class: 'weui-btn weui-btn_warn' } %>
+    <%= link_to({ action: 'edit', id: model.id }, class: 'weui-btn weui-btn_primary button_to') do %>
+      <i class="fa-light fa-pencil has-text-white"></i>
+    <% end %>
+    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { confirm: t('.confirm') }, form: { class: 'weui-btn weui-btn_danger button_to' }) do %>
+      <i class="fa-light fa-trash has-text-white"></i>
+    <% end %>
   </div>
 </div>
