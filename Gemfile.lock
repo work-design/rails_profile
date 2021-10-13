@@ -85,7 +85,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 905a00098f6cc84b2be5aa3f98abcce2691320cd
+  revision: 901e67366cef140563b0df3c1103255a5190127d
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -94,7 +94,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: da4966f18fb3db2c7b5b3128f03a3492be325172
+  revision: 3af7acecca30116eb8f5cc8bd31ad4cc167ef83e
   specs:
     rails_com (1.2.9)
       acme-client
@@ -111,7 +111,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: 2369187b1566f82928708c82b8586fb012b847ff
+  revision: 7498ce9e8436d982113e60db21f996cfa2f3669a
   specs:
     rails_design (0.0.1)
       rails
@@ -150,7 +150,7 @@ GEM
       with_advisory_lock (>= 4.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
-    debug (1.2.3)
+    debug (1.2.4)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
     default_where (2.3.0)
@@ -208,7 +208,7 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (1.0.2)
     method_source (1.0.0)
-    mini_mime (1.1.1)
+    mini_mime (1.1.2)
     mini_portile2 (2.6.1)
     minitest (5.14.4)
     multipart-post (2.1.1)
@@ -217,7 +217,7 @@ GEM
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     pg (1.2.3)
-    puma (5.5.0)
+    puma (5.5.2)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
