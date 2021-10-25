@@ -10,10 +10,10 @@
     </div>
   </div>
   <div class="weui-media-box__ft">
-    <%= link_to({ action: 'edit', id: model.id }, class: 'weui-btn weui-btn_primary button_to px-4') do %>
-      <i class="fa-light fa-pencil has-text-white"></i>
+    <%= link_to({ action: 'edit', id: model.id }, class: 'weui-btn button_to px-4') do %>
+      <i class="fa-light fa-pencil"></i>
     <% end %>
-    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { confirm: t('.confirm') }, form: { class: 'weui-btn weui-btn_danger button_to' }) do %>
+    <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { confirm: t('.confirm') }, form: { class: 'weui-btn button_to' }) do %>
       <i class="fa-light fa-trash has-text-white"></i>
     <% end %>
   </div>
