@@ -1,4 +1,4 @@
-<div class="weui-media-box weui-media-box_appmsg" data-controller="swipe" data-action="touchmove->swipe#move:passive touchstart->swipe#start:passive touchend->swipe#end:passive">
+<div class="weui-media-box weui-media-box_appmsg">
   <div class="weui-media-box__bd is-flex is-flex-direction-column">
     <h6 class="weui-media-box__title">
       <span><%= model.contact %></span>
@@ -9,8 +9,8 @@
       <span><%= model.detail %></span>
     </div>
   </div>
-  <div class="weui-media-box__ft" data-swipe-target="open" style="width: 0">
-    <%= link_to({ action: 'edit', id: model.id }, class: 'weui-btn weui-btn_primary button_to') do %>
+  <div class="weui-media-box__ft">
+    <%= link_to({ action: 'edit', id: model.id }, class: 'weui-btn weui-btn_primary button_to px-4') do %>
       <i class="fa-light fa-pencil has-text-white"></i>
     <% end %>
     <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { confirm: t('.confirm') }, form: { class: 'weui-btn weui-btn_danger button_to' }) do %>

@@ -30,6 +30,7 @@
       <%= render partial: 'address', collection: @current_user.addresses, as: :model %>
     </div>
   </div>
+  <% if @current_user.addresses.blank? %>
   <div class="weui-panel__ft" data-controller="wechat" data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>" data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>" id="wechat_address">
     <div class="weui-cells">
       <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
@@ -38,4 +39,5 @@
       </div>
     </div>
   </div>
+  <% end %>
 </div>
