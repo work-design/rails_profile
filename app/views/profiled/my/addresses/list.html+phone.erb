@@ -31,13 +31,19 @@
     </div>
   </div>
   <% if @current_user.addresses.blank? %>
-  <div class="weui-panel__ft" data-controller="wechat" data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>" data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>" id="wechat_address">
-    <div class="weui-cells">
-      <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
-        <div class="weui-cell__bd"><%= t('.new') %></div>
-        <span class="weui-cell__ft"></span>
+    <div class="weui-panel__ft" data-controller="wechat" data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>" data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>" id="wechat_address">
+      <div class="weui-cells">
+        <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
+          <div class="weui-cell__bd"><%= t('.new') %></div>
+          <span class="weui-cell__ft"></span>
+        </div>
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="weui-panel__ft">
+      <%= link_to({ controller: 'trade/my/carts', action: 'show' }, class: 'weui-btn_cell weui-btn_cell-primary') do %>
+        返回购物车
+      <% end %>
+    </div>
   <% end %>
 </div>
