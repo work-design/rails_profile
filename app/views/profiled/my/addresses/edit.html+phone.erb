@@ -1,0 +1,22 @@
+<div class="weui-panel">
+  <div class="weui-panel__hd">
+    <div class="level is-flex">
+      <div class="level-left">
+        <div class="level-item">
+          <%= link_to '返回', { action: 'index' }, class: 'weui-btn weui-btn_mini weui-btn_default' %>
+        </div>
+      </div>
+      <div class="level-right mt-0">
+        <div class="level-item">
+          <%= button_to({ action: 'destroy', id: model.id }, method: :delete, data: { confirm: t('.confirm') }, class: 'weui-btn weui-btn_mini weui-btn_danger', form: { class: '' }) do %>
+            <span>删除</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="weui-panel__bd">
+    <%= render partial: 'edit_form', locals: { model: model } %>
+  </div>
+</div>
+
