@@ -3,6 +3,16 @@
   <meta name="turbo-visit-control" content="reload">
 <% end %>
 
+<div class="weui-panel">
+  <div class="weui-panel__hd as-bar pt-0">
+    <%= link_to({ controller: 'trade/my/carts', action: 'show' }, class: 'px-4') do %>
+      <i class="fa-regular fa-angle-left"></i>
+    <% end %>
+    <div class="weui-title"><%= t('.title') %></div>
+    <i class="px-4" style="width: 37.5px"></i>
+  </div>
+</div>
+
 <% if current_cart.member %>
 <div class="weui-panel">
   <div class="weui-panel__hd"><%= current_cart.member.organ.name %></div>
@@ -20,10 +30,6 @@
 
 <div class="weui-panel" id="wechat_panel">
   <div class="weui-panel__hd as-bar">
-    <%= link_to({ controller: 'trade/my/carts', action: 'show' }, class: 'px-4') do %>
-      <i class="fa-regular fa-angle-left"></i>
-    <% end %>
-    <div class="weui-title"><%= t('.title') %></div>
     <%= link_to '管理', { action: 'index' } %>
   </div>
   <div class="weui-panel__bd">
