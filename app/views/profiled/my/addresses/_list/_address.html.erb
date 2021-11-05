@@ -11,6 +11,7 @@
   </span>
   <span class="weui-cell__ft" data-controller="input">
     <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update' }, method: :patch do |f| %>
+      <%= hidden_field_tag :return_to, params[:return_to] %>
       <%= f.check_box :address_id, { checked: model.id == current_cart.address_id, class: 'weui-check', data: { action: 'input#form' } }, model.id, model.id %>
       <span class="weui-icon-checked"></span>
     <% end %>

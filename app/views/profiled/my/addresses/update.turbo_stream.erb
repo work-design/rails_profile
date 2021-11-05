@@ -1,6 +1,8 @@
 <%= turbo_stream.append 'body' do %>
 <% if request.headers['Turbo-Frame'] == 'modal' && request.headers['Redirect'] %>
   <div data-controller="visit" data-visit-frame-value="modal" data-visit-url-value="<%= request.headers['Redirect'] %>"></div>
+<% elsif params[:return_to].present? %>
+  <div data-controller="visit" data-visit-url-value="<%= params[:return_to] %>"></div>
 <% else %>
   <div data-controller="visit" data-visit-url-value="<%= url_for(action: 'index') %>"></div>
 <% end %>
