@@ -1,4 +1,4 @@
-<%= render layout: 'index_table', locals: { cache_key: Address.column_names.hash } do %>
+<%= render layout: 'index_table', locals: { cache_key: Profiled::Address.column_names.hash } do %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @addresses, as: :address %>
 <% end %>
 

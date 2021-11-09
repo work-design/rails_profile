@@ -6,6 +6,9 @@ zh:
       addresses:
         index:
           title: 企业地址管理
+      address_organs:
+        index:
+          title: 企业地址管理
     panel:
       title: 区域管理
       areas:
