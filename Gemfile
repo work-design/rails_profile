@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
-gem 'rails', github: 'qinmingyuan/rails'
+gem 'rails'
 gem 'puma'
 gem 'pg'
 
