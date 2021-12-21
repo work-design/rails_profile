@@ -5,7 +5,7 @@
 
 <div class="weui-panel is-borderless">
   <div class="weui-panel__hd as-bar pt-0">
-    <%= link_to(:back, class: 'px-4') do %>
+    <%= link_to(params[:return_to], class: 'px-4') do %>
       <i class="fa-regular fa-angle-left"></i>
     <% end %>
     <div class="weui-title"><%= t('.title') %></div>
@@ -26,8 +26,9 @@
     </div>
   </div>
 </div>
-<% end %>
+<div class="has-text-centered has-text-grey mt-6">如地址有误，请联系企业负责人修改</div>
 
+<% else %>
 <div class="weui-panel" id="wechat_panel">
   <div class="weui-panel__hd as-bar">
     <%= link_to '管理', { action: 'index' } %>
@@ -48,3 +49,4 @@
     </div>
   <% end %>
 </div>
+<% end %>
