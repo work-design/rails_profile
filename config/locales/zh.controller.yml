@@ -28,7 +28,7 @@ zh:
           title: 添加个人资料
       addresses:
         index:
-          title: 我的地址
+          title: 管理地址
           new: 从微信添加
           add: 地图选择
         list:
