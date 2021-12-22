@@ -3,11 +3,21 @@
   <meta name="turbo-visit-control" content="reload">
 <% end %>
 
+<div class="weui-panel is-borderless">
+  <div class="weui-panel__hd as-bar pt-0">
+    <%= link_to(params[:return_to], class: 'px-4') do %>
+      <i class="fa-regular fa-angle-left"></i>
+    <% end %>
+    <div class="weui-title"><%= t('.title') %></div>
+    <i class="px-4" style="width: 37.5px"></i>
+  </div>
+</div>
+
 <div class="weui-panel" id="wechat_panel">
   <div class="weui-panel__hd level is-flex mb-0">
     <div class="level-left"><%= t('.title') %></div>
     <div class="level-right mt-0">
-      <%= link_to '选择地址', { action: 'list' } %>
+      <%= link_to t('profiled.my.addresses.list.title'), { action: 'list' } %>
     </div>
   </div>
   <div class="weui-panel__bd">

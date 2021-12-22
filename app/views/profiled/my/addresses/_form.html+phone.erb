@@ -8,7 +8,7 @@
     <%= f.hidden_field :area_id %>
     <% f.object.area.names.each do |name| %>
       <%= text_field_tag :provinceName, name, class: 'weui-input', readonly: true %>
-    <% end %>
+    <% end if f.object.area.names %>
   </div>
 </div>
 <%= f.text_area :detail %>
