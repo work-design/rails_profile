@@ -1,7 +1,3 @@
-<%= content_for(:wechat_js) do %>
-  <%= wechat_config_js debug: false, apis: ['updateAppMessageShareData', 'updateTimelineShareData'] -%>
-<% end %>
-
 <%= render 'show_table' %>
 
 <script>
@@ -19,7 +15,7 @@ wx.ready(function() {
     link: '<%= join_my_address_url(@address.id, invited_code: current_user.id) %>',
     imgUrl: '',
     success: function() {
-    
+
     }
   })
 })

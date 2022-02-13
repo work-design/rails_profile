@@ -1,8 +1,3 @@
-<%= content_for(:wechat_js) do %>
-  <%= wechat_config_js debug: false, apis: ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'] -%>
-  <meta name="turbo-visit-control" content="reload">
-<% end %>
-
 <div class="weui-panel is-borderless">
   <div class="weui-panel__hd as-bar pt-0">
     <%= link_to(params[:return_to], class: 'px-4') do %>
@@ -23,7 +18,14 @@
   <div class="weui-panel__bd">
     <%= render partial: 'address', collection: @addresses, as: :model %>
   </div>
-  <div class="weui-panel__ft" data-controller="wechat" data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>" data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>" id="wechat_address">
+  <div class="weui-panel__ft"
+       data-controller="wechat"
+       data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>"
+       data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
+       data-wechat-options-value="<%= current_wechat_app.js_config(request.original_url).to_json %>"
+       data-wechat-apis-value="<%= ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'].to_json %>"
+       data-wechat-debug-value="true"
+       id="wechat_address">
     <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
       <div class="weui-cell__bd"><%= t('.new') %></div>
       <span class="weui-cell__ft"></span>
