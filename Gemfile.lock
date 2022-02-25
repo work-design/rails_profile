@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 88d851c0c9d76adcbc9cc32e2051baeb2c8c60d9
+  revision: 007e5b44dcb2aa3da7fa5f5bbe8f3148fc185f27
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 2e75462f347c4ac9af5948b766f7b9f65d7650db
+  revision: da132d037d68251a76aef916cc4176f75c0b2049
   specs:
     rails_com (1.3.0)
       acme-client
@@ -30,14 +30,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: a5f71fa06ea1423bb740fcf20480aea7044766b0
+  revision: c46e8935f36a56f8c4fa0cbd274cc291892e0d0f
   specs:
     rails_design (0.0.1)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: 067da5cf1cf443e85f86cfc4f044f2bd3f1e5a31
+  revision: 0db60266d5ddc582757eb73f0b1875d0c9011d20
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -141,7 +141,7 @@ GEM
       activerecord (>= 4.0.0)
     digest (3.1.0)
     erubi (1.10.0)
-    faraday (1.9.3)
+    faraday (1.10.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -168,7 +168,7 @@ GEM
       activesupport (>= 5.0)
     http-2-next (0.5.0)
     http-form_data (2.3.0)
-    httpx (0.19.1)
+    httpx (0.19.3)
       http-2-next (>= 0.4.1)
     i18n (1.9.1)
       concurrent-ruby (~> 1.0)
