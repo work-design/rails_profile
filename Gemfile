@@ -9,7 +9,6 @@ gem 'pg'
 gem 'rails_com', github: 'work-design/rails_com'
 gem 'rails_extend', github: 'work-design/rails_extend'
 gem 'rails_auth', github: 'work-design/rails_auth'
-gem 'rails_vite', github: 'work-design/rails_vite'
 gem 'rails_design', github: 'work-design/rails_design'
 
 group :development, :test do
