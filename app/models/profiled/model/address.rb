@@ -13,6 +13,9 @@ module Profiled
 
       has_taxons :area
       belongs_to :area, class_name: 'Profiled::Area'
+      belongs_to :user, class_name: 'Auth::User'
+      belongs_to :member, class_name: 'Org::Member', optional: true
+      belongs_to :member_organ, class_name: 'Org::Organ', optional: true
 
       has_many :address_users, inverse_of: :address, dependent: :delete_all
       has_many :users, through: :address_users
