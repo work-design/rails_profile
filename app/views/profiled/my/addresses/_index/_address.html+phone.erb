@@ -7,11 +7,17 @@
     <div class="weui-media-box__desc is-size-7">
       <span><%= model.area.full_name %></span>
       <span><%= model.detail %></span>
+      <% if model.principal %>
+      <span class="tag">
+        <i class="fa-solid fa-circle-check has-text-success"></i>
+        <span class="pl-1">默认地址</span>
+      </span>
+      <% end %>
     </div>
   </div>
   <div class="weui-media-box__ft">
-    <%= link_to({ action: 'edit', id: model.id }, class: 'weui-btn weui-btn__primary button_to px-4') do %>
-      <i class="fa-light fa-pencil has-text-grey"></i>
+    <%= button_to({ action: 'actions', id: model.id }, method: :patch, class: 'button is-borderless') do %>
+      <i class="fa-light fa-ellipsis-h fa-lg"></i>
     <% end %>
   </div>
 </div>

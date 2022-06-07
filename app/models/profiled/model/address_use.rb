@@ -1,5 +1,5 @@
 module Profiled
-  module Model::AddressUser
+  module Model::AddressUse
     extend ActiveSupport::Concern
 
     included do

@@ -11,7 +11,7 @@
   </span>
   <span class="weui-cell__ft" data-controller="input">
     <span class="has-text-grey"></span>
-    <%= form_with theme: nil, scope: 'cart', url: { controller: 'trade/my/carts', action: 'update' }, method: :patch do |f| %>
+    <%= form_with theme: nil, url: { action: 'update' }, method: :patch do |f| %>
       <%= f.radio_button :address_id, model.id, checked: model.id == current_cart.address_id, class: 'weui-check', data: { action: 'input#form' } %>
       <span class="weui-icon-checked">选为默认</span>
     <% end %>

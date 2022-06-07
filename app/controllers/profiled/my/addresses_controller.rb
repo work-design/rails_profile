@@ -5,12 +5,11 @@ module Profiled
     def index
       q_params = {}
 
-      @addresses = current_user.addresses.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = current_user.addresses.includes(:area).default_where(q_params).order(id: :desc).page(params[:page])
       @address = current_user.addresses.build
     end
 
     def list
-
     end
 
     def new
@@ -94,7 +93,8 @@ module Profiled
         :detail,
         :post_code,
         :area_id,
-        :area_ancestors
+        :area_ancestors,
+        :principal
       )
     end
 

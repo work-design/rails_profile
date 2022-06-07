@@ -21,6 +21,7 @@ module Profiled
       has_many :address_uses, inverse_of: :address, dependent: :destroy_async
 
       before_validation :sync_cached_key
+      after_update :set_principal, if: -> { principal? && saved_change_to_principal? }
     end
 
     def sync_cached_key
@@ -29,6 +30,10 @@ module Profiled
 
     def content
       "#{area.full_name} #{detail}"
+    end
+
+    def set_principal
+      self.class.where.not(id: self.id).where(user_id: self.user_id, member_id: self.member_id).update_all(principal: false)
     end
 
   end
