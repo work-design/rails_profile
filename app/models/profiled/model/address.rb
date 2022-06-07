@@ -10,6 +10,7 @@ module Profiled
       attribute :post_code, :string
       attribute :source, :string
       attribute :cached_key, :string
+      attribute :principal, :boolean, default: false
 
       has_taxons :area
       belongs_to :area, class_name: 'Profiled::Area'
@@ -17,9 +18,7 @@ module Profiled
       belongs_to :member, class_name: 'Org::Member', optional: true
       belongs_to :member_organ, class_name: 'Org::Organ', optional: true
 
-      has_many :address_users, inverse_of: :address, dependent: :delete_all
-      has_many :users, through: :address_users
-      has_many :address_organs, inverse_of: :address, dependent: :delete_all
+      has_many :address_uses, inverse_of: :address, dependent: :destroy_async
 
       before_validation :sync_cached_key
     end

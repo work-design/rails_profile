@@ -13,12 +13,6 @@ module Profiled
 
       has_many :shipments, as: :shipping
 
-      enum kind: {
-        transport: 'transport',
-        forwarder: 'forwarder',
-        invoice: 'invoice'
-      }
-
       after_update :set_default, if: -> { default? && saved_change_to_default? }
     end
 
