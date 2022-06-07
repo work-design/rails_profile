@@ -1,12 +1,6 @@
 <%= render 'top_bar' %>
 
 <div class="weui-panel" id="wechat_panel">
-  <div class="weui-panel__hd level is-flex mb-0">
-    <div class="level-left"><%= t('.title') %></div>
-    <div class="level-right mt-0">
-      <%= link_to t('profiled.my.addresses.list.title'), { action: 'list' } %>
-    </div>
-  </div>
   <div class="weui-panel__bd">
     <%= render partial: 'address', collection: @addresses, as: :model %>
   </div>
