@@ -1,4 +1,7 @@
-<%= render layout: 'index_table', locals: { cache_key: Profiled::Area.column_names.hash } do %>
+<%= render 'filter_form' %>
+<%= render 'button' %>
+
+<%= render layout: 'index_table' do %>
   <%= render partial: 'index_tbody', layout: 'index_tr', collection: @areas, as: :model %>
 <% end %>
 
