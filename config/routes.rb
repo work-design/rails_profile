@@ -41,6 +41,22 @@ Rails.application.routes.draw do
         end
       end
     end
+
+    namespace :client, defaults: { namespace: 'client' } do
+      resources :addresses do
+        collection do
+          get :select
+          get :list
+          post :fork
+          post :wechat
+          post :program
+        end
+        member do
+          patch :actions
+          get :join
+        end
+      end
+    end
   end
 
 end
