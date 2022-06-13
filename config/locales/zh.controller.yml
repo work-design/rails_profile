@@ -34,6 +34,11 @@ zh:
         list:
           title: 选择默认地址
           new: 从微信添加
+    client:
+      title: 个人中心
+      addresses:
+        index:
+          title: 企业地址
     me:
       title: 个人中心
       profiles:
