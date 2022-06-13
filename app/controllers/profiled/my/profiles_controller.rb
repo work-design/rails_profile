@@ -1,6 +1,7 @@
 module Profiled
   class My::ProfilesController < My::BaseController
     before_action :set_profile, only: [:show, :edit, :update, :destroy]
+    before_action :set_accounts, only: [:edit, :update]
 
     def new
       @profile = current_user.profiles.build
@@ -18,32 +19,12 @@ module Profiled
       end
     end
 
-    def show
-    end
-
-    def edit
-      prepare_form
-    end
-
-    def update
-      @profile.assign_attributes profile_params
-
-      if @profile.save
-        render 'update'
-      else
-        render :edit, locals: { model: @profile }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
-    end
-
     private
     def set_profile
       @profile = current_user.profiles.find_or_create_by(default_params)
     end
 
-    def prepare_form
+    def set_accounts
       @accounts = current_user.accounts.confirmed
     end
 
