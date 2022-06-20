@@ -1,6 +1,7 @@
 module Profiled
   class Admin::AddressesController < Admin::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
+    before_action :set_new_address, only: [:create]
 
     def index
       q_params = {}
@@ -15,19 +16,13 @@ module Profiled
       @address.area ||= Area.new
     end
 
-    def create
-      @address = Address.new(address_params)
-
-      if @address.save
-        render 'create'
-      else
-        render :new, locals: { model: @address }, status: :unprocessable_entity
-      end
-    end
-
     private
     def set_address
       @address = Address.find(params[:id])
+    end
+
+    def set_new_address
+      @address = Address.new(address_params)
     end
 
     def address_params
