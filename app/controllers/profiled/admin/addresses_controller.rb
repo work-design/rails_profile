@@ -4,9 +4,10 @@ module Profiled
 
     def index
       q_params = {}
-      q_params.merge! params.permit('address_users.user_id')
+      q_params.merge! default_params
+      q_params.merge! params.permit('user_id')
 
-      @addresses = current_organ.addresses.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = Address.includes(:area).default_where(q_params).page(params[:page])
     end
 
     def new
@@ -15,7 +16,7 @@ module Profiled
     end
 
     def create
-      @address = current_organ.addresses.build(address_params)
+      @address = Address.new(address_params)
 
       if @address.save
         render 'create'
@@ -30,7 +31,8 @@ module Profiled
     end
 
     def address_params
-      params.fetch(:address, {}).permit(*address_permit_params)
+      p = params.fetch(:address, {}).permit(*address_permit_params)
+      p.merge! default_form_params
     end
 
     def address_permit_params
