@@ -1,7 +1,5 @@
-<%= f.fields :address do |ef| %>
-  <%= ef.text_field :contact %>
-  <%= ef.text_field :tel %>
-  <%= render partial: 'com/nodes/outer_select', locals: { f: ef, outer: 'area', node: ef.object.area } %>
-  <%= ef.text_field :detail %>
-<% end %>
+<%= f.text_field :contact %>
+<%= f.text_field :tel %>
+<%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: f.object.area } %>
+<%= f.text_field :detail %>
 <%= f.check_box :principal %>
