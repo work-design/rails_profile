@@ -1,7 +1,9 @@
 <th><%= Profiled::Profile.human_attribute_name(:real_name) %></th>
 <th><%= Profiled::Profile.human_attribute_name(:nick_name) %></th>
 <th><%= Profiled::Profile.human_attribute_name(:gender) %></th>
-<th><%= Profiled::Profile.human_attribute_name(:birthday_type) %></th>
-<th><%= Profiled::Profile.human_attribute_name(:birthday) %></th>
+<th>
+  <span><%= Profiled::Profile.human_attribute_name(:birthday_type) %></span>
+  <span><%= Profiled::Profile.human_attribute_name(:birthday) %></span>
+</th>
+<th><%= Profiled::Profile.human_attribute_name(:age) %></th>
 <th><%= Profiled::Profile.human_attribute_name(:extra) %></th>
-<th></th>

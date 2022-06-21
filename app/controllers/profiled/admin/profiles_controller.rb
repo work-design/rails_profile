@@ -23,7 +23,7 @@ module Profiled
       @profile = Profile.find(params[:id])
     end
 
-    def profile_params
+    def profile_permit_params
       [
         :real_name,
         :nick_name,
