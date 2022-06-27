@@ -12,11 +12,11 @@
       <div class="weui-picker__group">
         <div class="weui-picker__mask"></div>
         <div class="weui-picker__indicator"></div>
-        <select class="weui-picker__content" style="transform: translateY(96px)">
+        <div class="weui-picker__content" style="transform: translateY(96px)">
         <% @areas.each do |area| %>
-          <option class="weui-picker__item" data-action="click->weui-picker#getNext click->weui-picker#setValue" data-id="<%= area.id %>"><%= area.name %></option>
+          <div class="weui-picker__item" data-action="click->weui-picker#getNext click->weui-picker#setValue" data-id="<%= area.id %>"><%= area.name %></div>
         <% end %>
-        </select>
+        </div>
       </div>
     </div>
   </div>
