@@ -1,6 +1,7 @@
 module Profiled
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
+    before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
 
     def index
       q_params = {}
@@ -25,13 +26,9 @@ module Profiled
     end
 
     def create
-      @address = current_user.addresses.build(address_params)
+    end
 
-      if @address.save
-        render 'create'
-      else
-        render :new, locals: { model: @address }, status: :unprocessable_entity
-      end
+    def order_create
     end
 
     def fork
@@ -83,6 +80,10 @@ module Profiled
     private
     def set_address
       @address = Address.find(params[:id])
+    end
+
+    def set_new_address
+      @address = current_user.addresses.build
     end
 
     def address_params

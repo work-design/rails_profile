@@ -34,6 +34,9 @@ Rails.application.routes.draw do
           post :fork
           post :wechat
           post :program
+          post :order
+          post :order_new
+          post :order_create
         end
         member do
           patch :actions

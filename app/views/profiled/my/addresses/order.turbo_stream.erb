@@ -1,0 +1,5 @@
+<%= turbo_stream.append 'body' do %>
+  <%= render layout: 'weui_dialog', locals: { dialog_id: 'addresses_dialog' } do %>
+    <%= render 'index' %>
+  <% end %>
+<% end %>
