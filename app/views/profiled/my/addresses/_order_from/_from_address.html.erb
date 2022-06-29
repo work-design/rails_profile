@@ -1,0 +1,13 @@
+<label class="weui-cell weui-cell_active weui-check__label" for="address_id_<%= address.id %>">
+  <span class="weui-cell__bd">
+    <span><%= address.name %></span>
+    <span>
+      <span><%= address.area.full_name %></span>
+      <span><%= address.detail %></span>
+    </span>
+  </span>
+  <span class="weui-cell__ft" data-controller="input">
+    <%= radio_button_tag 'order[from_address_id]', address.id, address.id.to_s == params[:from_address_id], class: 'weui-check', id: "address_id_#{address.id}", form: 'new_order', data: { action: 'input#form' } %>
+    <span class="weui-icon-checked"></span>
+  </span>
+</label>

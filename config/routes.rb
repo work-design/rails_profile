@@ -35,6 +35,7 @@ Rails.application.routes.draw do
           post :wechat
           post :program
           post :order
+          post :order_from
           post :order_new
           post :order_create
         end

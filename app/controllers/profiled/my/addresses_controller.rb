@@ -13,6 +13,14 @@ module Profiled
     def list
     end
 
+    def order
+      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
+    end
+
+    def order_from
+      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
+    end
+
     def new
       r = QqMapHelper.ip '110.53.215.204' || request.remote_ip
       area_params = r['ad_info']
@@ -95,7 +103,7 @@ module Profiled
     end
 
     def set_new_address
-      @address = current_user.addresses.build
+      @address = current_user.addresses.build(address_params)
     end
 
     def address_params
