@@ -1,7 +1,7 @@
 <div class="weui-panel">
   <div class="weui-panel__hd">填写收货地址</div>
   <div class="weui-panel__bd">
-    <%= form_with theme: 'weui', model: @address, url: { controller: 'profiled/my/addresses', action: 'create' } do |f| %>
+    <%= form_with theme: 'weui', model: @address, url: { action: 'create' } do |f| %>
       <%= render partial: 'form', locals: { f: f } %>
       <%= f.submit '提交', wrap: { submit: nil } %>
     <% end %>

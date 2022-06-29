@@ -2,4 +2,4 @@
 <%= f.text_field :tel %>
 <%= render partial: 'com/nodes/outer_select', locals: { f: f, outer: 'area', node: f.object.area } %>
 <%= f.text_field :detail %>
-<%= f.check_box :principal %>
+<%= f.check_box :principal, label: { text: Profiled::Address.human_attribute_name(:principal), class: 'weui-cell__bd' } %>
