@@ -2,7 +2,7 @@
 <div class="weui-picker__group">
   <div class="weui-picker__mask"></div>
   <div class="weui-picker__indicator"></div>
-  <select class="weui-picker__content" data-action="change->weui-picker#getNext change->weui-picker#setValue" style="transform: translateY(96px); z-index: 100">
+  <select class="weui-picker__content" data-weui-picker-target="select" data-action="change->weui-picker#getNext change->weui-picker#setValue" style="transform: translateY(96px); z-index: 100">
   <% @areas.each do |area| %>
     <option class="weui-picker__item" data-id="<%= area.id %>"><%= area.name %></option>
   <% end %>
