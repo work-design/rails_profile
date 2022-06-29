@@ -34,6 +34,10 @@ zh:
         list:
           title: 选择默认地址
           new: 从微信添加
+        order:
+          title: 地址
+        order_new:
+          title: 新增地址
     client:
       title: 个人中心
       addresses:
