@@ -1,6 +1,6 @@
 <div data-controller="weui-dialog weui-picker" data-weui-picker-url-value="<%= url_for(action: 'follow') %>" class="weui-dialog__wrap weui-dialog__wrap_show">
   <div class="weui-mask" data-action="click->weui-dialog#close"></div>
-  <div data-weui-dialog-target="dialog" class="weui-half-screen-dialog weui-picker weui-half-screen-dialog_show" id="area_select">
+  <div data-weui-dialog-target="dialog" class="weui-half-screen-dialog is-dark weui-picker weui-half-screen-dialog_show" id="area_select">
     <div class="weui-half-screen-dialog__hd">
       <div class="weui-half-screen-dialog__hd__side">
         <button class="weui-icon-btn weui-icon-btn_close weui-picker__btn" data-action="weui-dialog#close">关闭</button>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="weui-half-screen-dialog__ft">
-      <button class="weui-btn weui-btn_primary weui-picker__btn" data-action="weui-dialog#close">确认</button>
+      <button class="weui-btn weui-btn_primary weui-picker__btn" data-action="weui-picker#close">确认</button>
     </div>
   </div>
 </div>

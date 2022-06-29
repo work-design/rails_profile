@@ -15,6 +15,7 @@
     <% f.object.area.names.each do |name| %>
       <%= text_field_tag :provinceName, name, class: 'weui-input', readonly: true %>
     <% end if f.object.area.names %>
+    <%= text_field_tag :provinceName, name, class: 'weui-input', readonly: true %>
   </div>
 </div>
 <%= f.text_field :detail %>
