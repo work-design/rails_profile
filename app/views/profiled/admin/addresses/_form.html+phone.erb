@@ -18,5 +18,7 @@
     <%= text_field_tag :provinceName, nil, class: 'weui-input', readonly: true if f.object.area.names.blank? %>
   </div>
 </div>
-<%= f.text_field :detail %>
-<%= f.check_box :principal, label: { text: Profiled::Address.human_attribute_name(:principal), class: 'weui-cell__bd' } %>
+<%= f.text_area :detail %>
+<div class="weui-cells_checkbox">
+  <%= f.check_box :principal, origin: { label: 'weui-cell__bd' } %>
+</div>
