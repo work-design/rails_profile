@@ -37,6 +37,8 @@ module Profiled
         :contact,
         :tel,
         :detail,
+        :area_id,
+        :principal,
         :area_ancestors
       ]
     end
