@@ -1,14 +1,3 @@
-<div class="weui-panel">
-  <div class="weui-panel__hd"><%= t('.title') %></div>
-  <div class="weui-panel__bd">
-    <div class="weui-cells weui-cells_radio">
-      <%= render partial: 'order_address', collection: @addresses, as: :address %>
-    </div>
-  </div>
-  <div class="weui-panel__ft">
-    <%= button_to({ action: 'order_new' }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
-      <div class="weui-cell__bd"><%= t('.new') %></div>
-      <span class="weui-cell__ft"></span>
-    <% end %>
-  </div>
+<div class="weui-cells weui-cells_radio">
+  <%= render partial: 'order_address', collection: @addresses, as: :address %>
 </div>
