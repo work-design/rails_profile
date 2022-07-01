@@ -1,5 +1,3 @@
-<% if request.headers['Turbo-Frame'] == 'modal' %>
-  <%= turbo_stream.append 'body' do %>
-    <div data-controller="visit"></div>
-  <% end %>
+<%= turbo_stream.append 'body' do %>
+  <div data-controller="visit"></div>
 <% end %>
