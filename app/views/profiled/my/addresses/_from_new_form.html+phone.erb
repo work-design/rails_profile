@@ -1,4 +1,4 @@
-<%= form_with theme: 'weui', model: @address, url: { controller: 'profiled/my/addresses', action: 'from_create' } do |f| %>
+<%= form_with theme: 'weui', model: @address, url: { action: 'from_create' } do |f| %>
   <%= render partial: 'form', locals: { f: f } %>
   <%= f.submit '提交', wrap: { submit: nil } %>
 <% end %>
