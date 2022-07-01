@@ -1,7 +1,7 @@
 module Profiled
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
-    before_action :set_new_address, only: [:new, :create, :order_new, :order_create]
+    before_action :set_new_address, only: [:new, :create, :order_new, :order_create, :from_new, :from_create]
 
     def index
       q_params = {}
@@ -49,6 +49,16 @@ module Profiled
 
     def order_create
       @address.save
+      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
+    end
+
+    def from_new
+      @address.area = Area.new
+    end
+
+    def from_create
+      @address.save
+      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
     end
 
     def fork

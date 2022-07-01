@@ -37,6 +37,8 @@ Rails.application.routes.draw do
           post :order_from
           post :order_new
           post :order_create
+          post :from_new
+          post :from_create
         end
         member do
           patch :actions

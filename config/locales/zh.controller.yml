@@ -39,7 +39,9 @@ zh:
         order:
           title: 收货地址
         order_new:
-          title: 新增地址
+          title: 新增收货地址
+        from_new:
+          title: 新增发货地址
     client:
       title: 个人中心
       addresses:
