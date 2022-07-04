@@ -41,7 +41,6 @@ Rails.application.routes.draw do
           post :from_create
         end
         member do
-          patch :actions
           get :join
         end
       end
@@ -57,7 +56,6 @@ Rails.application.routes.draw do
           post :program
         end
         member do
-          patch :actions
           get :join
         end
       end
