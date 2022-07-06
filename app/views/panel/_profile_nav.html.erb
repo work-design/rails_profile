@@ -1,10 +1,10 @@
-<div class="<%= active_helper(modules: 'profiled/panel', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu">
-  <%= content_tag :div, class: 'menu-list' do %>
-    <%= link_to t('profiled.panel.areas.index.title'), { controller: 'profiled/panel/areas' }, class: active_helper(controllers: 'areas', active: 'is-active') -%>
-  <% end %>
+<div class="<%= active_helper(modules: 'profiled/panel', active: 'menu ex-accordion is-active', item: 'menu ex-accordion') %>" data-controller="menu empty">
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-map-marker-alt fa-fw"></i>
     <span><%= t('profiled.panel.title') %></span>
     <i class="fa-solid dropdown"></i>
   </a>
+  <div class="menu-list" data-empty-target="content">
+    <%= link_to t('profiled.panel.areas.index.title'), { controller: 'profiled/panel/areas' }, class: active_helper(controllers: 'areas', active: 'is-active') %>
+  </div>
 </div>
