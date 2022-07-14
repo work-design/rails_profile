@@ -3,10 +3,14 @@
   <p><%= model.real_name %></p>
   <p class="has-text-grey"><%= model.nick_name %></p>
 </td>
-<td><%= model.gender %></td>
-<td>
-  <span class="tag"><%= model.birthday_type %></span>
-  <span><%= model.birthday %></span>
+<td><%= model.gender_i18n %></td>
+<td class="has-text-centered">
+<% if model.birthday.present? %>
+  <p>
+    <span class="tag"><%= model.birthday_type_i18n %></span>
+    <span><%= model.birthday %></span>
+  </p>
+  <p><%= model.age %></p>
+<% end %>
 </td>
-<td><%= model.age %></td>
 <td><%= model.extra %></td>

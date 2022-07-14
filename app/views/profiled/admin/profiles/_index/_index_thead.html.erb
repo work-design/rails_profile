@@ -4,9 +4,8 @@
   <p class="has-text-grey"><%= Profiled::Profile.human_attribute_name(:nick_name) %></p>
 </th>
 <th><%= Profiled::Profile.human_attribute_name(:gender) %></th>
-<th>
-  <span><%= Profiled::Profile.human_attribute_name(:birthday_type) %></span>
-  <span><%= Profiled::Profile.human_attribute_name(:birthday) %></span>
+<th class="has-text-centered">
+  <p><%= Profiled::Profile.human_attribute_name(:birthday) %></p>
+  <p><%= Profiled::Profile.human_attribute_name(:age) %></p>
 </th>
-<th><%= Profiled::Profile.human_attribute_name(:age) %></th>
 <th><%= Profiled::Profile.human_attribute_name(:extra) %></th>
