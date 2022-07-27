@@ -1,4 +1,9 @@
-<th>Kind</th>
-<th>联系人</th>
-<th>联系方式</th>
-<th></th>
+<th>
+  <p><%= Profiled::Address.human_attribute_name(:contact) %></p>
+  <p><%= Profiled::Address.human_attribute_name(:tel) %></p>
+</th>
+<th>
+  <p><%= Profiled::Address.human_attribute_name(:area_id) %></p>
+  <p><%= Profiled::Address.human_attribute_name(:detail) %></p>
+</th>
+<th><%= Profiled::Address.human_attribute_name(:station_id) %></th>
