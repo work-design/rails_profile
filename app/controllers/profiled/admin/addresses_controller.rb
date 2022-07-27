@@ -8,7 +8,7 @@ module Profiled
       q_params.merge! default_params
       q_params.merge! params.permit('user_id')
 
-      @addresses = Address.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = Address.includes(:area, :station).default_where(q_params).page(params[:page])
     end
 
     def new

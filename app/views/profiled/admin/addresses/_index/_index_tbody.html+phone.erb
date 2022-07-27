@@ -1,6 +1,9 @@
 <p>
   <strong><%= model.contact %></strong>
   <span><%= model.tel %></span>
+  <% if model.station %>
+  <span class="tag"><%= model.station.name %></span>
+  <% end %>
 </p>
 <p class="is-size-7">
   <span><%= model.area.full_name %></span>
