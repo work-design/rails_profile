@@ -2,9 +2,9 @@
   <td>
     <div class="checkbox">
       <% if address.kind == 'invoice' %>
-        <%= radio_button_tag :'order[invoice_address_id]', address.id, true, form: 'new_order' %><label></label>
+        <%= radio_button_tag 'order[invoice_address_id]', address.id, true, form: 'new_order' %><label></label>
       <% else %>
-        <%= radio_button_tag :'order[address_id]', address.id, true, form: 'new_order' %><label></label>
+        <%= radio_button_tag 'order[address_id]', address.id, true, form: 'new_order' %><label></label>
       <% end %>
     </div>
   </td>

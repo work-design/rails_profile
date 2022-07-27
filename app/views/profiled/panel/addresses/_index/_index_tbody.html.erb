@@ -1,16 +1,6 @@
-<tr>
-  <td><%= address.kind_i18n %></td>
-  <td><%= address.contact_person %></td>
-  <td><%= address.tel %></td>
-  <td>
-    <%= address.area.nation %>
-    <%= address.area.province %>
-    <%= address.area.city %>
-  </td>
-  <td><%= address.address %></td>
-  <td>
-    <%= link_to 'Show', address_path(address) %>
-    <%= link_to 'Edit', edit_admin_address_path(address) %>
-    <%= link_to 'Destroy', admin_address_path(address), method: :delete, data: { confirm: t('.confirm') } %>
-  </td>
-</tr>
+<td><%= model.contact %></td>
+<td><%= model.tel %></td>
+<td>
+  <%= model.area.full_name %>
+</td>
+<td><%= model.detail %></td>
