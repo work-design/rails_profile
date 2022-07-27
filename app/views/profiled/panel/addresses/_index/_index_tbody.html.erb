@@ -7,3 +7,7 @@
   <p><%= model.detail %></p>
 </td>
 <td><%= model.station&.name %></td>
+<td>
+  <p><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></p>
+  <p class="has-text-grey"><time data-controller="time"><%= model.updated_at.to_fs(:iso8601) %></time></p>
+</td>
