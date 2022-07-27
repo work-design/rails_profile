@@ -3,6 +3,9 @@
     <p>
       <strong><%= address.contact %></strong>
       <span><%= address.tel %></span>
+      <% if address.station %>
+        <span class="tag"><%= address.station.name %></span>
+      <% end %>
     </p>
     <p class="has-text-grey is-size-7">
       <span>
