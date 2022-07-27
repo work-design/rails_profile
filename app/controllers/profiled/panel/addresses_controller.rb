@@ -4,10 +4,16 @@ module Profiled
 
     def index
       q_params = {}
-      q_params.merge! default_params
       q_params.merge! params.permit('user_id')
 
-      @addresses = Address.includes(:area).default_where(q_params).page(params[:page])
+      @addresses = Address.includes(:area, :station).default_where(q_params).order(id: :desc).page(params[:page])
+    end
+
+    def search
+      q_params = {}
+      q_params.merge! params.permit('name-like')
+
+      @stations = Ship::Station.default_where(q_params)
     end
 
     private
@@ -16,14 +22,11 @@ module Profiled
     end
 
     def address_params
-      p = params.fetch(:address, {}).permit(*address_permit_params)
-      p.merge! default_form_params
+      params.fetch(:address, {}).permit(*address_permit_params)
     end
 
     def address_permit_params
       [
-        :kind,
-        :name,
         :contact,
         :tel,
         :detail,

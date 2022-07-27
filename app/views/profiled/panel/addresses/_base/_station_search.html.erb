@@ -1,0 +1,16 @@
+<div class="field is-horizontal">
+  <div class="field-label is-normal">
+    <label class="label">站点</label>
+  </div>
+  <div class="field-body">
+    <div class="field"><%= f.object.station&.name %></div>
+    <div class="panel field" data-controller="typer" data-typer-url-value="<%= url_for(action: 'search') %>" data-typer-method-value="post">
+      <%= f.hidden_field :station_id, data: { typer_target: 'value' } %>
+      <div class="control has-icons-left">
+        <%= search_field_tag 'name-like', nil, class: 'input', placeholder: '搜索', data: { typer_target: 'input' } %>
+        <span class="icon is-left"><i class="fa-light fa-search"></i></span>
+      </div>
+      <div class="panel" id="stations_content"></div>
+    </div>
+  </div>
+</div>

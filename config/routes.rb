@@ -16,7 +16,11 @@ Rails.application.routes.draw do
 
       namespace :panel, defaults: { namespace: 'panel' } do
         resources :areas
-        resources :addresses
+        resources :addresses do
+          collection do
+            post :search
+          end
+        end
         resources :profiles do
           member do
             patch :user
