@@ -6,7 +6,7 @@ module Profiled
     def index
       q_params = {}
 
-      @addresses = current_user.addresses.includes(:area).default_where(q_params).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).default_where(q_params).order(id: :desc).page(params[:page])
       @address = current_user.addresses.build
     end
 
@@ -14,11 +14,11 @@ module Profiled
     end
 
     def order
-      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).order(id: :desc).page(params[:page])
     end
 
     def order_from
-      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).order(id: :desc).page(params[:page])
     end
 
     def new
