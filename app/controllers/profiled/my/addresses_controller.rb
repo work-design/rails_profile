@@ -49,7 +49,7 @@ module Profiled
 
     def order_create
       @address.save
-      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).order(id: :desc).page(params[:page])
     end
 
     def from_new
@@ -58,7 +58,7 @@ module Profiled
 
     def from_create
       @address.save
-      @addresses = current_user.addresses.includes(:area).order(id: :desc).page(params[:page])
+      @addresses = current_user.addresses.includes(:area, :station).order(id: :desc).page(params[:page])
     end
 
     def fork
