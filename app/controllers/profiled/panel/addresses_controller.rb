@@ -6,7 +6,7 @@ module Profiled
       q_params = {}
       q_params.merge! params.permit('user_id')
 
-      @addresses = Address.includes(:area, :station).default_where(q_params).order(id: :desc).page(params[:page])
+      @addresses = Address.includes(:area, :station, account: :user).default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def search
