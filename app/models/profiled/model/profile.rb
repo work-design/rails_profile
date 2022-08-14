@@ -28,6 +28,10 @@ module Profiled
       has_one_attached :avatar
     end
 
+    def name
+      real_name.presence || nick_name.presence
+    end
+
     def age
       return 0 unless self.birthday
       r_hash = TimeHelper.exact_distance_time(self.birthday, Date.today)
