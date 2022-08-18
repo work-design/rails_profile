@@ -39,7 +39,7 @@ module Profiled
     end
 
     def age_str
-      return '未知' unless self.birthday
+      return '' unless self.birthday
       r_hash = TimeHelper.exact_distance_time(self.birthday, Date.today)
       "#{r_hash[:year]}岁#{r_hash[:month]}月"
     end
