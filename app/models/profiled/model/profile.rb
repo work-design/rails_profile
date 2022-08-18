@@ -11,7 +11,7 @@ module Profiled
       attribute :extra, :json, default: {}
 
       belongs_to :organ, class_name: 'Org::Organ', optional: true
-      belongs_to :account, class_name: 'Auth::Account', foreign_key: :identity, primary_key: :identity, optional: true
+      belongs_to :account, -> { confirmed }, class_name: 'Auth::Account', foreign_key: :identity, primary_key: :identity, optional: true
       has_many :users, class_name: 'Auth::User', through: :account
 
       enum birthday_type: {
