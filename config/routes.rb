@@ -35,7 +35,11 @@ Rails.application.routes.draw do
       end
 
       namespace :my, defaults: { namespace: 'my' } do
-        resource :profile
+        resource :profile do
+          member do
+            get :qrcode
+          end
+        end
         resources :addresses do
           collection do
             get :select

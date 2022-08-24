@@ -29,6 +29,8 @@ zh:
           title: 个人资料
         new:
           title: 添加个人资料
+        qrcode:
+          title: 我的二维码
       addresses:
         index:
           title: 管理地址

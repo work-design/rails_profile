@@ -1,6 +1,6 @@
 module Profiled
   class My::ProfilesController < My::BaseController
-    before_action :set_profile, only: [:show, :edit, :update, :destroy]
+    before_action :set_profile, only: [:show, :edit, :update, :destroy, :qrcode]
     before_action :set_accounts, only: [:edit, :update]
 
     def new
@@ -15,6 +15,9 @@ module Profiled
       else
         render :new
       end
+    end
+
+    def qrcode
     end
 
     private
