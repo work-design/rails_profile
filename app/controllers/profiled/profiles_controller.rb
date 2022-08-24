@@ -5,7 +5,7 @@ module Profiled
 
     def qrcode
       if current_user.organ_ids.include?(@profile.organ_id)
-        redirect_to({ controller: 'serve/me/servings', action: 'qrcode', id: params[:id], host: @serving.service.organ.host }, allow_other_host: true)
+        redirect_to({ controller: 'crm/me/maintains', action: 'client', client_id: params[:id], host: @profile.organ.host }, allow_other_host: true)
       end
     end
 
