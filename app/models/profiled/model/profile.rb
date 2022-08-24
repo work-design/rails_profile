@@ -44,5 +44,17 @@ module Profiled
       "#{r_hash[:year]}岁#{r_hash[:month]}月"
     end
 
+    def enter_url
+      Rails.application.routes.url_for(controller: 'profiled/profiles', action: 'qrcode', id: self.id, host: organ.host)
+    end
+
+    def qrcode_enter_png
+      QrcodeHelper.code_png(enter_url, border_modules: 0, fill: 'pink')
+    end
+
+    def qrcode_enter_url
+      QrcodeHelper.data_url(enter_url)
+    end
+
   end
 end

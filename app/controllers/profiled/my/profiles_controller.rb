@@ -4,8 +4,7 @@ module Profiled
     before_action :set_accounts, only: [:edit, :update]
 
     def new
-      @profile = current_user.profiles.build
-      prepare_form
+      @profile = current_account.profiles.build
     end
 
     def create
@@ -14,14 +13,13 @@ module Profiled
       if @profile.save
         render 'create'
       else
-        prepare_form
         render :new
       end
     end
 
     private
     def set_profile
-      @profile = current_user.profiles.find_or_create_by(default_params)
+      @profile = current_account.profiles.find_or_create_by(default_params)
     end
 
     def set_accounts

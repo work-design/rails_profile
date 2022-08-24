@@ -8,6 +8,11 @@ Rails.application.routes.draw do
           post :follow
         end
       end
+      resources :profiles, only: [] do
+        member do
+          get :qrcode
+        end
+      end
 
       namespace :admin, defaults: { namespace: 'admin' } do
         resources :profiles
