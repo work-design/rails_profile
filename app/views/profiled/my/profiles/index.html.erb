@@ -6,11 +6,11 @@
     </div>
     <div class="content">
       <div>
-        <i class="fa-light fa-user"></i>
+        <i class="fa-regular fa-user"></i>
         <span class="ui grey text"><%= profile.real_name %></span>
         <span class="ui green text"><%= profile.identity %></span>
         <%= link_to({ action: 'edit' }, aria: { label: t('.edit') }) do %>
-          <i class="fa-light fa-pencil"></i>
+          <i class="fa-regular fa-pencil"></i>
         <% end %>
       </div>
     </div>
@@ -24,7 +24,7 @@
   <div class="card">
     <div class="content">
       <%= link_to({ action: 'new' }, aria: { label: t('profile.my.profiles.new.title') }) do %>
-        <i class="fa-light fa-plus"></i>
+        <i class="fa-regular fa-plus"></i>
       <% end %>
     </div>
   </div>
