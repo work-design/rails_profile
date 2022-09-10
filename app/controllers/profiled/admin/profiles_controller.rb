@@ -7,7 +7,7 @@ module Profiled
       q_params.merge! default_params
       q_params.merge! params.permit(:name, :identity, :unionid)
 
-      @profiles = Profile.default_where(q_params).page(params[:page])
+      @profiles = Profile.default_where(q_params).order(id: :desc).page(params[:page])
     end
 
     def user

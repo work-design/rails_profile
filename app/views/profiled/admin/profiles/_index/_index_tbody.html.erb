@@ -1,9 +1,11 @@
 <td class="has-text-mono"><%= model.identity %></td>
 <td>
-  <p><%= model.real_name %></p>
+  <p>
+    <span><%= model.real_name %></span>
+    <span class="tag"><%= model.gender_i18n %></span>
+  </p>
   <p class="has-text-grey"><%= model.nick_name %></p>
 </td>
-<td><%= model.gender_i18n %></td>
 <td class="has-text-centered">
 <% if model.birthday.present? %>
   <p>
@@ -14,3 +16,4 @@
 <% end %>
 </td>
 <td><%= model.unionid %></td>
+<td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
