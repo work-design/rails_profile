@@ -5,7 +5,7 @@ module Profiled
     def index
       q_params = {}
       q_params.merge! default_params
-      q_params.merge! params.permit(:name, :identity)
+      q_params.merge! params.permit(:name, :identity, :unionid)
 
       @profiles = Profile.default_where(q_params).page(params[:page])
     end

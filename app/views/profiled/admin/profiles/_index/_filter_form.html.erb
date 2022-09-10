@@ -2,9 +2,10 @@
   <div class="field-body">
     <%= f.text_field :name %>
     <%= f.text_field :identity %>
+    <%= f.text_field :unionid %>
     <div class="field is-narrow">
       <%= f.submit %>
-      <%= link_to t('.clear'), filter_params(except: [:name, :identity]), class: 'button is-light' %>
+      <%= link_to t('.clear'), filter_params(except: [:name, :identity, :unionid]), class: 'button is-light' %>
     </div>
   </div>
 <% end %>
