@@ -47,7 +47,7 @@ zh:
           title: 新增收货地址
         from_new:
           title: 新增发货地址
-    client:
+    our:
       title: 个人中心
       addresses:
         index:

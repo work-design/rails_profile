@@ -61,7 +61,7 @@ Rails.application.routes.draw do
         end
       end
 
-      namespace :client, defaults: { namespace: 'client' } do
+      namespace :our, defaults: { namespace: 'our' } do
         resources :addresses do
           collection do
             get :select
