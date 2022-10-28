@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 418234744af9b7e8f78cd459aad2de4a4b37d426
+  revision: 3a08df2f5e38b5adeeb7376d0e700663b89b8a11
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 488a6d2e6e8ced689f35f06ccda2c5087d2d772f
+  revision: 2f0c148237e18b5ef0fe6c26f0a41ccfc7af0a11
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,14 +26,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: 391ce9e2b7018b83c821c8eb8844b3a309f47f4f
+  revision: 9dafcbf1542fec8d44f01267c6f01371c41b7045
   specs:
     rails_design (0.0.1)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: 6e0a4cf87fe800b65741fef573188b699fb45115
+  revision: 41dc0a8bf47b3c91a5738ffd7b5a7428324ac81a
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -169,7 +169,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.16.3)
-    net-http (0.2.2)
+    net-http (0.3.0)
       uri
     net-imap (0.3.1)
       net-protocol
@@ -227,7 +227,7 @@ GEM
     ruby2_keywords (0.0.5)
     thor (1.2.1)
     timeout (0.3.0)
-    turbo-rails (1.3.1)
+    turbo-rails (1.3.2)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
