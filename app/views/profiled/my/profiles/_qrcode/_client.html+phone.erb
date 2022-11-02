@@ -1,0 +1,27 @@
+<div class="weui-form-preview__item">
+  <label class="weui-form-preview__label"><%= Profiled::Profile.human_attribute_name(:real_name) %></label>
+  <span class="weui-form-preview__value"><%= @profile.real_name %></span>
+</div>
+<div class="weui-form-preview__item">
+  <label class="weui-form-preview__label"><%= Profiled::Profile.human_attribute_name(:nick_name) %></label>
+  <span class="weui-form-preview__value"><%= @profile.nick_name %></span>
+</div>
+<div class="weui-form-preview__item">
+  <label class="weui-form-preview__label"><%= Profiled::Profile.human_attribute_name(:gender) %></label>
+  <span class="weui-form-preview__value"><%= @profile.gender_i18n %></span>
+</div>
+<div class="weui-form-preview__item">
+  <label class="weui-form-preview__label"><%= Profiled::Profile.human_attribute_name(:birthday) %></label>
+  <span class="weui-form-preview__value">
+    <span class="tag"><%= @profile.birthday_type_i18n %></span>
+    <span><%= @profile.birthday %></span>
+  </span>
+</div>
+<div class="weui-form-preview__item">
+  <label class="weui-form-preview__label"><%= Profiled::Profile.human_attribute_name(:age) %></label>
+  <span class="weui-form-preview__value"><%= @profile.age %></span>
+</div>
+<div class="weui-form-preview__item">
+  <label class="weui-form-preview__label"><%= Profiled::Profile.human_attribute_name(:identity) %></label>
+  <span class="weui-form-preview__value"><%= @profile.identity %></span>
+</div>
