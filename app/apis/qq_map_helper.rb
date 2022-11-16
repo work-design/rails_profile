@@ -6,7 +6,7 @@ module QqMapHelper
 
   def client
     return @client if defined? @client
-    @client = HTTPX.with(origin: BASE, debug: STDERR, debug_level: 2)
+    @client = HTTPX.with(origin: BASE, debug: STDERR, debug_level: 1)
   end
 
   def geocoder(lat:, lng:)
