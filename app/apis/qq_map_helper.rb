@@ -15,7 +15,7 @@ module QqMapHelper
       key: KEY,
       location: [lat, lng].join(',')
     }
-    binding.b
+
     r = client.get(url, params: params_with_sign(url, body))
     result = r.json
     if result['status'] == 0
