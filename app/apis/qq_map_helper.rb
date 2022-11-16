@@ -1,52 +1,62 @@
 module QqMapHelper
   KEY = Rails.application.credentials.dig(:qq_map, :ws)
+  SK = Rails.application.credentials.dig(:qq_map, :sk)
+  BASE = 'https://apis.map.qq.com/ws/'
   extend self
 
   def geocoder(lat:, lng:)
-    url = 'https://apis.map.qq.com/ws/geocoder/v1'
+    url = 'geocoder/v1'
     body = {
       key: KEY,
       location: [lat, lng].join(',')
     }
 
-    r = HTTPX.get(url, params: body)
-    result = JSON.parse(r.to_s)
+    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(body))
+    result = r.json
     if result['status'] == 0
       result['result']
     else
+      Rails.logger.error(result)
       result
     end
   end
 
   def ip(ip)
-    url = 'https://apis.map.qq.com/ws/location/v1/ip'
+    url = 'location/v1/ip'
     body = {
       key: KEY,
       ip: ip
     }
 
-    r = HTTPX.get(url, params: body)
-    result = JSON.parse(r.to_s)
+    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(body))
+    result = r.json
     if result['status'] == 0
       result['result']
     else
+      Rails.logger.error(result)
       result
     end
   end
 
   def districts
-    url = 'https://apis.map.qq.com/ws/district/v1/list'
+    url = 'district/v1/list'
     body = {
       key: KEY
     }
 
-    r = HTTPX.get(url, params: body)
-    result = JSON.parse(r.to_s)
+    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(body))
+    result = r.json
     if result['status'] == 0
       result['result']
     else
+      Rails.logger.error(result)
       result
     end
+  end
+
+  def params_with_sign(body)
+    r = body.sort.to_h
+    r.merge! sig: Digest::MD5.hexdigest("#{path}?#{r.to_query}#{SK}")
   end
 
   def sync_to_areas
