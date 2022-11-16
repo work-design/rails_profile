@@ -11,7 +11,7 @@ module QqMapHelper
       location: [lat, lng].join(',')
     }
 
-    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(body))
+    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(url, body))
     result = r.json
     if result['status'] == 0
       result['result']
@@ -28,7 +28,7 @@ module QqMapHelper
       ip: ip
     }
 
-    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(body))
+    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(url, body))
     result = r.json
     if result['status'] == 0
       result['result']
@@ -44,7 +44,7 @@ module QqMapHelper
       key: KEY
     }
 
-    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(body))
+    r = HTTPX.with(origin: BASE).get(url, params: params_with_sign(url, body))
     result = r.json
     if result['status'] == 0
       result['result']
@@ -54,7 +54,7 @@ module QqMapHelper
     end
   end
 
-  def params_with_sign(body)
+  def params_with_sign(path, body)
     r = body.sort.to_h
     r.merge! sig: Digest::MD5.hexdigest("#{path}?#{r.to_query}#{SK}")
   end
