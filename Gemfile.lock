@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 03285f31016e782fd71032f5a4752bcae493efce
+  revision: a56a67f846f9354efc0c5b088cc984c54e563e99
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: d5916eac955d128fcd900545d7cf490e1bbd6c72
+  revision: 9e2479112055457c9d6e94959cf73605365d583d
   specs:
     rails_com (1.3.0)
       acme-client
@@ -26,14 +26,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: 8216e7a8c593d16c877c0c0b7d39d5943b3ec015
+  revision: 731b1e80be757f98e6d5d3b572e1a0481d563a24
   specs:
     rails_design (0.0.1)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: 99d5c783f12d5d9a4fbf81b2a84990e507e52d4e
+  revision: 58bb78046d012e81af45e66871b3740df91946a1
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -130,7 +130,7 @@ GEM
     default_where (2.2.0)
       activerecord (>= 4.0.0)
     erubi (1.11.0)
-    faraday (2.6.0)
+    faraday (2.7.1)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -169,7 +169,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.0)
     minitest (5.16.3)
-    net-http (0.3.0)
+    net-http (0.3.1)
       uri
     net-imap (0.3.1)
       net-protocol
@@ -233,7 +233,7 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    uri (0.11.0)
+    uri (0.12.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
