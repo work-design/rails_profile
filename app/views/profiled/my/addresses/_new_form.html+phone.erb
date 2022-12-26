@@ -1,9 +1,11 @@
-<div class="weui-panel">
-  <div class="weui-panel__hd">填写收货地址</div>
-  <div class="weui-panel__bd">
-    <%= form_with theme: 'weui', model: @address, url: { action: 'create' } do |f| %>
-      <%= render partial: 'form', locals: { f: f } %>
-      <%= f.submit '提交', wrap: { submit: nil } %>
-    <% end %>
+<%= form_with theme: 'weui', model: @address, url: { action: 'create' } do |f| %>
+  <div class="weui-form__control-area">
+    <div class="weui-cells__group weui-cells__group_form">
+      <div class="weui-cells__title">填写收货地址</div>
+      <div class="weui-cells">
+        <%= render partial: 'form', locals: { f: f } %>
+      </div>
+    </div>
   </div>
-</div>
+  <%= f.submit '提交', wrap: { submit: nil } %>
+<% end %>
