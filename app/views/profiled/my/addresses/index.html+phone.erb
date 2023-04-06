@@ -5,13 +5,12 @@
     <%= render partial: 'address', collection: @addresses, as: :model %>
   </div>
   <div class="weui-panel__ft" id="wechat_address">
-  <% if current_js_app %>
+  <% if request.variant.any?(:wechat) %>
     <div
       class="weui-cell weui-cell_access weui-cell_link"
       data-controller="wechat"
       data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false, **Rails.application.routes.default_url_options) %>"
       data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
-      data-wechat-debug-value="false"
       data-action="click->wechat#openAddress">
       <div class="weui-cell__bd"><%= t('.new') %></div>
       <span class="weui-cell__ft"></span>
