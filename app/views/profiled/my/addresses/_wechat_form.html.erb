@@ -1,4 +1,4 @@
-<div data-controller="weui-dialog" id="dialog">
+<div data-controller="weui-dialog" data-weui-dialog-target="mask" id="dialog" class="weui-mask">
   <div class="weui-half-screen-dialog weui-half-screen-dialog_show" data-weui-dialog-target="dialog">
     <div class="weui-half-screen-dialog__hd">
       <div class="weui-half-screen-dialog__hd__side">
@@ -28,7 +28,7 @@
         <%= f.text_area :detail %>
         <%= f.text_field :post_code %>
         <%= hidden_field_tag :return_to, params[:return_to] %>
-        <%= f.submit nil, wrap: { all: nil } %>
+        <%= f.submit nil, all: { submit: nil } %>
       <% end %>
     </div>
     <div class="weui-half-screen-dialog__ft"></div>
