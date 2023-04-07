@@ -9,8 +9,8 @@
     <span class="weui-cell__ft"></span>
   </div>
 <% else %>
-  <%= link_to({ action: 'new' }, class: 'weui-cell weui-cell_access weui-cell_link') do %>
-    <div class="weui-cell__bd">添加</div>
+  <%= link_to({ action: 'new' }, state: 'enter', class: 'weui-cell weui-cell_access weui-cell_link') do %>
+    <div class="weui-cell__bd"><%= t('.new') %></div>
     <span class="weui-cell__ft"></span>
   <% end %>
 <% end %>
