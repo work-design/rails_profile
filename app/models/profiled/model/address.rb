@@ -20,7 +20,7 @@ module Profiled
       belongs_to :member, class_name: 'Org::Member', optional: true
       belongs_to :member_organ, class_name: 'Org::Organ', optional: true
 
-      belongs_to :account, -> { confirmed }, class_name: 'Auth::Account', foreign_key: :tel, primary_key: :identity
+      belongs_to :account, -> { confirmed }, class_name: 'Auth::Account', foreign_key: :tel, primary_key: :identity, optional: true
 
       has_many :address_uses, inverse_of: :address, dependent: :destroy_async
 
