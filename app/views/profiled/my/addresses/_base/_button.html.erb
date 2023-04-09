@@ -2,7 +2,7 @@
   <div
     class="weui-cell weui-cell_access weui-cell_link"
     data-controller="wechat"
-    data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false, **Rails.application.routes.default_url_options) %>"
+    data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false, host: current_organ.host) %>"
     data-action="click->wechat#programAddress"
   >
     <div class="weui-cell__bd"><%= t('.new') %></div>
