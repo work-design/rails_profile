@@ -1,10 +1,20 @@
-<% if request.variant.any?(:wechat) %>
+<% if request.variant.include?(:mini_program) %>
   <div
     class="weui-cell weui-cell_access weui-cell_link"
     data-controller="wechat"
     data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false, **Rails.application.routes.default_url_options) %>"
+    data-action="click->wechat#programAddress"
+  >
+    <div class="weui-cell__bd"><%= t('.new') %></div>
+    <span class="weui-cell__ft"></span>
+  </div>
+<% elsif request.variant.include?(:wechat) %>
+  <div
+    class="weui-cell weui-cell_access weui-cell_link"
+    data-controller="wechat"
     data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
-    data-action="click->wechat#openAddress">
+    data-action="click->wechat#openAddress"
+  >
     <div class="weui-cell__bd"><%= t('.new') %></div>
     <span class="weui-cell__ft"></span>
   </div>
