@@ -1,19 +1,26 @@
-<td class="has-text-mono"><%= model.identity %></td>
+<td class="has-text-mono">
+  <p><%= model.identity %></p>
+  <p class="has-text-info"><%= model.unionid %></p>
+</td>
 <td>
   <p>
     <span><%= model.real_name %></span>
     <span class="tag"><%= model.gender_i18n %></span>
   </p>
-  <p class="has-text-grey"><%= model.nick_name %></p>
+  <p class="has-text-grey">
+    <span><%= model.nick_name %></span>
+    <span class="tag"><%= model.user_id %></span>
+  </p>
 </td>
 <td class="has-text-centered">
 <% if model.birthday.present? %>
   <p>
-    <span class="tag"><%= model.birthday_type_i18n %></span>
     <span><%= model.birthday %></span>
   </p>
-  <p><%= model.age %></p>
+  <p>
+    <span class="tag"><%= model.birthday_type_i18n %></span>
+    <span><%= model.age_str %></span>
+  </p>
 <% end %>
 </td>
-<td><%= model.unionid %></td>
 <td><time data-controller="time"><%= model.created_at.to_fs(:iso8601) %></time></td>
