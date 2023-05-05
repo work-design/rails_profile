@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   scope RailsCom.default_routes_scope do
+    concern :profiled do
+      resource :profile do
+        member do
+          get :qrcode
+        end
+      end
+    end
+
     namespace :profiled, defaults: { business: 'profiled' } do
       resources :areas, only: [:index] do
         collection do
@@ -36,11 +44,7 @@ Rails.application.routes.draw do
       end
 
       namespace :my, defaults: { namespace: 'my' } do
-        resource :profile do
-          member do
-            get :qrcode
-          end
-        end
+        concerns :profiled
         resources :addresses do
           collection do
             get :select
@@ -59,6 +63,10 @@ Rails.application.routes.draw do
             get :join
           end
         end
+      end
+
+      namespace :me, defaults: { namespace: 'me' } do
+        concerns :profiled
       end
 
       namespace :our, defaults: { namespace: 'our' } do

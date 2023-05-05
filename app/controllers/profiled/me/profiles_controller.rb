@@ -1,22 +1,11 @@
 module Profiled
   class Me::ProfilesController < Me::BaseController
-    before_action :set_profile, only: [:show, :edit, :update, :destroy]
+    before_action :set_profile, only: [:show, :qrcode, :edit, :update, :destroy]
 
     def show
     end
 
-    def edit
-    end
-
-    def update
-      @profile.assign_attributes profile_params
-
-      unless @profile.save
-        render :edit, locals: { model: @profile }, status: :unprocessable_entity
-      end
-    end
-
-    def destroy
+    def qrcode
     end
 
     private
