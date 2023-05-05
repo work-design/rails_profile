@@ -57,3 +57,5 @@ zh:
       profiles:
         show:
           title: 个人资料
+        qrcode:
+          title: 二维码
