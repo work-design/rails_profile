@@ -4,7 +4,7 @@
   class="weui-cell weui-cell_active weui-cell_readonly"
   data-controller="weui-picker"
   data-weui-picker-id-value="address_area_id"
-  data-weui-picker-url-value="<%= url_for(controller: '/profiled/areas', area_id: f.object.area_id) %>"
+  data-weui-picker-url-value="<%= url_for(controller: '/profiled/areas', area_id: f.object.area_id, data_id: 'address_area_id') %>"
   data-action="click->weui-picker#getData"
 >
   <div class="weui-cell__hd">
