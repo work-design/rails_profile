@@ -36,6 +36,10 @@ module Profiled
       "#{area.full_name} #{detail}"
     end
 
+    def contact_info
+      "#{contact} #{tel}"
+    end
+
     def set_principal
       self.class.where.not(id: self.id).where(user_id: self.user_id, member_id: self.member_id).update_all(principal: false)
     end
