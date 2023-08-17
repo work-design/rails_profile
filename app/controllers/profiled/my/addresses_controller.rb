@@ -2,6 +2,7 @@ module Profiled
   class My::AddressesController < My::BaseController
     before_action :set_address, only: [:show, :edit, :update, :destroy]
     before_action :set_new_address, only: [:new, :create, :order_new, :order_create, :from_new, :from_create]
+    skip_before_action :verify_authenticity_token, only: [:program] if whether_filter(:verify_authenticity_token)
 
     def index
       q_params = {}
