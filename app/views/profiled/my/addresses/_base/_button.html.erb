@@ -3,7 +3,7 @@
     data-controller="mini-program"
     data-mini-program-direct-value="true"
     data-mini-program-url-value="/pages/addresses/index"
-    data-mini-program-data-value="<%= { url: url_for(action: 'program', only_path: false, host: current_organ.host) } %>"
+    data-mini-program-data-value="<%= { url: url_for(action: 'program', only_path: false, host: current_organ.host) }.to_json %>"
     class="weui-cell weui-cell_access weui-cell_link"
   >
     <div class="weui-cell__bd"><%= t('.new') %></div>
