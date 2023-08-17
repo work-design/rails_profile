@@ -37,13 +37,15 @@
     </div>
   </div>
   <% if @current_user.addresses.blank? %>
-    <div class="weui-panel__ft"
-         data-controller="wechat"
-         data-wechat-address-value="/pages/profiled/my/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>"
-         data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
-         data-wechat-options-value="<%= current_wechat_app.js_config(request.original_url).to_json %>"
-         data-wechat-apis-value="<%= ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'].to_json %>"
-         id="wechat_address">
+    <div
+      class="weui-panel__ft"
+      data-controller="mini-program"
+      data-mini-program-url-value="/pages/profiled/addresses/index?url=<%= url_for(action: 'program', only_path: false) %>"
+      data-wechat-url-value="<%= url_for(action: 'fork', only_path: false) %>"
+      data-wechat-options-value="<%= current_wechat_app.js_config(request.original_url).to_json %>"
+      data-wechat-apis-value="<%= ['openAddress', 'getLocation', 'openLocation', 'scanQRCode'].to_json %>"
+      id="wechat_address"
+    >
       <div class="weui-cells">
         <div class="weui-cell weui-cell_access weui-cell_link" data-action="click->wechat#openAddress">
           <div class="weui-cell__bd"><%= t('.new') %></div>
