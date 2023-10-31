@@ -2,13 +2,24 @@ en:
   profiled:
     title: Profile
     panel:
-      title: 区域管理
+      title: Profiles
+      addresses:
+        index:
+          title: Addresses
       areas:
         index:
-          title: 地区
+          title: Areas
       agencies:
         index:
           title: 会员列表
+    admin:
+      title: Profiles
+      addresses:
+        index:
+          title: Addresses
+      profiles:
+        index:
+          title: Profiles
     my:
       title: Settings
       profiles:
@@ -24,7 +35,7 @@ en:
           new: Add
           add: 地图选择
     me:
-      title: 个人中心
+      title: Profiles
       profiles:
         show:
           title: 个人资料
