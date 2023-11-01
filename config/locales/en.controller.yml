@@ -31,7 +31,7 @@ en:
           title: 添加个人资料
       addresses:
         index:
-          title: Addresses
+          title: My Addresses
           new: Add
           add: 地图选择
     me:
