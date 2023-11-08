@@ -2,7 +2,7 @@
   <a class="menu-label" data-action="menu#toggle">
     <i class="fa-solid fa-map-marker-alt fa-fw"></i>
     <span><%= t('profiled.admin.title') %></span>
-    <i class="fa-solid dropdown"></i>
+    <i class="fa-solid fa-fw dropdown"></i>
   </a>
   <div class="menu-list" data-empty-target="content">
     <%= link_to t('profiled.admin.profiles.index.title'), { controller: 'profiled/admin/profiles' }, class: active_helper(controllers: 'profiles', active: 'is-active') %>
