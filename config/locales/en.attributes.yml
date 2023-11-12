@@ -2,28 +2,25 @@ en:
   activerecord:
     attributes:
       profiled/profile:
-        birthday_type: 生日类型
-        birthday: 生日
-        age: 年龄
-        gender: 性别
-        first_name: 姓
-        real_name: 名
-        nick_name: 昵称
-        area_id: 地区
+        birthday_type: Birthday Type
+        birthday: Birthday
+        age: Age
+        gender: Gender
+        first_name: First Name
+        real_name: Real Name
+        nick_name: Nick Name
+        area_id: Area
         area_ancestors: 地区
-        address: 地址
+        address: Address
         identity: Email Or Mobile
-        resume: 简历
-        major: 专业
-        degree: 学历
       profiled/area:
         names: 地区
-        popular: 是否热门
-        published: 是否显示
+        popular: Is Popular
+        published: Published
       profiled/address:
-        contact: 联系人
-        tel: 手机号
-        detail: 详细地址
-        area_id: 地区
-        post_code: 邮政编码
+        contact: Contact
+        tel: Tel
+        detail: Detail
+        area_id: Area
+        post_code: Post Code
         principal: 默认地址
