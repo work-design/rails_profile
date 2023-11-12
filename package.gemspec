@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = 'rails_profile'
   s.version = '0.0.1'
-  s.authors = ['qinmingyuan']
+  s.authors = ['Mingyuan Qin']
   s.email = ['mingyuan0715@foxmail.com']
   s.homepage = 'https://github.com/work-design/rails_profile'
   s.summary = 'User Profile'

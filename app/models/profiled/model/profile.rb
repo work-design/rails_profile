@@ -25,6 +25,8 @@ module Profiled
       belongs_to :account, -> { where(confirmed: true) }, class_name: 'Auth::Account', foreign_key: :identity, primary_key: :identity, optional: true
       belongs_to :user, class_name: 'Auth::User', optional: true
 
+      has_many :pending_members, class_name: 'Org::Member', primary_key: :identity, foreign_key: :identity
+
       has_one_attached :avatar
     end
 
