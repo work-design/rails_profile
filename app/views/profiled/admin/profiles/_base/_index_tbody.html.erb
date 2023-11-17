@@ -1,6 +1,8 @@
 <td class="has-text-mono">
   <p><%= model.identity %></p>
-  <p class="has-text-info"><%= model.unionid %></p>
+  <% if defined? RailsWechat %>
+    <p class="has-text-info"><%= model.unionid %></p>
+  <% end %>
 </td>
 <td>
   <p>

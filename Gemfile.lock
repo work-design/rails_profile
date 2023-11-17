@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 498a4dc8dd295b1cd98694d70af3768dadfe354e
+  revision: 832f97d7233707adc9138bf3835ccc953dc5f153
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -27,14 +27,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: d6800e67d01de71622533a22fce197d152ad3726
+  revision: d288582be83dfb212335670384933376d2b523b5
   specs:
     rails_design (0.0.1)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: 7fb5951bb22b11516ae884b8b2310d2a714749b4
+  revision: 1f4cf0f50c0e6f793dccb926a335a25fe868060c
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -213,7 +213,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.5.9)
+    nio4r (2.6.0)
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -362,7 +362,7 @@ CHECKSUMS
   net-pop (0.1.2) sha256=848b4e982013c15b2f0382792268763b748cce91c9e91e36b0f27ed26420dff3
   net-protocol (0.2.2) sha256=aa73e0cba6a125369de9837b8d8ef82a61849360eba0521900e2c3713aa162a8
   net-smtp (0.4.0) sha256=2d7eb8de289ba8dce3f0d436ee40b9366bea28354c5ba183c8ab2ec05139a3e7
-  nio4r (2.5.9) sha256=0e9d160662fd38d5a26cfe75308f32dfebe4c0523bceaa86873838c93f3a2971
+  nio4r (2.6.0) sha256=b0f89a01783f177cbfee1b49dcb821061ab253c84fcb27dcdcd8c3af98aecbde
   nokogiri (1.15.4) sha256=e4a801e5ef643cc0036f0a7e93433d18818b31d48c9c287596b68e92c0173c4d
   pg (1.5.4) sha256=04f7b247151c639a0b955d8e5a9a41541343f4640aa3c2bdf749a872c339d25d
   propshaft (0.8.0) sha256=cad3fa50f78ef59db4938e61e5edc9b6105838cd890f75b1ca4d7c9b5b662b68
