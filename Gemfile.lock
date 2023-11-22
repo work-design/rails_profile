@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/work-design/rails_auth.git
-  revision: 832f97d7233707adc9138bf3835ccc953dc5f153
+  revision: 86277d2a3c0837989eb95887972710abe8251dc5
   specs:
     rails_auth (1.2.0)
       bcrypt (~> 3.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_com.git
-  revision: 96d3d088e110d4da0c3770df1b90bc57c564e7df
+  revision: afa5675bce5c18839bd28fd01ea29d57ab4d537d
   specs:
     rails_com (1.3.0)
       acme-client
@@ -27,14 +27,14 @@ GIT
 
 GIT
   remote: https://github.com/work-design/rails_design.git
-  revision: d288582be83dfb212335670384933376d2b523b5
+  revision: 3f94091e92a96c4ee1589cab0718aa349bf7463d
   specs:
     rails_design (0.0.1)
       rails
 
 GIT
   remote: https://github.com/work-design/rails_extend.git
-  revision: 1f4cf0f50c0e6f793dccb926a335a25fe868060c
+  revision: 9f040fe7020cdddb300256f6cb74b98ae55c0a86
   specs:
     rails_extend (1.0.1)
       rails (>= 5.0)
@@ -128,7 +128,7 @@ GEM
     acts_as_list (1.1.0)
       activerecord (>= 4.2)
     base64 (0.2.0)
-    bcrypt (3.1.19)
+    bcrypt (3.1.20)
     bigdecimal (3.1.5)
     builder (3.2.4)
     closure_tree (7.4.0)
@@ -148,7 +148,7 @@ GEM
     erubi (1.12.0)
     et-orbi (1.2.7)
       tzinfo
-    faraday (2.7.11)
+    faraday (2.7.12)
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -169,7 +169,7 @@ GEM
       thor (>= 0.14.1)
     http-2-next (1.0.1)
     http-form_data (2.3.0)
-    httpx (1.1.2)
+    httpx (1.1.4)
       http-2-next (>= 1.0.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -321,7 +321,7 @@ CHECKSUMS
   activesupport (7.1.2) sha256=5bd81ef71524a14725ecb6c3b07bfc00ae0ccc77dd611190bd93bd9f92abd0d0
   acts_as_list (1.1.0) sha256=06d4c4de6a1014a58b0eb2c832f51b7593df6ae547199e510a392205c31bab61
   base64 (0.2.0) sha256=0f25e9b21a02a0cc0cea8ef92b2041035d39350946e8789c562b2d1a3da01507
-  bcrypt (3.1.19) sha256=e94fe5cac1c9da5ddced396fb565789f9cdcc477ecbfdf539e3a7acdaa669991
+  bcrypt (3.1.20)
   bigdecimal (3.1.5)
   builder (3.2.4) sha256=99caf08af60c8d7f3a6b004029c4c3c0bdaebced6c949165fe98f1db27fbbc10
   closure_tree (7.4.0) sha256=e39171bbe35de3c06898c3caf2d2949bba2d379aa78fc1a03c1c63f165c1d2b5
@@ -334,7 +334,7 @@ CHECKSUMS
   drb (2.2.0) sha256=e9e4af1cded3306cfe37e064a0086e302d5f40df9cb4d161d059a6bb3a75d40f
   erubi (1.12.0) sha256=27bedb74dfb1e04ff60674975e182d8ca787f2224f2e8143268c7696f42e4723
   et-orbi (1.2.7) sha256=3b693d47f94a4060ccc07e60adda488759b1e8b9228a633ebbad842dfc245fb4
-  faraday (2.7.11) sha256=85dbf6bb776c66d2a03394d8fe535f90cb1c875e3c6ab9bb85d26ca13597c76e
+  faraday (2.7.12)
   faraday-net_http (3.0.2) sha256=6882929abed8094e1ee30344a3369e856fe34530044630d1f652bf70ebd87e8d
   faraday-retry (2.2.0) sha256=80824a5454dd0ce7d8074013454d163569b909001a64bdb3499c9968df4f41c5
   fugit (1.9.0) sha256=e92ae18828a094afdd753e42ded0b83ad3449d79adddc5d1ab88e28dbfedd221
@@ -342,7 +342,7 @@ CHECKSUMS
   good_job (3.21.1) sha256=2a2bccb6f80461a24772e26023b86b542cf8f4e994e6a6557ad1b76a025bbd97
   http-2-next (1.0.1) sha256=255a0c0f0d35e8b5352d3bc5b2bdb3643a27a65e0da7f10a7f2f75e1c23ae640
   http-form_data (2.3.0) sha256=cc4eeb1361d9876821e31d7b1cf0b68f1cf874b201d27903480479d86448a5f3
-  httpx (1.1.2) sha256=e45726eba4af287a6dd058fb68b130abbc973ed727498939dd31db04c5e48be5
+  httpx (1.1.4)
   i18n (1.14.1) sha256=9d03698903547c060928e70a9bc8b6b87fda674453cda918fc7ab80235ae4a61
   io-console (0.6.0) sha256=ce9d9a3455be48c56cac65b8ef7ec59b07526343905f9fda138791005b563336
   irb (1.9.0) sha256=bb7c14302574c8c03c81ba6630878dfea7aa7238e666a67ccfa445c34a624214

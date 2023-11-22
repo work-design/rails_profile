@@ -1,14 +1,10 @@
 # frozen_string_literal: true
 module Profiled
-  module Model::Profile
+  module Share::Age
     extend ActiveSupport::Concern
 
     included do
       attribute :birthday, :date
-      attribute :real_name, :string
-      attribute :nick_name, :string
-      attribute :identity, :string
-      attribute :extra, :json, default: {}
 
       enum birthday_type: {
         solar: 'solar',
@@ -28,10 +24,6 @@ module Profiled
       has_one_attached :avatar
     end
 
-    def name
-      real_name.presence || nick_name.presence
-    end
-
     def age
       return 0 unless self.birthday
       r_hash = TimeHelper.exact_distance_time(self.birthday, Date.today)
@@ -45,7 +37,12 @@ module Profiled
     end
 
     def enter_url
-      Rails.application.routes.url_for(controller: 'profiled/profiles', action: 'qrcode', id: self.id, host: organ.host)
+      Rails.application.routes.url_for(
+        controller: 'profiled/profiles',
+        action: 'qrcode',
+        id: self.id,
+        host: organ.host
+      )
     end
 
     def qrcode_enter_png
