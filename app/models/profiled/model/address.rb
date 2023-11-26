@@ -5,7 +5,7 @@ module Profiled
     included do
       attribute :name, :string
       attribute :detail, :string
-      attribute :contact, :string
+      attribute :contact_person, :string
       attribute :tel, :string
       attribute :post_code, :string
       attribute :source, :string
@@ -29,7 +29,7 @@ module Profiled
     end
 
     def sync_cached_key
-      self.cached_key = [area_id, detail, contact, tel].join(',')
+      self.cached_key = [area_id, detail, contact_person, tel].join(',')
     end
 
     def content
@@ -37,7 +37,7 @@ module Profiled
     end
 
     def contact_info
-      "#{contact} #{tel}"
+      "#{contact_person} #{tel}"
     end
 
     def set_principal

@@ -34,7 +34,7 @@ module Profiled
       [
         :kind,
         :name,
-        :contact,
+        :contact_person,
         :tel,
         :detail,
         :area_id,
