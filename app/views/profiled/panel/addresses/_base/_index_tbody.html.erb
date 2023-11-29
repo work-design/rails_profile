@@ -1,9 +1,9 @@
 <td>
-  <p><%= model.contact %></p>
+  <p><%= model.contact_person %></p>
   <p><%= model.tel %></p>
 </td>
 <td>
-  <p><strong><%= model.area.full_name %></strong></p>
+  <p><strong><%= model.area&.full_name %></strong></p>
   <p class="is-size-7"><%= model.detail %></p>
 </td>
 <td><%= model.station&.name %></td>
