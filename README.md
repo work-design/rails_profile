@@ -1,8 +1,8 @@
 # RailsProfile
 
-[![测试](https://github.com/work-design/rails_profile/actions/workflows/test.yml/badge.svg)](https://github.com/work-design/rails_profile/actions/workflows/test.yml)
-[![Docker构建](https://github.com/work-design/rails_profile/actions/workflows/cd.yml/badge.svg)](https://github.com/work-design/rails_profile/actions/workflows/cd.yml)
-[![Gem](https://github.com/work-design/rails_profile/actions/workflows/gempush.yml/badge.svg)](https://github.com/work-design/rails_profile/actions/workflows/gempush.yml)
+[![测试](actions/workflows/test.yml/badge.svg)](https://github.com/work-design/rails_profile/actions/workflows/test.yml)
+[![Engine构建](actions/workflows/git.yml/badge.svg)](https://github.com/work-design/rails_profile/actions/workflows/cd.yml)
+[![Gem](actions/workflows/gempush.yml/badge.svg)](https://github.com/work-design/rails_profile/actions/workflows/gempush.yml)
 
 用户画像，
 
@@ -15,6 +15,3 @@
 
 ## Contributing
 Contribution directions go here.
-
-## 许可证
-遵循 [MIT](LICENSE) 协议
