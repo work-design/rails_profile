@@ -1,10 +1,10 @@
 <%= render 'top_bar' %>
 
-<div class="weui-panel" id="wechat_panel">
+<div id="wechat_panel" class="weui-panel is-box">
   <div class="weui-panel__bd">
     <%= render partial: 'address', collection: @addresses, as: :model %>
   </div>
-  <div class="weui-panel__ft" id="wechat_address">
+  <div id="wechat_address" class="weui-panel__ft">
     <%= render 'button' %>
   </div>
 </div>
