@@ -6,6 +6,8 @@ module Profiled
 
     included do
       has_many :addresses, class_name: 'Profiled::Address', foreign_key: :member_id
+
+      has_many :agent_addresses, class_name: 'Profiled::Address', foreign_key: :agent_id
     end
 
   end
